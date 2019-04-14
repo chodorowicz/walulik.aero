@@ -1,0 +1,54 @@
+import React from "react"
+import styled from "@emotion/styled"
+
+import { Button, ButtonInner } from "../../components"
+import Line from "../../images/line.inline.svg"
+import { colors, fontSizes } from "../../constants"
+import { Carousel } from "./carousel/carousel"
+
+const Wrapper = styled.div`
+  position: relative;
+  padding-left: 114px;
+  padding-right: 114px;
+  padding-top: 98px;
+  padding-bottom: 98px;
+  overflow: hidden;
+`
+
+const SectionTitle = styled.h2`
+  font-size: ${fontSizes.mediumLarge}px;
+  color: ${colors.darkBlue};
+  padding-bottom: 28px;
+  position: relative;
+  display: inline-block;
+  &:after {
+    content: "";
+    display: block;
+    height: 7px;
+    width: 2000px;
+    background-color: ${colors.darkBlue};
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+`
+
+const BottomSection = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+export const SectionBooks: React.FC<any> = () => {
+  return (
+    <Wrapper>
+      <SectionTitle>Books</SectionTitle>
+      <Carousel />
+      <BottomSection>
+        <Button>
+          <ButtonInner>see all books</ButtonInner>
+          <Line />
+        </Button>
+      </BottomSection>
+    </Wrapper>
+  )
+}

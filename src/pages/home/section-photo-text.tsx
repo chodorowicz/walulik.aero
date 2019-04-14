@@ -3,7 +3,8 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
 
-import { Title, Paragraph, Button } from "../../components";
+import { Title, Paragraph, Button, ButtonInner } from "../../components";
+import Line from "../../images/line.inline.svg";
 
 
 const Wrapper = styled.div`
@@ -40,7 +41,7 @@ export const SectonPhotoText: React.FC<any> = () => {
         <Title>Jan Walulik</Title>
         <Paragraph>Attorney and researcher specialising in aviation law and policy and in commercial law for over 10 years. Active as an aviation expert in consulting and training projects for the industry and the government. Lecturer in air law; author, editor and reviewer of numerous publications on regulatory issues in aviation. Member of the Warsaw Bar Association.</Paragraph>
         <div>
-          <Button>learn more</Button>
+          <Button><ButtonInner>learn more</ButtonInner><Line /></Button>
         </div>
       </TextContent>
     </Wrapper>

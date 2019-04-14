@@ -12,3 +12,7 @@ export const Button = styled.button`
   color: ${colors.accent};
   font-weight: 700;
 `;
+
+export const ButtonInner = styled.span`
+  margin-right: 10px;
+`;

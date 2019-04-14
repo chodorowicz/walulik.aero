@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 import { colors, fontSizes } from "../constants"
 import HomePageImage from "../images/home-page-bg@2x.jpg"
 import { Layout } from "../layout"
-import { Menu, SectonPhotoText } from "./home/";
+import { Menu, SectonPhotoText, SectionBooks, SectionPapers } from "./home/";
 
 const TopSection = styled.div`
   background-image: url("${HomePageImage}");
@@ -45,6 +45,8 @@ const HomePage: React.FC = children => (
       <Menu />
     </TopSection>
     <SectonPhotoText />
+    <SectionBooks />
+    <SectionPapers />
   </Layout>
 )
 
