@@ -1,10 +1,12 @@
 import styled from "@emotion/styled"
 
-import { fontSizes, colors } from "../constants";
+import { Title } from "./text";
+import { fontSizes, colors, fontFamily } from "../constants";
 
-export const SectionTitle = styled.h2`
+export const SectionTitle = styled(Title)`
   font-size: ${fontSizes.mediumLarge}px;
   color: ${colors.darkBlue};
+  font-family: ${fontFamily.montserrat};
   padding-bottom: 28px;
   position: relative;
   display: inline-block;
@@ -18,4 +20,4 @@ export const SectionTitle = styled.h2`
     bottom: 0;
     right: 0;
   }
-`
+`;

@@ -1,4 +1,4 @@
-export { Menu } from "./menu"
+export { Menu } from "../../layout/menu"
 export { SectonPhotoText } from "./section-photo-text"
 export { SectionBooks } from "./section-books";
 export { SectionPapers } from "./section-papers";

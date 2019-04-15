@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import { css } from "@emotion/core";
 
-import { colors, fontSizes, fontWeight } from "../../constants"
+import { colors, fontSizes, fontWeight, fontFamily, urls } from "../constants"
 
 const MenuWrapper = styled.nav`
   font-size: ${fontSizes.medium}px;
+  font-family: ${fontFamily.montserrat};
   color: ${colors.accent};
   font-weight: ${fontWeight.bold};
   margin: 0;
@@ -29,7 +29,7 @@ const StyledLink = styled(Link)`
 
 export const Menu: React.FC = () => {
   return <MenuWrapper>
-    <StyledLink to="/about">About</StyledLink>
-    <StyledLink to="/books">Books</StyledLink>
+    <StyledLink to={urls.about}>About</StyledLink>
+    <StyledLink to={urls.books}>Books</StyledLink>
   </MenuWrapper>
 }

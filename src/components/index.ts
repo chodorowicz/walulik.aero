@@ -1,4 +1,6 @@
-export { PageCallout } from "./page-callout";
-export * from "./text";
-export * from "./button";
-export { SectionTitle } from "./section-title";
+export { PageCallout } from "./page-callout"
+export * from "./text"
+export * from "./button"
+export { SectionTitle } from "./section-title"
+export { TopSection } from "./top-section"
+export { SectionTop } from "./section-top"

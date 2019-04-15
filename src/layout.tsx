@@ -2,7 +2,7 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { Global, css } from "@emotion/core"
 
-import { colors } from "./constants"
+import { colors, fontFamily } from "./constants"
 import { Footer } from "./layout/footer";
 
 export const Layout: React.FC = ({ children }) => (
@@ -10,9 +10,10 @@ export const Layout: React.FC = ({ children }) => (
     <Global
       styles={css`
         body {
-          font-family: "Montserrat", sans-serif;
+          font-family: ${fontFamily.roboto};
           margin: 0;
           background-color: ${colors.whiteOff};
+          color: ${colors.darkBlue};
         }
       `}
     />

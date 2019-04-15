@@ -2,14 +2,8 @@ import React from "react"
 import styled from "@emotion/styled"
 
 import { SectionTitle } from "../../components"
-import { ContactForm } from "./contact-form/contact-form";
-import Line from "../../images/line.inline.svg"
+import { ContactForm } from "./contact-form/contact-form"
 import { colors, fontSizes, fontFamily, fontWeight } from "../../constants"
-import { PaperBox } from "./paper-box";
-import EconomicRegulation from "../../images/icon-economic.inline.svg";
-import IconAirlineFinance from "../../images/icon-airline-finance.svg";
-import IconSecurity from "../../images/icon-security.svg";
-import IconCriminalLaw from "../../images/icon-criminal-law.svg";
 
 const Wrapper = styled.div`
   padding-top: 111px;
@@ -44,18 +38,6 @@ const Link = styled.a`
   color: ${colors.accent};
   font-weight: ${fontWeight.bold};
   font-size: ${fontSizes.medium}px;
-`;
-
-const WrapperText = styled.div`
-  padding-left: 100px;
-  padding-right: 100px;
-`;
-
-const BoxWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 30px;
-  height: 380px;
 `;
 
 export const SectionContact: React.FC<any> = () => {

@@ -28,3 +28,9 @@ export const fontFamily = {
   roboto: `"Roboto", sans-serif`,
   montserrat: `"Montserrat", sans-serif`,
 }
+
+export const urls = {
+  home: "/",
+  about: "/about",
+  books: "/books",
+}
