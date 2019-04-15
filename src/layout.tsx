@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 import { Global, css } from "@emotion/core"
 
 import { colors } from "./constants"
+import { Footer } from "./layout/footer";
 
 export const Layout: React.FC = ({ children }) => (
   <div>
@@ -21,10 +22,11 @@ export const Layout: React.FC = ({ children }) => (
         rel="stylesheet"
       />
       <link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i&amp;subset=latin-ext"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i&amp;subset=latin-ext"
         rel="stylesheet"
     />
     </Helmet>
     {children}
+    <Footer />
   </div>
 )

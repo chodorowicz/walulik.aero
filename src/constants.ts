@@ -1,7 +1,11 @@
 export const fontSizes = {
+  size15: 15,
   small: 17,
+  size18: 18,
   medium: 20,
   large: 24,
+  largePlus: 26,
+  size28: 28,
   mediumLarge: 40,
   xLarge: 52,
   xxLarge: 72,
@@ -21,5 +25,6 @@ export const fontWeight = {
 }
 
 export const fontFamily = {
-  roboto: "Roboto, sans-serif",
+  roboto: `"Roboto", sans-serif`,
+  montserrat: `"Montserrat", sans-serif`,
 }

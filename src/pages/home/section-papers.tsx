@@ -1,15 +1,17 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { Button, ButtonInner, Title, Paragraph } from "../../components"
-import Line from "../../images/line.inline.svg"
-import { colors, fontSizes } from "../../constants"
+import { Title, Paragraph } from "../../components"
+import { colors } from "../../constants"
 import { PaperBox } from "./paper-box";
 import EconomicRegulation from "../../images/icon-economic.inline.svg";
+import IconAirlineFinance from "../../images/icon-airline-finance.svg";
+import IconSecurity from "../../images/icon-security.svg";
+import IconCriminalLaw from "../../images/icon-criminal-law.svg";
 
 const Wrapper = styled.div`
   padding-top: 98px;
-  padding-bottom: 98px;
+  padding-bottom: 134px;
   padding-left: 114px;
   padding-right: 114px;
   background-color: ${colors.grey};
@@ -24,7 +26,7 @@ const BoxWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
-  height: 300px;
+  height: 380px;
 `;
 
 export const SectionPapers: React.FC<any> = () => {
@@ -36,9 +38,9 @@ export const SectionPapers: React.FC<any> = () => {
       </WrapperText>
       <BoxWrapper>
         <PaperBox text="Economic regulation"><EconomicRegulation /></PaperBox>
-        <PaperBox text="Economic regulation" />
-        <PaperBox text="Economic regulation" />
-        <PaperBox text="Economic regulation" />
+        <PaperBox text="Airline finance"><IconAirlineFinance /></PaperBox>
+        <PaperBox text="Safety and security"><IconSecurity /></PaperBox>
+        <PaperBox text="Aviation criminal law"><IconCriminalLaw /></PaperBox>
       </BoxWrapper>
     </Wrapper>
   )
