@@ -34,3 +34,7 @@ export const urls = {
   about: "/about",
   books: "/books",
 }
+
+export const sizes = {
+  size1160: 1160,
+}

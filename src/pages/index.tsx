@@ -7,7 +7,7 @@ import HomePageImage from "../images/home-page-bg@2x.jpg"
 
 const HomePage: React.FC = () => (
   <Layout>
-    <SectionTop background={HomePageImage} />
+    <SectionTop background={HomePageImage} isHome={true} />
     <SectonPhotoText />
     <SectionBooks />
     <SectionPapers />

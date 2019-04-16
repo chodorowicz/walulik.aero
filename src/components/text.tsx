@@ -6,6 +6,7 @@ export const Title = styled.h2`
   color: ${colors.darkBlue};
   font-size: ${fontSizes.mediumLarge}px;
   font-family: ${fontFamily.montserrat};
+  margin-top: 0px;
 `;
 
 export const Paragraph = styled.p`
@@ -13,5 +14,5 @@ export const Paragraph = styled.p`
   font-size: 24px;
   line-height: 42px;
   font-family: 'Roboto', sans-serif;
-  font-weight: ${fontWeight.light}
+  font-weight: ${fontWeight.light};
 `;

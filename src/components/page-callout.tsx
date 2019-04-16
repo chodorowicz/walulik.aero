@@ -1,16 +1,11 @@
-import React from "react"
 import styled from "@emotion/styled"
 
-import { colors } from "../constants";
+import { colors, sizes } from "../constants";
 
-const Wrapper = styled.div`
+export const PageCallout = styled.div`
   background-color: ${colors.darkBlue};
   padding: 90px 98px;
+  width: ${sizes.size1160}px;
+  margin-left: auto;
+  margin-right: auto;
 `;
-
-
-export const PageCallout: React.FC = ({ children }) => (
-  <Wrapper>
-    {children}
-  </Wrapper>
-)
