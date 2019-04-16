@@ -9,10 +9,19 @@ export const Title = styled.h2`
   margin-top: 0px;
 `;
 
-export const Paragraph = styled.p`
-  color: ${colors.darkBlue};
+
+interface IParagraph {
+  color?: string;
+}
+
+export const Paragraph = styled.p<IParagraph>`
+  color: ${props => props.color || colors.darkBlue};
   font-size: 24px;
   line-height: 42px;
   font-family: 'Roboto', sans-serif;
   font-weight: ${fontWeight.light};
+
+  a {
+    color: ${colors.accent};
+  }
 `;
