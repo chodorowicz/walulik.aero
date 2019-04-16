@@ -12,11 +12,12 @@ export const Title = styled.h2`
 
 interface IParagraph {
   color?: string;
+  fontSize?: number;
 }
 
 export const Paragraph = styled.p<IParagraph>`
   color: ${props => props.color || colors.darkBlue};
-  font-size: 24px;
+  font-size: ${props => props.fontSize || 24}px;
   line-height: 42px;
   font-family: 'Roboto', sans-serif;
   font-weight: ${fontWeight.light};
