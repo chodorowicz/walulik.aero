@@ -19,14 +19,6 @@ const StyledPageCallout = styled(PageCallout)`
   z-index: 1;
 `;
 
-const StyledTitle = styled(Title)`
-  color: ${colors.white};
-`;
-
-const StyledParagraph = styled(Paragraph)`
-  color: ${colors.white};
-`;
-
 const StyledWrapperContent = styled(WrapperContent)`
   padding-top: 165px;
   padding-bottom: 130px;
@@ -57,10 +49,12 @@ const StyledParagraphText = styled(Paragraph)`
 
 export const SectionAbout: React.FC = () => (
   <Wrapper>
-    <StyledPageCallout>
-      <StyledTitle>About</StyledTitle>
-      <StyledParagraph>Jan has been specialising in aviation law and policy and in corporate law for over 10 years. He started his legal career at Weil in a commercial law department. Since 2008 he has been practicing individually as a business lawyer specialising in commercial law, aviation law, administrative law and tax law. Jan has successfully led numerous corporate restructuring projects, and has been active as an aviation expert in consulting and training projects for the industry and the government. He is a member of the Warsaw Bar Association.</StyledParagraph>
-    </StyledPageCallout>
+    <WrapperContent>
+      <StyledPageCallout>
+        <Title color={colors.white} style={{ marginBottom: "100px" }}>About</Title>
+        <Paragraph color={colors.white}>Jan has been specialising in aviation law and policy and in corporate law for over 10 years. He started his legal career at Weil in a commercial law department. Since 2008 he has been practicing individually as a business lawyer specialising in commercial law, aviation law, administrative law and tax law. Jan has successfully led numerous corporate restructuring projects, and has been active as an aviation expert in consulting and training projects for the industry and the government. He is a member of the Warsaw Bar Association.</Paragraph>
+      </StyledPageCallout>
+    </WrapperContent>
     <StyledWrapperContent>
       <ImagesColumn>
         <img src={ImageAbout1} />
