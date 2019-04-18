@@ -69,7 +69,7 @@ export function Footer(): JSX.Element {
       <ContainerRight>
         <ContactInfo>
           <Title>
-            ContactInfoJan Walulik <br />
+            Jan Walulik <br />
             Aviation Research &amp; Consulting
           </Title>
           <Text>

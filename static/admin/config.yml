@@ -1,0 +1,19 @@
+backend:
+  # name: test-repo
+  name: github
+  repo: chodorowicz/jan-walulik
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home Page"
+        name: "index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
+          - {label: "Claim", name: "claim", widget: "markdown" }
+          - {label: "test", name: "test", widget: "markdown" }

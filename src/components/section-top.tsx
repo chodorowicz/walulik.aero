@@ -32,17 +32,14 @@ const Title = styled.h1`
 interface IProps {
   background: string;
   isHome: boolean;
+  claim: string;
 }
 
-export const SectionTop: React.FC<IProps> = ({ background, isHome = false }) => {
+export const SectionTop: React.FC<IProps> = ({ background, isHome = false, claim }) => {
   return (
     <TopSection background={background}>
       <HomePageTitle><StyledTitleLink to={urls.home}>Jan Walulik</StyledTitleLink></HomePageTitle>
-      {isHome && <Title>
-        Aviation <br />
-        Research <br />
-        &amp; Consulting
-      </Title>}
+      {isHome && <Title dangerouslySetInnerHTML={{ __html: claim }} />}
       <Menu />
     </TopSection>
   );

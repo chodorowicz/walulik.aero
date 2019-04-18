@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "walulik.aero",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Jan Walulik website",
   "version": "0.1.0",
-  "license": "MIT",
+  "license": "unlicensed",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -19,12 +19,15 @@
     "gatsby": "^2.3.16",
     "gatsby-image": "2.0.37",
     "gatsby-plugin-emotion": "4.0.6",
+    "gatsby-plugin-netlify-cms": "3.0.18",
     "gatsby-plugin-react-helmet": "3.0.12",
     "gatsby-plugin-react-svg": "2.1.1",
     "gatsby-plugin-sharp": "2.0.33",
     "gatsby-plugin-typescript": "2.0.12",
     "gatsby-source-filesystem": "2.0.29",
+    "gatsby-transformer-remark": "2.3.8",
     "gatsby-transformer-sharp": "2.1.17",
+    "netlify-cms": "2.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "5.2.0"
