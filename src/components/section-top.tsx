@@ -6,20 +6,13 @@ import { colors, fontSizes, fontFamily, urls } from "../constants"
 import { Menu } from "../layout/menu"
 import { TopSection } from ".";
 import { MarkdownContainer } from "../components"
+import LogoJan from "../images/logo-jan.svg"
 
 const HomePageTitle = styled.h2`
   margin: 0;
   position: absolute;
   top: 8%;
 `
-
-const StyledTitleLink = styled(Link)`
-  font-size: ${fontSizes.xLarge}px;
-  font-family: ${fontFamily.roboto};
-  color: ${colors.accent};
-  font-weight: 700;
-  text-decoration: none;
-`;
 
 const Title = styled.h1`
   font-size: ${fontSizes.xxLarge}px;
@@ -30,16 +23,17 @@ const Title = styled.h1`
 `
 
 interface IProps {
-  background: string;
+  background?: string;
   isHome: boolean;
-  claim: string;
+  claim?: string;
 }
 
-export const SectionTop: React.FC<IProps> = ({ background, isHome = false, claim }) => {
+export const SectionTop: React.FC<IProps> = ({ background, isHome = false, claim, children }) => {
   return (
-    <TopSection background={background}>
-      <HomePageTitle><StyledTitleLink to={urls.home}>Jan Walulik</StyledTitleLink></HomePageTitle>
-      {isHome && <Title> <MarkdownContainer content={claim} /></Title>}
+    <TopSection background={background || ""}>
+      <HomePageTitle><Link to={urls.home}><LogoJan /></Link></HomePageTitle>
+      {(isHome && claim) && <Title><MarkdownContainer content={claim} /></Title>}
+      {children}
       <Menu />
     </TopSection>
   );

@@ -10,14 +10,6 @@ export function modulo(mod: number): (n: number) => number {
   return (n: number) => ((n % mod) + mod) % mod;
 }
 
-const books = [{
-  image: "",
-  link: "",
-}, {
-  image: "",
-  link: "",
-}];
-
 const CarouselMain = styled.div`
   display: flex;
   justify-content: center;

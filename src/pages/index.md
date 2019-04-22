@@ -6,4 +6,3 @@ claim: |-
   & Consulting
 test: test
 ---
-

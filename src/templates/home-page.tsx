@@ -10,7 +10,6 @@ interface IProps {
   data: {
     markdownRemark: {
       frontmatter: {
-        title: string;
         claim: string;
       }
     }
@@ -18,7 +17,7 @@ interface IProps {
 }
 
 const HomePage: React.FC<IProps> = (props) => {
-  const { title, claim } = props.data.markdownRemark.frontmatter;
+  const { claim } = props.data.markdownRemark.frontmatter;
   return (
     <Layout>
       <SectionTop background={HomePageImage} isHome={true} claim={claim} />
@@ -36,7 +35,6 @@ export const pageQuery = graphql`
   query HomePageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "home-page" } }) {
       frontmatter {
-        title
         claim
       }
     }

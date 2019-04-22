@@ -15,3 +15,7 @@ export const Button = styled.button`
 export const ButtonInner = styled.span`
   margin-right: 10px;
 `;
+
+export const ButtonInnerLeft = styled.span`
+  margin-left: 10px;
+`;
