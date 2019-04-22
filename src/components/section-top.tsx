@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-const ReactMarkdown = require('react-markdown')
 
 import { colors, fontSizes, fontFamily, urls } from "../constants"
 import { Menu } from "../layout/menu"
 import { TopSection } from ".";
+import { MarkdownContainer } from "../components"
 
 const HomePageTitle = styled.h2`
   margin: 0;
@@ -39,7 +39,7 @@ export const SectionTop: React.FC<IProps> = ({ background, isHome = false, claim
   return (
     <TopSection background={background}>
       <HomePageTitle><StyledTitleLink to={urls.home}>Jan Walulik</StyledTitleLink></HomePageTitle>
-      {isHome && <Title>  <ReactMarkdown source={claim.replace(/\\\n/g, "<br />")} escapeHtml={false} /></Title>}
+      {isHome && <Title> <MarkdownContainer content={claim} /></Title>}
       <Menu />
     </TopSection>
   );
