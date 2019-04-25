@@ -8,10 +8,10 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      // this needs to point to folder where uploaded images are stored
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static`,
+        path: `${__dirname}/static/assets`,
         name: 'uploads',
       },
     },

@@ -17,11 +17,13 @@ export const colors = {
   white: "#ffffff",
   whiteOff: "#F4F4F4",
   grey: "#D1D1D1",
+  grey2: "#868686",
 }
 
 export const fontWeight = {
   light: 300,
   bold: 700,
+  normal400: 400,
 }
 
 export const fontFamily = {

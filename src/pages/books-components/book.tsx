@@ -11,6 +11,7 @@ interface IBooks {
 
 const BookContainer = styled.div`
   margin-bottom: 80px;
+  margin-top: 80px;
 `;
 
 const BookImage = styled.img`
