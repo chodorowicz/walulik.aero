@@ -36,18 +36,19 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then(result => {
+
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const { edges } = result.data.allMarkdownRemark
 
-    posts.forEach(edge => {
-      const id = edge.node.id
+    edges.forEach(edge => {
+      const isBookPage = edge.node.frontmatter.templateKey === "book-page"
+      const { id } = edge.node
       createPage({
         path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),

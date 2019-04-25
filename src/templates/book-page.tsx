@@ -17,6 +17,7 @@ interface IProps {
 }
 
 const BookPage: React.FC<IProps> = props => {
+  const { data } = props; 
   const { html, frontmatter } = props.data.markdownRemark;
   const { image, text, title } = frontmatter;
 

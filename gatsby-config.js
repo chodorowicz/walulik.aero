@@ -2,32 +2,19 @@ const path = require("path")
 
 module.exports = {
   plugins: [
-    "gatsby-plugin-emotion",
-    "gatsby-plugin-typescript",
-    "gatsby-plugin-react-helmet",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     {
       // this needs to point to folder where uploaded images are stored
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/assets`,
-        name: 'uploads',
+        name: 'assets',
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/src/images`,
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
-      },
-    },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /\.svg$/,
-        },
       },
     },
     {
@@ -37,6 +24,8 @@ module.exports = {
         name: 'pages',
       },
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -44,7 +33,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-relative-images',
             options: {
-              name: 'uploads',
+              name: 'assets',
             },
           },
           {
@@ -60,6 +49,17 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.svg$/,
+        },
       },
     },
     "gatsby-plugin-netlify-cms"
