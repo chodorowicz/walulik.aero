@@ -7,6 +7,15 @@ const Box = styled.div`
   background-color: ${colors.darkBlue};
   width: 300px;
   position: relative;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: ${colors.accent};
+    transition: all ease 0.2s;
+    svg, path {
+      fill: #ffffff;
+    }
+  }
 `
 
 const Text = styled.div`

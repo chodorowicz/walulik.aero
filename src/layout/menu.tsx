@@ -19,17 +19,30 @@ const StyledLink = styled(Link)`
   &:not(:last-child) {
     margin-right: 40px;
   }
-  &:hover {
+  &:hover,
+  &.active {
     text-decoration: underline;
+    color: ${props => props.theme.lightMenu ? colors.accent : colors.white};
   }
 `
+
+const commonLinkProps = {
+  activeClassName: "active",
+  partiallyActive: true,
+}
 
 export const Menu: React.FC = () => {
   return (
     <MenuWrapper>
-      <StyledLink to={urls.about}>About</StyledLink>
-      <StyledLink to={urls.books}>Books</StyledLink>
-      <StyledLink to={urls.researchPapers}>Research papers</StyledLink>
+      <StyledLink to={urls.about} {...commonLinkProps}>
+        About
+      </StyledLink>
+      <StyledLink to={urls.books} {...commonLinkProps}>
+        Books
+      </StyledLink>
+      <StyledLink to={urls.researchPapers} {...commonLinkProps}>
+        Research papers
+      </StyledLink>
     </MenuWrapper>
   )
 }
