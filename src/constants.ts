@@ -43,5 +43,6 @@ export const sizes = {
 }
 
 export const spacings = {
+  space40: 40,
   space80: 80,
 }

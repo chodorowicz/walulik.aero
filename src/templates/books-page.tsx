@@ -24,6 +24,29 @@ const Books: React.FC = props => {
 
 export default Books
 
+export const booksListFields = graphql`
+  fragment booksListFields on MarkdownRemarkConnection {
+    edges {
+      node {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          publisher
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
 export const pageQuery = graphql`
   query BooksPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "books-page" } }) {
@@ -32,28 +55,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMarkdownRemark: allMarkdownRemark(
       limit: 1000
       filter: { frontmatter: { templateKey: { eq: "book-page" } } }
     ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            publisher
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
+      ...booksListFields
     }
   }
 `
