@@ -49,3 +49,18 @@ export const StyledContent = styled.div<IStyledContent>`
     font-weight: ${fontWeight.normal400};
   }
 `;
+
+export const StyledCalloutContent = styled.div<IStyledContent>`
+  color: ${props => props.color || colors.white};
+  font-size: ${fontSizes.large}px;
+  font-weight: ${fontWeight.light};
+  line-height: 1.7em;
+
+  h2 {
+    &:first-child {
+      margin-top: 0;
+    }
+    font-size: ${fontSizes.mediumLarge}px;
+    font-weight: ${fontWeight.bold};
+  }
+`;

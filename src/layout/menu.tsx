@@ -25,11 +25,14 @@ const StyledLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
-`;
+`
 
 export const Menu: React.FC = () => {
-  return <MenuWrapper>
-    <StyledLink to={urls.about}>About</StyledLink>
-    <StyledLink to={urls.books}>Books</StyledLink>
-  </MenuWrapper>
+  return (
+    <MenuWrapper>
+      <StyledLink to={urls.about}>About</StyledLink>
+      <StyledLink to={urls.books}>Books</StyledLink>
+      <StyledLink to={urls.researchPapers}>Research papers</StyledLink>
+    </MenuWrapper>
+  )
 }

@@ -36,7 +36,7 @@ const Social = styled.aside`
 
 
 const Content = styled.div`
-  grid-area: content;;
+  grid-area: content;
 `;
 
 // const BookNavigation = styled.div`

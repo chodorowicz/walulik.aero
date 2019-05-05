@@ -35,6 +35,7 @@ export const urls = {
   home: "/",
   about: "/about",
   books: "/books",
+  researchPapers: "/research-papers",
 }
 
 export const sizes = {

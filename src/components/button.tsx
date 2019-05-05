@@ -1,6 +1,9 @@
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 
 import { colors, fontSizes } from "../constants";
+
+
 
 export const Button = styled.button`
   border-radius: 30px;
@@ -10,6 +13,11 @@ export const Button = styled.button`
   font-size: ${fontSizes.small}px;
   color: ${colors.accent};
   font-weight: 700;
+  text-decoration: none;
+`;
+
+export const LinkButton = styled(Button.withComponent(Link))`
+  text-decoration: none;
 `;
 
 export const ButtonInner = styled.span`

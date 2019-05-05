@@ -21,7 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark(limit: 10000) {
         edges {
           node {
             id
@@ -31,6 +31,8 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               title
               templateKey
+              category
+              where
             }
           }
         }
@@ -46,7 +48,8 @@ exports.createPages = ({ actions, graphql }) => {
     const { edges } = result.data.allMarkdownRemark
 
     const books = edges.filter(edge => edge.node.frontmatter.templateKey === "book-page");
-    const pages = edges.filter(edge => edge.node.frontmatter.templateKey !== "book-page");
+    const pages = edges.filter(edge => !["book-page", "research-paper"].includes(edge.node.frontmatter.templateKey));
+    const researchPapers = edges.filter(edge => edge.node.frontmatter.templateKey === "research-paper");
 
     pages.forEach(edge => {
       const { id } = edge.node
@@ -58,6 +61,7 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           slug: edge.node.fields.slug,
           id,
+          researchPapers,
         },
       })
     })
@@ -76,6 +80,26 @@ exports.createPages = ({ actions, graphql }) => {
           slug: edge.node.fields.slug,
           id,
           books,
+          next,
+          prev
+        },
+      })
+    })
+
+    researchPapers.forEach((edge, index) => {
+      const { id } = edge.node
+      const prev = index === 0 ? researchPapers[researchPapers.length - 1].node : researchPapers[index - 1].node;
+      const next = (index + 1 === researchPapers.length) ? researchPapers[0].node : researchPapers[index + 1].node;
+
+      createPage({
+        path: edge.node.fields.slug,
+        component: path.resolve(
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
+        ),
+        context: {
+          slug: edge.node.fields.slug,
+          id,
+          researchPapers,
           next,
           prev
         },
