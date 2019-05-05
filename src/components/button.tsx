@@ -13,7 +13,9 @@ export const Button = styled.button`
   color: ${colors.accent};
   font-weight: 700;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   &:hover {
     color: ${colors.white};
     background: ${colors.accent};
