@@ -41,3 +41,7 @@ export const urls = {
 export const sizes = {
   size1160: 1160,
 }
+
+export const spacings = {
+  space80: 80,
+}

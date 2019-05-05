@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { Button, ButtonInner, SectionTitle } from "../../components"
+import { Button, ButtonInner, SectionTitle, WrapperContent } from "../../components"
 import Line from "../../images/line.inline.svg"
 import { Carousel } from "./carousel/carousel"
 
@@ -22,14 +22,16 @@ const BottomSection = styled.div`
 export const SectionBooks: React.FC<any> = () => {
   return (
     <Wrapper>
-      <SectionTitle>Books</SectionTitle>
-      <Carousel />
-      <BottomSection>
-        <Button>
-          <ButtonInner>see all books</ButtonInner>
-          <Line />
-        </Button>
-      </BottomSection>
+      <WrapperContent>
+        <SectionTitle>Books</SectionTitle>
+        <Carousel />
+        <BottomSection>
+          <Button>
+            <ButtonInner>see all books</ButtonInner>
+            <Line />
+          </Button>
+        </BottomSection>
+      </WrapperContent>
     </Wrapper>
   )
 }
