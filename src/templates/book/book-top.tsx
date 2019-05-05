@@ -9,7 +9,7 @@ import {
   MarkdownContainer,
 } from "../../components"
 import LineLeft from "../../images/line-left.inline.svg"
-import { CarouselArrows } from "../home/carousel/carousel-arrows"
+import { CarouselArrowsLinks } from "../home/carousel/carousel-arrows"
 import { colors, fontSizes, fontWeight } from "../../constants"
 
 const StyledWrapperContent = styled(WrapperContent)`
@@ -62,9 +62,11 @@ interface IProps {
   fluid: any;
   text: string;
   title: string;
+  nextLink: string;
+  prevLink: string;
 }
 
-export const BookTop: React.FC<IProps> = ({ fluid, text, title }) => {
+export const BookTop: React.FC<IProps> = ({ fluid, text, title, nextLink, prevLink }) => {
   return (
     <StyledWrapperContent>
       <Container>
@@ -76,7 +78,7 @@ export const BookTop: React.FC<IProps> = ({ fluid, text, title }) => {
             </BackButton>
           </div>
           <ArrowsContainer>
-            <CarouselArrows next={() => ({})} prev={() => ({})} />
+            <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
           </ArrowsContainer>
         </BookNavigation>
         <BookContainer>

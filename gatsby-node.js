@@ -29,6 +29,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
+              title
               templateKey
             }
           }
@@ -44,17 +45,39 @@ exports.createPages = ({ actions, graphql }) => {
 
     const { edges } = result.data.allMarkdownRemark
 
-    edges.forEach(edge => {
-      const isBookPage = edge.node.frontmatter.templateKey === "book-page"
+    const books = edges.filter(edge => edge.node.frontmatter.templateKey === "book-page");
+    const pages = edges.filter(edge => edge.node.frontmatter.templateKey !== "book-page");
+
+    pages.forEach(edge => {
       const { id } = edge.node
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
-        // additional data can be passed via context
         context: {
+          slug: edge.node.fields.slug,
           id,
+        },
+      })
+    })
+
+    books.forEach((edge, index) => {
+      const { id } = edge.node
+      const prev = index === 0 ? books[books.length - 1].node : books[index - 1].node;
+      const next = (index + 1 === books.length) ? books[0].node : books[index + 1].node;
+
+      createPage({
+        path: edge.node.fields.slug,
+        component: path.resolve(
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
+        ),
+        context: {
+          slug: edge.node.fields.slug,
+          id,
+          books,
+          next,
+          prev
         },
       })
     })

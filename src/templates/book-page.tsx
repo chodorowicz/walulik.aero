@@ -17,14 +17,25 @@ interface IProps {
 }
 
 const BookPage: React.FC<IProps> = props => {
-  const { data } = props; 
-  const { html, frontmatter } = props.data.markdownRemark;
-  const { image, text, title } = frontmatter;
+  const { data, pageContext } = props
+  const { html, frontmatter } = props.data.markdownRemark
+  const { image, text, title } = frontmatter
+  const { next, prev } = pageContext
+  const nextLink = next && next.fields.slug
+  const prevLink = prev && prev.fields.slug
+
+  console.log(props)
 
   return (
     <Layout>
       <SectionTop isHome={false}>
-        <BookTop fluid={image.childImageSharp.fluid} text={text} title={title}/>
+        <BookTop
+          fluid={image.childImageSharp.fluid}
+          text={text}
+          title={title}
+          nextLink={nextLink}
+          prevLink={prevLink}
+        />
       </SectionTop>
       <BookContent html={html} />
     </Layout>
@@ -34,8 +45,9 @@ const BookPage: React.FC<IProps> = props => {
 export default BookPage
 
 export const pageQuery = graphql`
-  query BookPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "book-page" } }) {
+  query BookPageTemplate($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
       html
       frontmatter {
         text
