@@ -1,14 +1,20 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { DeepRequired } from "utility-types"
 
 import { Layout } from "../layout"
 import { SectionTop } from "../components"
 import BooksPageBackground from "../images/books/books-bg@2x.jpg"
 import { SectionBooks } from "./books-components/section-books"
+import { BooksPageTemplateQuery } from "../generated/graphql"; 
 
-const Books: React.FC = props => {
-  console.log(props)
+interface IProps {
+  data: DeepRequired<BooksPageTemplateQuery>;
+}
+
+const Books: React.FC<IProps> = props => {
   const { data } = props
+
   const { html, frontmatter } = data.markdownRemark
   return (
     <Layout>
