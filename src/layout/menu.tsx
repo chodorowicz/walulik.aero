@@ -10,16 +10,13 @@ const MenuWrapper = styled.nav`
   color: ${colors.accent};
   font-weight: ${fontWeight.bold};
   margin: 0;
-  position: absolute;
-  top: 8%;
-  right: 100px;
   display: flex;
 `
 
 const StyledLink = styled(Link)`
   color: ${colors.accent};
   text-decoration: none;
-  &:not(last-child) {
+  &:not(:last-child) {
     margin-right: 40px;
   }
   &:hover {
