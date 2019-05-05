@@ -15,6 +15,14 @@ const CircleWithIcon = styled.button`
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: ${colors.accent};
+    path, line {
+      fill: ${colors.white};
+      stroke: ${colors.white};
+    }
+  }
 `;
 
 const CircleWithIconTop = styled(CircleWithIcon)`
