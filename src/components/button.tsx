@@ -3,8 +3,6 @@ import { Link } from "gatsby"
 
 import { colors, fontSizes } from "../constants";
 
-
-
 export const Button = styled.button`
   border-radius: 30px;
   border: solid 3px ${colors.accent};
@@ -14,6 +12,7 @@ export const Button = styled.button`
   color: ${colors.accent};
   font-weight: 700;
   text-decoration: none;
+  display: inline-block;
 `;
 
 export const LinkButton = styled(Button.withComponent(Link))`

@@ -38,3 +38,17 @@ export const SectionTop: React.FC<IProps> = ({ background, isHome = false, claim
     </TopSection>
   );
 }
+
+const SectionTopShortContainer = styled.div`
+  position: relative;
+  height: 400px;
+`;
+
+export const SectionTopShort: React.FC = () => {
+  return (
+    <SectionTopShortContainer>
+      <HomePageTitle><Link to={urls.home}><LogoJan /></Link></HomePageTitle>
+      <Menu />
+    </SectionTopShortContainer>
+  );
+}

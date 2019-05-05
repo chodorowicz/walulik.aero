@@ -17,7 +17,7 @@ const MenuWrapper = styled.nav`
 `
 
 const StyledLink = styled(Link)`
-  color: ${colors.white};
+  color: ${colors.accent};
   text-decoration: none;
   &:not(last-child) {
     margin-right: 40px;

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 
 import { colors } from "../../constants";
+import { gradient } from "../../styles";
 import { PageCallout, Title, Paragraph, WrapperContent } from "../../components";
 import ImageAbout1 from "../../images/about-1@2x.jpg"
 import ImageAbout2 from "../../images/about-2@2x.jpg"
@@ -10,7 +11,7 @@ import LogoCarsWzuw from "../../images/about/logo-cars-wzuw@2x.png";
 const Wrapper = styled.div`
   padding-left: 100px;
   padding-right: 100px;
-  background-image: linear-gradient(359deg, #d1d1d1, #f4f4f4);
+  ${gradient};
 `;
 
 const StyledPageCallout = styled(PageCallout)`

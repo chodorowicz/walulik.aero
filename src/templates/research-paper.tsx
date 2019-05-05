@@ -1,20 +1,40 @@
 import React from "react"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
+import styled from "@emotion/styled"
 
 import { Layout } from "../layout"
-import { SectionTop } from "../components";
+import { gradient } from "../styles"
+import { SectionTopShort, WrapperContent } from "../components"
 import BooksPageBackground from "../images/books/books-bg@2x.jpg"
-import { SectionResearchPapers } from "./research-papers/section-reasearch-papers";
+import { SectionResearchPapers } from "./research-papers/section-reasearch-papers"
+import { Paper } from "./research-paper/paper";
 
-const ResearchPapersPage: React.FC = () => {
+const PageWrapper = styled.div`
+  ${gradient};
+`
+
+const ResearchPapersPage: React.FC = (props) => {
+  console.log(props)
+  const { data, pageContext } = props
+  const { html, frontmatter } = data.markdownRemark
+  const { title, where, category } = frontmatter
+  const { next, prev } = pageContext
+  const nextLink = next && next.fields.slug
+  const prevLink = prev && prev.fields.slug
+
   return (
     <Layout>
-      asd
+      <PageWrapper>
+        <WrapperContent>
+          <SectionTopShort />
+          <Paper nextLink={nextLink} prevLink={prevLink} title={title} html={html} where={where} category={category} />
+        </WrapperContent>
+      </PageWrapper>
     </Layout>
   )
 }
 
-export default ResearchPapersPage;
+export default ResearchPapersPage
 
 // export const pageQuery = graphql`
 //   query ResearchPapersPageTemplate {
@@ -26,3 +46,18 @@ export default ResearchPapersPage;
 //     }
 //   }
 // `
+
+export const pageQuery = graphql`
+  query ResearchPageTemplate($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      html
+      frontmatter {
+        where
+        title
+        category
+      }
+    }
+  }
+`
+

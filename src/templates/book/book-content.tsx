@@ -7,7 +7,8 @@ import {
   ButtonInnerLeft,
   WrapperContent,
   MarkdownContainer,
-  StyledContent
+  StyledContent,
+  Share
 } from "../../components"
 import LineLeft from "../../images/line-left.inline.svg"
 import { CarouselArrows } from "../home/carousel/carousel-arrows"
@@ -30,7 +31,7 @@ const Container = styled.div`
   grid-gap: 20px;
 `
 
-const Social = styled.aside`
+const Social = styled(Share)`
   grid-area: social;
 `;
 
@@ -95,14 +96,7 @@ export const BookContent: React.FC<IProps> = ({ html }) => {
   return (
     <WrapperContent>
       <Container>
-        <Social>
-          <ShareTitle>Share:</ShareTitle>
-          <ShareLogosContainer>
-            <LogoFacebook />
-            <LogoLinkedIn />
-            <LogoTwitter />
-          </ShareLogosContainer>
-        </Social>
+        <Social />
         <Content>
           <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
         </Content>
