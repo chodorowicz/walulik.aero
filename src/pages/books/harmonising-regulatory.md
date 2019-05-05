@@ -4,6 +4,7 @@ title: Harmonising
 image: /assets/brexit-and-aviation-law.png
 text: |-
   Harmonising law
+publisher: bbb
 ---
 
 ## Harmonising

@@ -62,6 +62,7 @@ exports.createPages = ({ actions, graphql }) => {
           slug: edge.node.fields.slug,
           id,
           researchPapers,
+          books,
         },
       })
     })

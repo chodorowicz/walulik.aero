@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 
 import { fontSizes, colors } from "../../constants"
 
@@ -7,6 +8,7 @@ interface IBooks {
   source: string
   title: string
   publisher: string
+  url: string;
 }
 
 const BookContainer = styled.div`
@@ -16,6 +18,7 @@ const BookContainer = styled.div`
 
 const BookImage = styled.img`
   max-width: 100%;
+  margin-bottom: 30px;
 `
 
 const Info = styled.div`
@@ -24,10 +27,10 @@ const Info = styled.div`
   text-align: center;
 `
 
-export const Book: React.FC<IBooks> = ({ source, title, publisher }) => {
+export const Book: React.FC<IBooks> = ({ source, title, publisher, url }) => {
   return (
     <BookContainer>
-      <BookImage src={source} />
+      <Link to={url}><BookImage src={source} /></Link>
       <Info>
         <strong>{title}</strong><br />
         {publisher}

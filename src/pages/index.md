@@ -4,5 +4,4 @@ claim: |-
   Aviation\
   Research\
   & Consulting
-test: test
 ---
