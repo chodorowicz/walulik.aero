@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 
 import { colors, fontSizes, fontFamily, fontWeight } from "../../constants"
+import { transition } from "../../styles"
 
 const Box = styled.div`
   background-color: ${colors.darkBlue};
@@ -10,7 +11,7 @@ const Box = styled.div`
 
   &:hover {
     background-color: ${colors.accent};
-    transition: all ease 0.2s;
+    ${transition};
     svg, path {
       fill: #ffffff;
     }

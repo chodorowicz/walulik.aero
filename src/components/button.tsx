@@ -2,6 +2,7 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 
 import { colors, fontSizes } from "../constants";
+import { transition } from "../styles"
 
 export const Button = styled.button`
   border-radius: 30px;
@@ -13,6 +14,15 @@ export const Button = styled.button`
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
+  &:hover {
+    color: ${colors.white};
+    background: ${colors.accent};
+    ${transition};
+    path, line {
+      fill: ${colors.white};
+      stroke: ${colors.white};
+    }
+  }
 `;
 
 export const LinkButton = styled(Button.withComponent(Link))`

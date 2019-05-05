@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { Button, ButtonInner, SectionTitle, WrapperContent } from "../../components"
+import { LinkButton, ButtonInner, SectionTitle, WrapperContent } from "../../components"
 import Line from "../../images/line.inline.svg"
 import { Carousel } from "./carousel/carousel"
+import { urls } from "../../constants"
 
 const Wrapper = styled.div`
   position: relative;
@@ -26,10 +27,10 @@ export const SectionBooks: React.FC<any> = () => {
         <SectionTitle>Books</SectionTitle>
         <Carousel />
         <BottomSection>
-          <Button>
+          <LinkButton to={urls.books}>
             <ButtonInner>see all books</ButtonInner>
             <Line />
-          </Button>
+          </LinkButton>
         </BottomSection>
       </WrapperContent>
     </Wrapper>
