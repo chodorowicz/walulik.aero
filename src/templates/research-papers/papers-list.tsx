@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styled from "@emotion/styled"
+import slugify from "@sindresorhus/slugify"
 
 import { LinkButton } from "../../components";
 import { IPaper } from "MyTypes"
@@ -68,7 +69,11 @@ export const PapersList: React.FC<IProps> = ({
   categories,
   researchPapers,
 }) => {
-  const [selectedCategory, setCategory] = useState(categories[0])
+  const params = new URLSearchParams(window.location.search)
+  const section = params.get("section")
+  const matchedCategory = categories.find(x => slugify(x) === section)
+  const foundCategory = matchedCategory !== undefined ? matchedCategory : categories[0]
+  const [selectedCategory, setCategory] = useState(foundCategory)
   const filteredPapers = researchPapers.filter(
     paper => paper.node.frontmatter.category === selectedCategory
   )

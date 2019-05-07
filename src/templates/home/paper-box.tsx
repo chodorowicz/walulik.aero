@@ -12,7 +12,8 @@ const Box = styled.div`
   &:hover {
     background-color: ${colors.accent};
     ${transition};
-    svg, path {
+    svg,
+    path {
       fill: #ffffff;
     }
   }
@@ -38,11 +39,12 @@ const CenterElement = styled.div`
 
 interface IProps {
   text: string
+  className?: string
 }
 
-export const PaperBox: React.FC<IProps> = ({ children, text }) => {
+export const PaperBox: React.FC<IProps> = ({ children, text, className }) => {
   return (
-    <Box>
+    <Box className={className}>
       <CenterElement>{children}</CenterElement>
       <Text>{text}</Text>
     </Box>

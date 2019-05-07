@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "@emotion/styled"
+import slugify from "@sindresorhus/slugify"
+import { Link } from "gatsby"
 
 import { Title, Paragraph, WrapperContent } from "../../components"
-import { colors, spacings } from "../../constants"
+import { colors, spacings, urls } from "../../constants"
 import { PaperBox } from "./paper-box"
 import EconomicRegulation from "../../images/icon-economic.inline.svg"
 import IconAirlineFinance from "../../images/icon-airline-finance.svg"
@@ -28,6 +30,27 @@ const BoxWrapper = styled.div`
   height: 380px;
 `
 
+const PaperBoxSC = styled(PaperBox)`
+  height: 100%;
+`
+
+const LinkSC = styled(Link)`
+  display: block;
+`
+
+const LinkedPaperBox: React.FC<{ section: string }> = ({
+  children,
+  section,
+}) => {
+  return (
+    <LinkSC to={`/${urls.researchPapers}?section=${slugify(section)}`}>
+      <PaperBoxSC text={section}>
+        {children}
+      </PaperBoxSC>
+    </LinkSC>
+  )
+}
+
 export const SectionPapers: React.FC<any> = () => {
   return (
     <Wrapper>
@@ -41,18 +64,18 @@ export const SectionPapers: React.FC<any> = () => {
           </Paragraph>
         </WrapperText>
         <BoxWrapper>
-          <PaperBox text="Economic regulation">
+          <LinkedPaperBox section="Economic regulation">
             <EconomicRegulation />
-          </PaperBox>
-          <PaperBox text="Airline finance">
-            <IconAirlineFinance />
-          </PaperBox>
-          <PaperBox text="Safety and security">
+          </LinkedPaperBox>
+          <LinkedPaperBox section="Airline finance">
+          <IconAirlineFinance />
+          </LinkedPaperBox>
+          <LinkedPaperBox section="Safety and security">
             <IconSecurity />
-          </PaperBox>
-          <PaperBox text="Aviation criminal law">
+          </LinkedPaperBox>
+          <LinkedPaperBox section="Aviation criminal law">
             <IconCriminalLaw />
-          </PaperBox>
+          </LinkedPaperBox>
         </BoxWrapper>
       </WrapperContent>
     </Wrapper>
