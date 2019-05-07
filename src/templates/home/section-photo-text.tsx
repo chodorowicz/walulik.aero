@@ -11,23 +11,25 @@ import {
   WrapperContent,
 } from "../../components"
 import Line from "../../images/line.inline.svg"
-import { gradient } from "../../styles";
+import { gradient, grid12 } from "../../styles";
 
 const WrapperOuter = styled.div`
   ${gradient};
 `
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  ${grid12};
+`
+
+const WrapperImageSC = styled.div`
+  grid-column: 1 / span 4;
 `
 
 const TextContent = styled.div`
-  padding-left: 114px;
-  padding-right: 114px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  grid-column: 6 / span 6;
 `
 
 export const SectonPhotoText: React.FC<any> = () => {
@@ -47,7 +49,9 @@ export const SectonPhotoText: React.FC<any> = () => {
     <WrapperOuter>
       <WrapperContent>
         <Wrapper>
-          <Img fluid={data.file.childImageSharp.fluid} />
+          <WrapperImageSC>
+            <Img fluid={data.file.childImageSharp.fluid} />
+          </WrapperImageSC>
           <TextContent>
             <Title>Jan Walulik</Title>
             <Paragraph>

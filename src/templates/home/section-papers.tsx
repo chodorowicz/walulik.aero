@@ -10,17 +10,21 @@ import EconomicRegulation from "../../images/icon-economic.inline.svg"
 import IconAirlineFinance from "../../images/icon-airline-finance.svg"
 import IconSecurity from "../../images/icon-security.svg"
 import IconCriminalLaw from "../../images/icon-criminal-law.svg"
+import { grid12 } from "../../styles"
 
 const Wrapper = styled.div`
   padding-top: 98px;
   padding-bottom: 134px;
   background-color: ${colors.grey};
 `
+const SectionGridSC = styled.div`
+  ${grid12};
+`
 
 const WrapperText = styled.div`
-  padding-left: 100px;
-  padding-right: 100px;
+  grid-column: 2 / span 10;
 `
+
 
 const BoxWrapper = styled.div`
   margin-top: ${spacings.space80}px;
@@ -28,6 +32,7 @@ const BoxWrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
   height: 380px;
+  grid-column: 1 / span 12;
 `
 
 const PaperBoxSC = styled(PaperBox)`
@@ -55,6 +60,7 @@ export const SectionPapers: React.FC<any> = () => {
   return (
     <Wrapper>
       <WrapperContent>
+        <SectionGridSC>
         <WrapperText>
           <Title>Research papers</Title>
           <Paragraph>
@@ -77,6 +83,7 @@ export const SectionPapers: React.FC<any> = () => {
             <IconCriminalLaw />
           </LinkedPaperBox>
         </BoxWrapper>
+        </SectionGridSC>
       </WrapperContent>
     </Wrapper>
   )
