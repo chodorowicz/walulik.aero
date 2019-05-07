@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { SectionTitle } from "../../components"
+import { SectionTitle, WrapperContent } from "../../components"
 import { ContactForm } from "./contact-form/contact-form"
-import { colors, fontSizes, fontFamily, fontWeight } from "../../constants"
+import { colors, fontSizes, fontFamily, fontWeight, spacings } from "../../constants"
 
 const Wrapper = styled.div`
   padding-top: 111px;
@@ -14,9 +14,8 @@ const Wrapper = styled.div`
 `
 
 const InfoSide = styled.div`
-  padding-top: 111px;
+  padding-top: ${spacings.space50}px;
   padding-bottom: 134px;
-  padding-left: 114px;
 `
 
 const InfoSideTitle = styled.h2`
@@ -42,23 +41,25 @@ const Link = styled.a`
 
 export const SectionContact: React.FC<any> = () => {
   return (
-    <Wrapper>
-      <InfoSide>
-        <SectionTitle>Contact</SectionTitle>
-        <InfoSideTitle>
-          Jan Walulik<br />
-          Aviation Research &amp; Consulting
-        </InfoSideTitle>
-        <InfoSideDetails>
-          50/515 Nowogrodzka St.<br />
-          Warsaw, PL00-695 <br />
-          Poland<br />
-          jan@walulik.aero<br />
-        </InfoSideDetails>
-        <br />
-        <Link href="https://walulik.aero">walulik.aero</Link>
-      </InfoSide>
-      <ContactForm />
-    </Wrapper>
+    <WrapperContent>
+      <Wrapper>
+        <InfoSide>
+          <SectionTitle>Contact</SectionTitle>
+          <InfoSideTitle>
+            Jan Walulik<br />
+            Aviation Research &amp; Consulting
+          </InfoSideTitle>
+          <InfoSideDetails>
+            50/515 Nowogrodzka St.<br />
+            Warsaw, PL00-695 <br />
+            Poland<br />
+            jan@walulik.aero<br />
+          </InfoSideDetails>
+          <br />
+          <Link href="https://walulik.aero">walulik.aero</Link>
+        </InfoSide>
+        <ContactForm />
+      </Wrapper>
+    </WrapperContent>
   )
 }

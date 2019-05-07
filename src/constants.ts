@@ -44,6 +44,7 @@ export const sizes = {
 
 export const spacings = {
   space40: 40,
+  space50: 50,
   space80: 80,
   space1of12: Number(1/12 * 100).toFixed(2),
 }
