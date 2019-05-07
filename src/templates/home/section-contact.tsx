@@ -4,18 +4,28 @@ import styled from "@emotion/styled"
 import { SectionTitle, WrapperContent } from "../../components"
 import { ContactForm } from "./contact-form/contact-form"
 import { colors, fontSizes, fontFamily, fontWeight, spacings } from "../../constants"
+import { grid12 } from "../../styles"
 
 const Wrapper = styled.div`
   padding-top: 111px;
   padding-bottom: 134px;
-  padding-left: 114px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  ${grid12};
 `
 
 const InfoSide = styled.div`
+  grid-column: 2 / 7;
   padding-top: ${spacings.space50}px;
   padding-bottom: 134px;
+`
+
+const ContactFormWrapperSC = styled.div`
+  grid-column: 7 / 13;
+  background-color: ${colors.darkBlue};
+`
+
+const ContactFormWrapperInnerSC = styled.div`
+  grid-area: 1 / 8 / 1 / 12;
+  background-color: ${colors.darkBlue};
 `
 
 const InfoSideTitle = styled.h2`
@@ -58,7 +68,11 @@ export const SectionContact: React.FC<any> = () => {
           <br />
           <Link href="https://walulik.aero">walulik.aero</Link>
         </InfoSide>
-        <ContactForm />
+        <ContactFormWrapperSC>
+          <ContactFormWrapperInnerSC>
+            <ContactForm />
+          </ContactFormWrapperInnerSC>
+        </ContactFormWrapperSC>
       </Wrapper>
     </WrapperContent>
   )

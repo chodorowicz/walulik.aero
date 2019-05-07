@@ -7,3 +7,9 @@ export const gradient = css`
 export const transition = css`
   transition: all ease 0.2s;
 `;
+
+export const grid12 = css`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 16px;
+`

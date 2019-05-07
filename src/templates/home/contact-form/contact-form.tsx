@@ -6,7 +6,6 @@ import { Button, ButtonInner } from "../../../components"
 import Line from "../../../images/line.inline.svg"
 
 const Container = styled.div`
-  background-color: ${colors.darkBlue};
   padding: 50px 100px;
   color: ${colors.white};
 `
