@@ -2,9 +2,10 @@ import React, { useState } from "react"
 import styled from "@emotion/styled"
 import slugify from "@sindresorhus/slugify"
 
-import { LinkButton } from "../../components";
+import { LinkButton } from "../../components"
 import { IPaper } from "MyTypes"
 import { colors, fontSizes, fontWeight, fontFamily } from "../../constants"
+import { grid12 } from "../../styles"
 
 const Grid = styled.div`
   display: grid;
@@ -12,6 +13,7 @@ const Grid = styled.div`
   grid-template-columns: 3fr 1fr 8fr 1fr;
   padding-top: 80px;
   padding-bottom: 160px;
+  ${grid12};
 `
 
 interface IProps {
@@ -33,8 +35,17 @@ const NavButton = styled.button<{ isSelected: boolean }>`
   text-align: left;
 `
 
+const NavigationContainer = styled.div`
+  grid-column: 2 / span 3;
+`
+
+const NavigationInner = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+`
+
 const ContentSC = styled.div`
-  grid-area: content;
+  grid-column: 5 / span 7;
 `
 
 const PaperSC = styled.div`
@@ -53,17 +64,17 @@ const Title = styled.h2`
 const Where = styled.p`
   font-size: ${fontSizes.size18}px;
   font-weight: ${fontWeight.light};
-`;
+`
 
 const ButtonAreaSC = styled.div`
   padding-top: 10px;
   display: flex;
   justify-content: flex-end;
-`;
+`
 
 const StyledLinkButton = styled(LinkButton)`
   display: inline-block;
-`;
+`
 
 export const PapersList: React.FC<IProps> = ({
   categories,
@@ -72,30 +83,35 @@ export const PapersList: React.FC<IProps> = ({
   const params = new URLSearchParams(window.location.search)
   const section = params.get("section")
   const matchedCategory = categories.find(x => slugify(x) === section)
-  const foundCategory = matchedCategory !== undefined ? matchedCategory : categories[0]
+  const foundCategory =
+    matchedCategory !== undefined ? matchedCategory : categories[0]
   const [selectedCategory, setCategory] = useState(foundCategory)
   const filteredPapers = researchPapers.filter(
     paper => paper.node.frontmatter.category === selectedCategory
   )
   return (
     <Grid>
-      <div>
-        {categories.map(category => (
-          <NavButton
-            isSelected={selectedCategory === category}
-            onClick={() => setCategory(category)}
-          >
-            {category}
-          </NavButton>
-        ))}
-      </div>
+      <NavigationContainer>
+        <NavigationInner>
+          {categories.map(category => (
+            <NavButton
+              isSelected={selectedCategory === category}
+              onClick={() => setCategory(category)}
+            >
+              {category}
+            </NavButton>
+          ))}
+        </NavigationInner>
+      </NavigationContainer>
       <ContentSC>
         {filteredPapers.map(({ node }) => (
           <PaperSC>
             <Title>{node.frontmatter.title}</Title>
             <Where>{node.frontmatter.where}</Where>
             <ButtonAreaSC>
-              <StyledLinkButton to={node.fields.slug}>See More</StyledLinkButton>
+              <StyledLinkButton to={node.fields.slug}>
+                See More
+              </StyledLinkButton>
             </ButtonAreaSC>
           </PaperSC>
         ))}

@@ -13,8 +13,6 @@ interface IProps {
 }
 
 const Wrapper = styled.div`
-  padding-left: 100px;
-  padding-right: 100px;
   background-image: linear-gradient(359deg, #d1d1d1, #f4f4f4);
 `
 
