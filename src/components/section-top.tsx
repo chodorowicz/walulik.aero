@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const HomePageTitle = styled.h2`
-  margin: 0; 
+  margin: 0;
 `
 
 const Title = styled.h1`
@@ -34,8 +34,21 @@ const LogoMenuContainerSC = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 8%;
+  padding-top: 8%;
 `
+
+const LogoAndMenu: React.FC = () => {
+  return (
+    <LogoMenuContainerSC>
+      <HomePageTitle>
+        <Link to={urls.home}>
+          <LogoJan />
+        </Link>
+      </HomePageTitle>
+      <Menu />
+    </LogoMenuContainerSC>
+  )
+}
 
 export const SectionTop: React.FC<IProps> = ({
   background,
@@ -46,14 +59,7 @@ export const SectionTop: React.FC<IProps> = ({
   return (
     <TopSectionSC background={background || ""}>
       <WrapperContent>
-        <LogoMenuContainerSC>
-          <HomePageTitle>
-            <Link to={urls.home}>
-              <LogoJan />
-            </Link>
-          </HomePageTitle>
-          <Menu />
-        </LogoMenuContainerSC>
+        <LogoAndMenu />
         {isHome && claim && (
           <Title>
             <MarkdownContainer content={claim} />
@@ -74,15 +80,24 @@ export const SectionTopShort: React.FC = () => {
   return (
     <SectionTopShortContainer>
       <WrapperContent>
-        <LogoMenuContainerSC>
-          <HomePageTitle>
-            <Link to={urls.home}>
-              <LogoJan />
-            </Link>
-          </HomePageTitle>
-          <Menu /> 
-        </LogoMenuContainerSC>
+        <LogoAndMenu />
       </WrapperContent>
     </SectionTopShortContainer>
+  )
+}
+
+const SectionContainerBook = styled.div`
+  background-color: ${colors.darkBlue};
+  position: relative;
+`
+
+export const SectionTopBooks: React.FC = ({ children }) => {
+  return (
+    <SectionContainerBook>
+      <WrapperContent>
+        <LogoAndMenu />
+        {children}
+      </WrapperContent>
+    </SectionContainerBook>
   )
 }

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import { Layout } from "../layout"
-import { SectionTop } from "../components"
+import { SectionTopBooks } from "../components"
 import { BookTop } from "./book/book-top"
 import { BookContent } from "./book/book-content"
 
@@ -24,11 +24,9 @@ const BookPage: React.FC<IProps> = props => {
   const nextLink = next && next.fields.slug
   const prevLink = prev && prev.fields.slug
 
-  console.log(props)
-
   return (
     <Layout>
-      <SectionTop isHome={false}>
+      <SectionTopBooks>
         <BookTop
           fluid={image.childImageSharp.fluid}
           text={text}
@@ -36,7 +34,7 @@ const BookPage: React.FC<IProps> = props => {
           nextLink={nextLink}
           prevLink={prevLink}
         />
-      </SectionTop>
+      </SectionTopBooks>
       <BookContent html={html} />
     </Layout>
   )

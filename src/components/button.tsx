@@ -13,7 +13,7 @@ export const Button = styled.button`
   color: ${colors.accent};
   font-weight: 700;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   cursor: pointer;
   &:hover {
