@@ -80,12 +80,18 @@ export const PapersList: React.FC<IProps> = ({
   categories,
   researchPapers,
 }) => {
-  const params = new URLSearchParams(window.location.search)
-  const section = params.get("section")
-  const matchedCategory = categories.find(x => slugify(x) === section)
-  const foundCategory =
-    matchedCategory !== undefined ? matchedCategory : categories[0]
-  const [selectedCategory, setCategory] = useState(foundCategory)
+  const [selectedCategory, setCategory] = useState("")
+
+  // to make in SSR compatible
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const section = params.get("section")
+    const matchedCategory = categories.find(x => slugify(x) === section)
+    const foundCategory =
+      matchedCategory !== undefined ? matchedCategory : categories[0]
+    setCategory(foundCategory)
+  }, [])
+
   const filteredPapers = researchPapers.filter(
     paper => paper.node.frontmatter.category === selectedCategory
   )
