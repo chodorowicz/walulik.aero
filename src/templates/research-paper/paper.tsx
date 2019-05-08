@@ -1,18 +1,24 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { LinkButton, ButtonInnerLeft, StyledContent, Share } from "../../components"
+import {
+  LinkButton,
+  ButtonInnerLeft,
+  StyledContent,
+  Share,
+} from "../../components"
 import LineLeft from "../../images/line-left.inline.svg"
 import { urls, fontSizes, colors } from "../../constants"
 import { CarouselArrowsLinks } from "../home/carousel/carousel-arrows"
+import { grid12 } from "../../styles"
 
 interface IProps {
-  nextLink: string;
-  prevLink: string;
-  html: string;
-  title: string;
-  where: string;
-  category: string;
+  nextLink: string
+  prevLink: string
+  html: string
+  title: string
+  where: string
+  category: string
 }
 
 const Wrapper = styled.div`
@@ -21,20 +27,27 @@ const Wrapper = styled.div`
   grid-template-columns: 3fr 7fr 2fr;
   grid-gap: 20px;
   padding-bottom: 120px;
+  ${grid12};
 `
 
 const Navigation = styled.div`
-  grid-area: navigation;
+  grid-column: 1 / span 3;
+`
+
+const NavigationInner = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const ArrowsContainer = styled.div`
   margin-top: 130px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 `
 
 const Content = styled.div`
-  grid-area: content;
+  grid-column: 4 / span 7;
 `
 
 const BreadCrumbs = styled.div`
@@ -44,35 +57,50 @@ const BreadCrumbs = styled.div`
 `
 
 const Social = styled.div`
-  grid-area: social;
+  grid-column: 11 / span 2;
+  margin-top: 73px; /* to align it with title */
+`
+
+const StyledContentTitleSC = styled(StyledContentSC)`
+  padding-right: 50px;
 `
 
 const StyledContentSC = styled(StyledContent)`
   padding-top: 50px;
 `
 
-
-export const Paper: React.FC<IProps> = ({ nextLink, prevLink, html, title, where, category }) => {
+export const Paper: React.FC<IProps> = ({
+  nextLink,
+  prevLink,
+  html,
+  title,
+  where,
+  category,
+}) => {
   return (
     <Wrapper>
       <Navigation>
-        <LinkButton to={urls.researchPapers}>
-          <LineLeft />
-          <ButtonInnerLeft>Research Papers</ButtonInnerLeft>
-        </LinkButton>
-        <ArrowsContainer>
-          <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
-        </ArrowsContainer>
+        <NavigationInner>
+          <LinkButton to={urls.researchPapers}>
+            <LineLeft />
+            <ButtonInnerLeft>Research Papers</ButtonInnerLeft>
+          </LinkButton>
+          <ArrowsContainer>
+            <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
+          </ArrowsContainer>
+        </NavigationInner>
       </Navigation>
       <Content>
         <BreadCrumbs>Research papers > {category} ></BreadCrumbs>
-        <StyledContent>
+        <StyledContentTitleSC>
           <h2>{title}</h2>
           <p>{where}</p>
-        </StyledContent>
+        </StyledContentTitleSC>
         <StyledContentSC dangerouslySetInnerHTML={{ __html: html }} />
       </Content>
-      <Social><Share /></Social>
+      <Social>
+        <Share />
+      </Social>
     </Wrapper>
   )
 }

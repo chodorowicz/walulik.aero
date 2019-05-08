@@ -21,7 +21,6 @@ const theme = {
 
 
 const ResearchPapersPage: React.FC = (props) => {
-  console.log(props)
   const { data, pageContext } = props
   const { html, frontmatter } = data.markdownRemark
   const { title, where, category } = frontmatter
