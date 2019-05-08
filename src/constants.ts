@@ -47,4 +47,5 @@ export const spacings = {
   space50: 50,
   space80: 80,
   space1of12: Number(1/12 * 100).toFixed(2),
+  gridGap16: 16,
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { colors } from "../../constants"
+import { colors, spacings } from "../../constants"
 import {
   PageCallout,
   Title,
@@ -13,8 +13,6 @@ import { Book } from "./book"
 import { IBook } from "MyTypes"
 
 const Wrapper = styled.div`
-  padding-left: 100px;
-  padding-right: 100px;
   background-image: linear-gradient(359deg, #d1d1d1, #f4f4f4);
 `
 
@@ -27,6 +25,9 @@ const StyledPageCallout = styled(PageCallout)`
 const BooksWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: ${spacings.gridGap16}px;
+  padding-left: ${spacings.space1of12}%;
+  padding-right: ${spacings.space1of12}%;
   & > * {
     min-width: 0;
   }

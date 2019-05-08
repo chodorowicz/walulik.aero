@@ -9,6 +9,7 @@ interface IBooks {
   title: string
   publisher: string
   url: string;
+  classname?: string;
 }
 
 const BookContainer = styled.div`
@@ -27,9 +28,9 @@ const Info = styled.div`
   text-align: center;
 `
 
-export const Book: React.FC<IBooks> = ({ source, title, publisher, url }) => {
+export const Book: React.FC<IBooks> = ({ source, title, publisher, url, classname }) => {
   return (
-    <BookContainer>
+    <BookContainer className={classname}>
       <Link to={url}><BookImage src={source} /></Link>
       <Info>
         <strong>{title}</strong><br />
