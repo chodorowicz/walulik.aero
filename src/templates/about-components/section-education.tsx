@@ -4,11 +4,12 @@ import styled from "@emotion/styled"
 import { colors, fontSizes } from "../../constants"
 import {
   Button,
-  Title,
+  ButtonInner,
   Paragraph,
   WrapperContent,
   SectionTitle,
 } from "../../components"
+import { grid12 } from "../../styles"
 import Line from "../../images/line.inline.svg"
 import ImageEducation from "../../images/about/education@2x.png"
 
@@ -20,22 +21,22 @@ const StyledWrapperContent = styled(WrapperContent)`
   display: grid;
   grid-template-columns: 2fr 3fr 1fr;
   grid-gap: 40px;
+  ${grid12};
   padding-top: 130px;
   padding-bottom: 190px;
 `
 
-const ColumnPhoto = styled.div``
+const ColumnPhoto = styled.div`
+  grid-column: 2 / span 4;
+`
 
-const ColumnText = styled.div``
-
-const StyledTitle = styled(Title)`
-  color: ${colors.white};
+const ColumnText = styled.div`
+  grid-column: 7 / span 5;
 `
 
 const StyledPhoto = styled.img`
   position: relative;
   z-index: 1;
-  margin-top: 80px;
 `
 
 const ContactBox = styled.div`
@@ -82,7 +83,7 @@ export const SectionEducation: React.FC = () => (
               Jan can be contacted by email or on social media. Jan speaks
               English, Polish, German and Russian.
             </Paragraph>
-            <Button>Contact Jan <Line /></Button>
+            <Button><ButtonInner>Contact Jan</ButtonInner><Line /></Button>
           </ContactBoxInner>
         </ContactBox>
       </ColumnText>

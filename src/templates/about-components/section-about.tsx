@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 
 import { colors } from "../../constants";
-import { gradient } from "../../styles";
+import { gradient, grid12 } from "../../styles";
 import { PageCallout, Title, Paragraph, WrapperContent } from "../../components";
 import ImageAbout1 from "../../images/about-1@2x.jpg"
 import ImageAbout2 from "../../images/about-2@2x.jpg"
@@ -25,15 +25,18 @@ const StyledWrapperContent = styled(WrapperContent)`
   padding-bottom: 130px;
   display: grid;
   grid-template-columns: repeat(2, 50%);
+  ${grid12};
 `;
 
 const ImagesColumn = styled.div`
+  grid-column: 2 / span 4;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-gap: 70px;
 `;
 
 const TextColumn = styled.div`
+  grid-column: 7 / span 5;
   position: relative;
 `;
 
