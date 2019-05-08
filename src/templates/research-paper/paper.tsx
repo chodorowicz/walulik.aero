@@ -61,7 +61,7 @@ const Social = styled.div`
   margin-top: 73px; /* to align it with title */
 `
 
-const StyledContentTitleSC = styled(StyledContentSC)`
+const StyledContentTitleSC = styled(StyledContent)`
   padding-right: 50px;
 `
 

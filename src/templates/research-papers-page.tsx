@@ -4,7 +4,7 @@ import { uniq } from "lodash"
 
 import { Layout } from "../layout"
 import { SectionTop } from "../components"
-import BooksPageBackground from "../images/books/books-bg@2x.jpg"
+import ResearchPageBackground from "../images/research/research-bg@2x.jpg"
 import { SectionResearchPapers } from "./research-papers/section-reasearch-papers"
 
 interface IPaper {
@@ -25,7 +25,7 @@ const ResearchPapersPage: React.FC = ({ data, pageContext }) => {
   const categories = getCategories(pageContext.researchPapers);
   return (
     <Layout>
-      <SectionTop background={BooksPageBackground} isHome={false} />
+      <SectionTop background={ResearchPageBackground} isHome={false} />
       <SectionResearchPapers
         title={data.markdownRemark.frontmatter.title}
         html={data.markdownRemark.html}

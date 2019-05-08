@@ -81,9 +81,9 @@ export function Footer(): JSX.Element {
               Aviation Research &amp; Consulting
             </Title>
             <Text>
-              50/515 Nowogrodzka
+              50/515 Nowogrodzka St.
               <br />
-              St. Warsaw, PL00-695
+              Warsaw, PL00-695
               <br />
               Poland
             </Text>
@@ -93,7 +93,7 @@ export function Footer(): JSX.Element {
         </ContainerRight>
         <CopySection>
           &copy; {new Date().getFullYear()} walulik.aero | All rights reserved |
-          Designed by Furyarts
+          Designed by Furyarts &amp; chodorowicz
         </CopySection>
         <LinksSection>
           <StandardLink href="#">Privacy Policy</StandardLink> |{" "}
