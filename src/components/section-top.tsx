@@ -4,7 +4,8 @@ import { Link } from "gatsby"
 
 import { colors, fontSizes, fontFamily, urls } from "../constants"
 import { Menu } from "../layout/menu"
-import { TopSection, WrapperContent } from "."
+import { WrapperContent } from "./wrappers"
+import { TopSection } from "./top-section"
 import { MarkdownContainer } from "../components"
 import LogoJan from "../images/logo-jan.svg"
 
