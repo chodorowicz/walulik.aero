@@ -25,7 +25,8 @@ export const Layout: React.FC = ({ children }) => (
       <link
         href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i&amp;subset=latin-ext"
         rel="stylesheet"
-    />
+      />
+      <meta name="viewport" content="width=device-width, minimum-scale=1, minimal-ui"></meta>
     </Helmet>
     {children}
     <Footer />

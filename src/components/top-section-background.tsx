@@ -6,7 +6,7 @@ interface ITopSectionProps {
   background: string;
 }
 
-export const TopSection = styled.div<ITopSectionProps>`
+export const TopSectionBackground = styled.div<ITopSectionProps>`
   background-image: url("${props => props.background}");
   background-repeat: no-repeat;
   background-size: cover;

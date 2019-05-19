@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import { colors, fontSizes, fontFamily, urls } from "../constants"
 import { Menu } from "../layout/menu"
 import { WrapperContent } from "./wrappers"
-import { TopSection } from "./top-section"
+import { TopSectionBackground } from "./top-section-background"
 import { MarkdownContainer } from "../components"
 import LogoJan from "../images/logo-jan.svg"
 
@@ -27,7 +27,8 @@ const Title = styled.h1`
   bottom: 15%;
 `
 
-const TopSectionSC = styled(TopSection)`
+const TopSectionSC = styled(TopSectionBackground)<{ isHome: boolean }>`
+  background-position: center ${props => props.isHome ? "center" : "right"};
   display: flex;
 `
 
@@ -58,7 +59,7 @@ export const SectionTop: React.FC<IProps> = ({
   children,
 }) => {
   return (
-    <TopSectionSC background={background || ""}>
+    <TopSectionSC background={background || ""} isHome={isHome}>
       <WrapperContent>
         <LogoAndMenu />
         {isHome && claim && (

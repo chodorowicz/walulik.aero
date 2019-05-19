@@ -11,7 +11,8 @@ import {
   WrapperContent,
 } from "../../components"
 import Line from "../../images/line.inline.svg"
-import { gradient, grid12 } from "../../styles";
+import { gradient, grid12 } from "../../styles"
+import { breakPoints, spacings } from "../../constants"
 
 const WrapperOuter = styled.div`
   ${gradient};
@@ -22,14 +23,25 @@ const Wrapper = styled.div`
 `
 
 const WrapperImageSC = styled.div`
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 12;
+  padding-bottom: ${spacings.space80}px;
+  @media (min-width: ${breakPoints.b1024}px) {
+    padding-bottom: 0;
+    grid-column: 1 / span 4;
+  }
 `
 
 const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  grid-column: 6 / span 6;
+
+  grid-column: 1 / span 12;
+  padding-bottom: ${spacings.space40}px;
+  @media (min-width: ${breakPoints.b1024}px) {
+    padding-bottom: 0;
+    grid-column: 6 / span 6;
+  }
 `
 
 export const SectonPhotoText: React.FC<any> = () => {

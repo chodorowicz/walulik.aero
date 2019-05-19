@@ -46,6 +46,20 @@ export const spacings = {
   space40: 40,
   space50: 50,
   space80: 80,
-  space1of12: Number(1/12 * 100).toFixed(2),
+  space1of12: Number((1 / 12) * 100).toFixed(2),
   gridGap16: 16,
+}
+
+export const breaks = [576, 768, 1024]
+export const mq = breaks.map(bp => `@media (min-width: ${bp}px)`)
+
+type IBreakPoints = "b576" | "b768" | "b1024";
+export const mq2 = breaks.reduce(
+  (acc, bp) => ({ ...acc, [`b${bp}`]: `@media (min-width: ${bp}px)` }),
+  {}
+) as { [x in IBreakPoints]: string }
+
+export const breakPoints = {
+  b768: 768,
+  b1024: 1024,
 }

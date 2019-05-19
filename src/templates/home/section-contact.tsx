@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 
 import { SectionTitle, WrapperContent } from "../../components"
 import { ContactForm } from "./contact-form/contact-form"
-import { colors, fontSizes, fontFamily, fontWeight, spacings } from "../../constants"
+import { colors, fontSizes, fontFamily, fontWeight, spacings, mq2 } from "../../constants"
 import { grid12 } from "../../styles"
 
 const Wrapper = styled.div`
@@ -13,13 +13,19 @@ const Wrapper = styled.div`
 `
 
 const InfoSide = styled.div`
-  grid-column: 2 / 7;
+  grid-column: 2 / span 10;
+  ${mq2.b768} {
+    grid-column: 2 / 7;
+  };
   padding-top: ${spacings.space50}px;
   padding-bottom: 134px;
 `
 
 const ContactFormWrapperSC = styled.div`
-  grid-column: 7 / 13;
+  grid-column: 2 / span 10;
+  ${mq2.b768} {
+    grid-column: 7 / 13;
+  };
   background-color: ${colors.darkBlue};
 `
 

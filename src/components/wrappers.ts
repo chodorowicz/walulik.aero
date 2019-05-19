@@ -7,4 +7,5 @@ export const WrapperContent = styled.div`
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  max-width: 96%;
 `;
