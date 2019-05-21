@@ -37,6 +37,7 @@ export const urls = {
   about: "/about",
   books: "/books",
   researchPapers: "/research-papers",
+  contact: "/#contact",
 }
 
 export const sizes = {
@@ -44,6 +45,7 @@ export const sizes = {
 }
 
 export const spacings = {
+  space20: 20,
   space30: 30,
   space40: 40,
   space50: 50,

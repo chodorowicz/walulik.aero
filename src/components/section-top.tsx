@@ -26,16 +26,17 @@ const Title = styled.h1`
   font-family: ${fontFamily.montserrat};
   color: ${colors.white};
   position: absolute;
-  bottom: 15%;
+  bottom: 0;
 
   font-size: ${fontSizes.size36}px;
   ${mq.b768} {
+    bottom: 15%;
     font-size: ${fontSizes.xxLarge}px;
   }
 `
 
 const TopSectionSC = styled(TopSectionBackground)<{ isHome: boolean }>`
-  background-position: center ${props => props.isHome ? "center" : "right"};
+  background-position: center ${props => props.isHome ? "right -200px" : "right"};
   display: flex;
 `
 
