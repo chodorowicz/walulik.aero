@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 import React from "react"
 import { Link } from "gatsby"
 
-import { colors } from "../../../constants"
+import { colors, mq, spacings } from "../../../constants"
 import Line from "../../../images/line.inline.svg";
 import LineLeft from "../../../images/line-left.inline.svg";
 
@@ -23,10 +23,25 @@ const CircleWithIcon = styled.button`
       stroke: ${colors.white};
     }
   }
+  margin-right: ${spacings.space20}px;
+  ${mq.b768} {
+   margin-right: 0; 
+   margin-bottom: ${spacings.space20}px;
+  }
 `;
 
+const ArrowsContainer = styled.div`
+  display: flex;
+  ${mq.b768} {
+    flex-direction: column;
+  }
+`
+
 const CircleWithIconTop = styled(CircleWithIcon)`
-  margin-bottom: 30px;
+  order: 2;
+  ${mq.b768} {
+    margin-bottom: 30px;
+  }
 `;
 
 const CircleWithIconLink = CircleWithIcon.withComponent(Link);
@@ -44,10 +59,10 @@ interface IPropsLinks {
 
 export const CarouselArrows: React.FC<IProps> = ({ next, prev }) => {
   return (
-    <div>
+    <ArrowsContainer>
       <CircleWithIconTop onClick={next}><Line /></CircleWithIconTop>
       <CircleWithIcon onClick={prev}><LineLeft /></CircleWithIcon>
-    </div>
+    </ArrowsContainer>
   )
 }
 

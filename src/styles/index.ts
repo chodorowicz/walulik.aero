@@ -15,3 +15,8 @@ export const grid12 = css`
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: ${spacings.gridGap16}px;
 `
+
+export const paddingSides20 = css`
+  padding-left: ${spacings.space20}px;
+  padding-right: ${spacings.space20}px;
+`

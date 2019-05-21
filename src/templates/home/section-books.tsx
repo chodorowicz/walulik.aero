@@ -4,40 +4,40 @@ import styled from "@emotion/styled"
 import { LinkButton, ButtonInner, SectionTitle, WrapperContent } from "../../components"
 import Line from "../../images/line.inline.svg"
 import { Carousel } from "./carousel/carousel"
-import { urls, spacings } from "../../constants"
+import { urls, spacings, mq } from "../../constants"
+import { grid12 } from "../../styles"
 
 const Wrapper = styled.div`
   position: relative;
-  padding-left: 114px;
-  padding-right: 114px;
   padding-top: 98px;
   padding-bottom: 98px;
   overflow: hidden;
 `
 
 const WrapperContentSC = styled(WrapperContent)`
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 16px;
+  ${grid12};
 `
 
 const TitleWrapper = styled.div`
-  grid-column-start: 2;
-  grid-column-end: 12;
+  grid-column: 1 / span 12;
   margin-bottom: ${spacings.space80}px;
+  ${mq.b768} {
+    grid-column-start: 2;
+  }
 `
 
 const CarouselWrapper = styled.div`
-  grid-column-start: 2;
-  grid-column-end: 12;
+  grid-column: 1 / span 12;
   margin-bottom: ${spacings.space40}px;
+  ${mq.b768} {
+    grid-column-start: 2;
+  }
 `
 
 const BottomSection = styled.div`
   display: flex;
   justify-content: center;
-  grid-column-start: 1;
-  grid-column-end: 13;
+  grid-column: 1 / span 12;
 `
 
 export const SectionBooks: React.FC<any> = () => {

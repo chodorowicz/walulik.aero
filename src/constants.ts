@@ -55,6 +55,12 @@ export const spacings = {
   gridGap16: 16,
 }
 
+export const breaksMap = {
+  b576: 576,
+  b768: 768,
+  b1024: 1024,
+}
+
 export const breaks = [576, 768, 1024]
 
 type IBreakPoints = "b576" | "b768" | "b1024";

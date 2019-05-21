@@ -4,7 +4,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import { CarouselCounter } from "./carousel-counter"
 import { CarouselArrows } from "./carousel-arrows"
-import { spacings } from "../../../constants"
+import { spacings, breaksMap, mq } from "../../../constants"
 
 export function modulo(mod: number): (n: number) => number {
   return (n: number) => ((n % mod) + mod) % mod
@@ -12,32 +12,75 @@ export function modulo(mod: number): (n: number) => number {
 
 const CarouselMain = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: ${spacings.space40}px;
+  ${mq.b768} {
+    flex-direction: row;
+  }
 `
 
 const NavigationSC = styled.div`
-  margin-right: ${spacings.space80}px;
+  order: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: ${spacings.space40}px;
+
+  ${mq.b768} {
+    flex-direction: column;
+    margin-right: ${spacings.space80}px;
+  }
 `
 
 const CarouselArrowsContainer = styled.div`
-  margin-bottom: 70px;
+  display: flex;
+  ${mq.b768} {
+    margin-bottom: 70px;
+    flex-direction: column;  
+  }
 `
 
 const Books = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3, 33%);
+  grid-template-columns: 1fr;
+  ${mq.b768} {
+    grid-template-columns: repeat(3, 33%);
+    order: 2;
+  }
 `
 
 const BookContainer = styled.div`
+  display: flex; 
+  justify-content: center;
+  position: relative;
+  right: -11%;
   img {
     max-width: 100%;
   }
 `
 
+function useWindowDimensions() {
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  })
+  React.useEffect(() => {
+    const handleResize = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+    window.addEventListener("resize", handleResize)
+    return () => { window.removeEventListener("resize", handleResize) }
+  }, [])
+  return dimensions.width;
+}
+
 export const Carousel: React.FC = () => {
   const [page, setPage] = useState(0)
+  const dimensions = useWindowDimensions(setPage);
 
   const result = useStaticQuery(graphql`
     query BooksQuery2 {
@@ -67,10 +110,13 @@ export const Carousel: React.FC = () => {
     }
   `)
 
-  const ITEMS_PER_PAGE = 3
+  const ITEMS_PER_PAGE = dimensions >= breaksMap.b768 ? 3 : 1;
   const { edges } = result.books
   const numberOfPages = Math.ceil(edges.length / ITEMS_PER_PAGE)
   const modNumberOfPages = modulo(numberOfPages)
+  if (modNumberOfPages > page) {
+    setPage(modNumberOfPages);
+  }
   const nextPage = () => setPage(modNumberOfPages(page + 1))
   const prevPage = () => setPage(modNumberOfPages(page - 1))
 
