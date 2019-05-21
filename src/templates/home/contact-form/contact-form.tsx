@@ -82,12 +82,11 @@ export const ContactForm: React.FC = () => {
         </SectionSC>
         <LabelSC>message</LabelSC>
         <TextareaSC
+          value={message}
           onChange={event => {
             setMessage(event.currentTarget.value)
           }}
-        >
-          {message}
-        </TextareaSC>
+        />
         <ButtonSectionSC>
           <Button>
             <ButtonInner>Send</ButtonInner>

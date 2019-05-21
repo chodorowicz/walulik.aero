@@ -1,13 +1,15 @@
 import * as React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import MediaQuery from 'react-responsive';
 
-import { colors, fontSizes, fontFamily, urls } from "../constants"
+import { colors, fontSizes, fontFamily, urls, mq, spacings, breakPoints } from "../constants"
 import { Menu } from "../layout/menu"
 import { WrapperContent } from "./wrappers"
 import { TopSectionBackground } from "./top-section-background"
 import { MarkdownContainer } from "../components"
 import LogoJan from "../images/logo-jan.svg"
+import LogoJanSmall from "../images/logo-small.svg"
 
 interface IProps {
   background?: string
@@ -25,6 +27,11 @@ const Title = styled.h1`
   color: ${colors.white};
   position: absolute;
   bottom: 15%;
+
+  font-size: ${fontSizes.size36}px;
+  ${mq.b768} {
+    font-size: ${fontSizes.xxLarge}px;
+  }
 `
 
 const TopSectionSC = styled(TopSectionBackground)<{ isHome: boolean }>`
@@ -36,7 +43,10 @@ const LogoMenuContainerSC = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 8%;
+  padding-top: ${spacings.space30}px;
+  ${mq.b768} {
+    padding-top: ${spacings.space60}px;
+  }
 `
 
 const LogoAndMenu: React.FC = () => {
@@ -44,7 +54,9 @@ const LogoAndMenu: React.FC = () => {
     <LogoMenuContainerSC>
       <HomePageTitle>
         <Link to={urls.home}>
-          <LogoJan />
+          <MediaQuery minDeviceWidth={breakPoints.b768}>
+            {matches => matches ? <LogoJan /> : <LogoJanSmall />}
+          </MediaQuery>
         </Link>
       </HomePageTitle>
       <Menu />

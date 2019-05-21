@@ -6,6 +6,7 @@ export const fontSizes = {
   large: 24,
   largePlus: 26,
   size28: 28,
+  size36: 36,
   mediumLarge: 40,
   xLarge: 52,
   xxLarge: 72,
@@ -43,18 +44,19 @@ export const sizes = {
 }
 
 export const spacings = {
+  space30: 30,
   space40: 40,
   space50: 50,
+  space60: 60,
   space80: 80,
   space1of12: Number((1 / 12) * 100).toFixed(2),
   gridGap16: 16,
 }
 
 export const breaks = [576, 768, 1024]
-export const mq = breaks.map(bp => `@media (min-width: ${bp}px)`)
 
 type IBreakPoints = "b576" | "b768" | "b1024";
-export const mq2 = breaks.reduce(
+export const mq = breaks.reduce(
   (acc, bp) => ({ ...acc, [`b${bp}`]: `@media (min-width: ${bp}px)` }),
   {}
 ) as { [x in IBreakPoints]: string }

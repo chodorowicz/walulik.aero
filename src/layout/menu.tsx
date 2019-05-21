@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import MediaQuery from 'react-responsive';
 
-import { colors, fontSizes, fontWeight, fontFamily, urls } from "../constants"
+import { colors, fontSizes, fontWeight, fontFamily, urls, breakPoints } from "../constants"
+import VegeBurger from "../images/vege-burger.svg"
 
 const MenuWrapper = styled.nav`
   font-size: ${fontSizes.medium}px;
@@ -33,16 +35,23 @@ const commonLinkProps = {
 
 export const Menu: React.FC = () => {
   return (
-    <MenuWrapper>
-      <StyledLink to={urls.about} {...commonLinkProps}>
-        About
-      </StyledLink>
-      <StyledLink to={urls.books} {...commonLinkProps}>
-        Books
-      </StyledLink>
-      <StyledLink to={urls.researchPapers} {...commonLinkProps}>
-        Research papers
-      </StyledLink>
-    </MenuWrapper>
+    <>
+    <MediaQuery maxWidth={breakPoints.b768}>
+      <VegeBurger />
+    </MediaQuery>
+    <MediaQuery minDeviceWidth={breakPoints.b768}>
+      <MenuWrapper>
+        <StyledLink to={urls.about} {...commonLinkProps}>
+          About
+        </StyledLink>
+        <StyledLink to={urls.books} {...commonLinkProps}>
+          Books
+        </StyledLink>
+        <StyledLink to={urls.researchPapers} {...commonLinkProps}>
+          Research papers
+        </StyledLink>
+      </MenuWrapper>
+    </MediaQuery>
+    </>
   )
 }

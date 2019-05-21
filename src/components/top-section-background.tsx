@@ -14,6 +14,4 @@ export const TopSectionBackground = styled.div<ITopSectionProps>`
   background-color: ${colors.darkBlue};
   min-height: 100vh;
   position: relative;
-  padding-left: 100px;
-  padding-right: 100px;
 `

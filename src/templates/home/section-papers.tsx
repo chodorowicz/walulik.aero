@@ -4,7 +4,7 @@ import slugify from "@sindresorhus/slugify"
 import { Link } from "gatsby"
 
 import { Title, Paragraph, WrapperContent } from "../../components"
-import { colors, spacings, urls, breakPoints, mq2 } from "../../constants"
+import { colors, spacings, urls, breakPoints, mq } from "../../constants"
 import { PaperBox } from "./paper-box"
 import EconomicRegulation from "../../images/icon-economic.inline.svg"
 import IconAirlineFinance from "../../images/icon-airline-finance.svg"
@@ -38,7 +38,7 @@ const LinkSC = styled(Link)`
   height: 380px;
 
   grid-column: 2 / span 10;
-  ${mq2.b768} {
+  ${mq.b768} {
     &:nth-child(2n-1) {
       grid-column: 1 / span 6;
     }
@@ -46,7 +46,7 @@ const LinkSC = styled(Link)`
       grid-column: 7 / span 6;
     }
   };
-  ${mq2.b1024} {
+  ${mq.b1024} {
     &:nth-child(2n-1), &:nth-child(2n) {
       grid-column: auto / span 3;
     }
