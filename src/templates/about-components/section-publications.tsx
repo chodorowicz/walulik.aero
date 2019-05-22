@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { colors } from "../../constants"
+import { colors, mq, spacings } from "../../constants"
 import { grid12 } from "../../styles"
-import { Button, Title, Paragraph, WrapperContent } from "../../components"
+import { Button, ButtonInner, Title, Paragraph, WrapperContent } from "../../components"
 import IkarCover from "../../images/about/cover_ikar@2x.png"
 import Line from "../../images/line.inline.svg"
 
@@ -13,16 +13,28 @@ const Wrapper = styled.div`
 
 const StyledWrapperContent = styled(WrapperContent)`
   ${grid12};
-  padding-top: 130px;
-  padding-bottom: 170px;
+  padding-top: 70px;
+  padding-bottom: 110px;
+  ${mq.b768} {
+    padding-top: 130px;
+    padding-bottom: 170px;
+  }
 `
 
 const WrapperText = styled.div`
-  grid-column: 2 / span 5;
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    grid-column: 2 / span 5;
+  }
 `
 
 const WrapperImage = styled.div`
-  grid-column: 8 / span 4;
+  grid-column: 1 / span 12;
+  margin-top: ${spacings.space40}px;
+  ${mq.b768} {
+    margin-bottom: unset;
+    grid-column: 8 / span 4;
+  }
 `
 
 const StyledTitle = styled(Title)`
@@ -30,9 +42,13 @@ const StyledTitle = styled(Title)`
 `
 
 const ContainerButton = styled.div`
-  padding-top: 80px;
+  padding-top: ${spacings.space40}px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  ${mq.b768} {
+    padding-top: 80px;
+    justify-content: flex-end; 
+  }
 `
 
 const ImageSC = styled.img`
@@ -54,7 +70,7 @@ export const SectionPublications: React.FC = () => (
         </Paragraph>
         <ContainerButton>
           <Button>
-            See my research papers <Line />
+            <ButtonInner>See my research papers</ButtonInner> <Line />
           </Button>
         </ContainerButton>
       </WrapperText>
