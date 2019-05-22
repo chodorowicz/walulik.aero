@@ -45,7 +45,7 @@ const MobileMenu = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -63,7 +63,7 @@ const MobileMenu = styled.div`
 `
 
 const LogoJanSmallSC = styled(LogoJanSmall)`
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   left: ${spacings.space20}px;
 `
@@ -73,7 +73,7 @@ const VegeBurgerContainer = styled.div`
 `
 
 const CloseContainer = styled("div")`
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   right: ${spacings.space20}px;
   top: ${spacings.space30 + 5}px;
