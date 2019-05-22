@@ -6,6 +6,7 @@ import {
   ResponsiveStyledPageCallout,
   Title,
   WrapperContent,
+  WrapperContentNoMobilePadding,
   StyledCalloutContent,
   MarkdownContainer,
 } from "../../components"
@@ -48,7 +49,7 @@ interface IProps {
 
 export const SectionBooks: React.FC<IProps> = ({ books, text, title }) => (
   <Wrapper>
-    <WrapperContent>
+    <WrapperContentNoMobilePadding>
       <ResponsiveStyledPageCallout>
         <Title color={colors.white} style={{ marginBottom: "100px" }}>
           {title}
@@ -67,6 +68,6 @@ export const SectionBooks: React.FC<IProps> = ({ books, text, title }) => (
           />
         ))}
       </BooksWrapper>
-    </WrapperContent>
+    </WrapperContentNoMobilePadding>
   </Wrapper>
 )

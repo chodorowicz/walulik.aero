@@ -2,14 +2,21 @@ import React from "react"
 import styled from "@emotion/styled"
 
 import { colors } from "../../constants"
-import { PageCallout, StyledCalloutContent, Title, WrapperContent, MarkdownContainer } from "../../components"
-import { PapersList } from "./papers-list";
+import {
+  PageCallout,
+  StyledCalloutContent,
+  Title,
+  WrapperContent,
+  MarkdownContainer,
+  WrapperContentNoMobilePadding,
+} from "../../components"
+import { PapersList } from "./papers-list"
 
 interface IProps {
-  html: string;
-  title: string;
-  categories: string[];
-  researchPapers: any;
+  html: string
+  title: string
+  categories: string[]
+  researchPapers: any
 }
 
 const Wrapper = styled.div`
@@ -22,9 +29,14 @@ const StyledPageCallout = styled(PageCallout)`
   z-index: 1;
 `
 
-export const SectionResearchPapers: React.FC<IProps> = ({ html, title, categories, researchPapers }) => (
+export const SectionResearchPapers: React.FC<IProps> = ({
+  html,
+  title,
+  categories,
+  researchPapers,
+}) => (
   <Wrapper>
-    <WrapperContent>
+    <WrapperContentNoMobilePadding>
       <StyledPageCallout>
         <Title color={colors.white} style={{ marginBottom: "100px" }}>
           {title}
@@ -34,6 +46,6 @@ export const SectionResearchPapers: React.FC<IProps> = ({ html, title, categorie
         </StyledCalloutContent>
       </StyledPageCallout>
       <PapersList categories={categories} researchPapers={researchPapers} />
-    </WrapperContent>
+    </WrapperContentNoMobilePadding>
   </Wrapper>
 )

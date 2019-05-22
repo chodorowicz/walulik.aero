@@ -4,16 +4,17 @@ import slugify from "@sindresorhus/slugify"
 
 import { LinkButton } from "../../components"
 import { IPaper } from "MyTypes"
-import { colors, fontSizes, fontWeight, fontFamily } from "../../constants"
-import { grid12 } from "../../styles"
+import { colors, fontSizes, fontWeight, fontFamily, mq, spacings } from "../../constants"
+import { grid12, paddingSides20, paddingSides0 } from "../../styles"
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-areas: "nav . content ..";
-  grid-template-columns: 3fr 1fr 8fr 1fr;
   padding-top: 80px;
   padding-bottom: 160px;
+  ${paddingSides20};
   ${grid12};
+  ${mq.b768} {
+    ${paddingSides0};
+  }
 `
 
 interface IProps {
@@ -36,7 +37,10 @@ const NavButton = styled.button<{ isSelected: boolean }>`
 `
 
 const NavigationContainer = styled.div`
-  grid-column: 2 / span 3;
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    grid-column: 2 / span 3;
+  }
 `
 
 const NavigationInner = styled.div`
@@ -45,7 +49,11 @@ const NavigationInner = styled.div`
 `
 
 const ContentSC = styled.div`
-  grid-column: 5 / span 7;
+  padding-top: ${spacings.space60}px;
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    grid-column: 5 / span 7;
+  }
 `
 
 const PaperSC = styled.div`
@@ -74,6 +82,8 @@ const ButtonAreaSC = styled.div`
 
 const StyledLinkButton = styled(LinkButton)`
   display: inline-block;
+  padding-top: 8px;
+  padding-bottom: 8px;
 `
 
 export const PapersList: React.FC<IProps> = ({
