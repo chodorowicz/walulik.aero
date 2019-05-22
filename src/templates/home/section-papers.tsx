@@ -22,7 +22,10 @@ const SectionGridSC = styled.div`
 `
 
 const WrapperText = styled.div`
-  grid-column: 2 / span 10;
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    grid-column: 2 / span 10;
+  }
 `
 
 const BoxWrapper = styled.div`
@@ -36,9 +39,10 @@ const BoxWrapper = styled.div`
 const LinkSC = styled(Link)`
   display: block;
   height: 380px;
+  grid-column: 1 / span 12;
 
-  grid-column: 2 / span 10;
   ${mq.b768} {
+    grid-column: 2 / span 10;
     &:nth-child(2n-1) {
       grid-column: 1 / span 6;
     }
@@ -55,7 +59,6 @@ const LinkSC = styled(Link)`
 
 const PaperBoxSC = styled(PaperBox)`
   height: 100%;
-
 `
 
 

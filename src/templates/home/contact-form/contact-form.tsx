@@ -4,16 +4,20 @@ import styled from "@emotion/styled"
 import { colors, fontSizes, fontFamily, spacings } from "../../../constants"
 import { Button, ButtonInner } from "../../../components"
 import Line from "../../../images/line.inline.svg"
+import { paddingSides20 } from "../../../styles";
 
 const Container = styled.div`
-  padding: 50px 100px;
   color: ${colors.white};
+  padding-top: 50px;
+  padding-bottom: 50px;
+  ${paddingSides20};
 `
 
 const Title = styled.h3`
   font-size: ${fontSizes.size28}px;
   font-family: ${fontFamily.roboto};
   margin-top: 0;
+  margin-bottom: ${spacings.space80}px;
 `
 
 const SectionSC = styled.div`

@@ -1,28 +1,33 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { SectionTitle, WrapperContent } from "../../components"
+import { SectionTitle, WrapperContent, WrapperContentNoMobilePadding } from "../../components"
 import { ContactForm } from "./contact-form/contact-form"
 import { colors, fontSizes, fontFamily, fontWeight, spacings, mq } from "../../constants"
-import { grid12 } from "../../styles"
+import { grid12, paddingSides20, paddingSides0 } from "../../styles"
 
 const Wrapper = styled.div`
-  padding-top: 111px;
-  padding-bottom: 134px;
   ${grid12};
+  ${mq.b768} {
+    padding-top: 111px;
+    padding-bottom: 134px;
+  }
 `
 
 const InfoSide = styled.div`
-  grid-column: 2 / span 10;
-  ${mq.b768} {
-    grid-column: 2 / 7;
-  };
   padding-top: ${spacings.space50}px;
   padding-bottom: 134px;
+  ${paddingSides20};
+
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    ${paddingSides0};
+    grid-column: 2 / 7;
+  };
 `
 
 const ContactFormWrapperSC = styled.div`
-  grid-column: 2 / span 10;
+  grid-column: 1 / span 12;
   ${mq.b768} {
     grid-column: 7 / 13;
   };
@@ -57,7 +62,7 @@ const Link = styled.a`
 
 export const SectionContact: React.FC<any> = () => {
   return (
-    <WrapperContent>
+    <WrapperContentNoMobilePadding>
       <Wrapper>
         <InfoSide>
           <SectionTitle>Contact</SectionTitle>
@@ -80,6 +85,6 @@ export const SectionContact: React.FC<any> = () => {
           </ContactFormWrapperInnerSC>
         </ContactFormWrapperSC>
       </Wrapper>
-    </WrapperContent>
+    </WrapperContentNoMobilePadding>
   )
 }

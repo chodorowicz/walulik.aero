@@ -20,3 +20,8 @@ export const paddingSides20 = css`
   padding-left: ${spacings.space20}px;
   padding-right: ${spacings.space20}px;
 `
+
+export const paddingSides0 = css`
+  padding-left: 0;
+  padding-right: 0;
+`

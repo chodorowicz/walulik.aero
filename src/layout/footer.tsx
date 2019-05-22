@@ -8,6 +8,7 @@ import {
   fontWeight,
   fontFamily,
   spacings,
+  mq,
 } from "../constants"
 import LogoCars from "../images/logos/cars.svg"
 import { grid12 } from "../styles"
@@ -27,19 +28,41 @@ const Container = styled.footer`
 `
 
 const ContainerLeft = styled.div`
-  grid-column: 1/7;
+  grid-column: 1 / span 12;
+  grid-row: 1;
+  ${mq.b768} {
+    grid-row: 1;
+    grid-column: 1/7;
+  }
 `
 
 const ContainerRight = styled.div`
-  grid-column: 9/13;
+  grid-column: 1 / span 12;
+  grid-row: 2;
+  ${mq.b768} {
+    grid-row: 1;
+    grid-column: 9/13;
+  }
 `
 
 const CopySection = styled.div`
-  grid-column: 1/7;
+  grid-column: 1 / span 12;
+  grid-row: 4;
+  text-align: center;
+  ${mq.b768} {
+    text-align: unset;
+    grid-row: 2;
+    grid-column: 1/7;
+  }
 `
 
 const LinksSection = styled.div`
-  grid-column: 9/13;
+  grid-column: 1 / span 12;
+  grid-row: 3;
+  ${mq.b768} {
+    grid-row: 2;
+    grid-column: 9/13;
+  }
 `
 
 const Title = styled.h3`

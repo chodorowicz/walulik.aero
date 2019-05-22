@@ -19,10 +19,6 @@ export const WrapperContent = styled.div`
 `;
 
 export const WrapperContentNoMobilePadding = styled(WrapperContent)`
-  width: ${sizes.size1160}px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
   padding-left: 0;
   padding-right: 0;
 `;
