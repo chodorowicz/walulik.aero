@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
+import MediaQuery from "react-responsive"
 
 import {
   LinkButton,
@@ -8,7 +9,7 @@ import {
   Share,
 } from "../../components"
 import LineLeft from "../../images/line-left.inline.svg"
-import { urls, fontSizes, colors } from "../../constants"
+import { urls, fontSizes, colors, mq, breaksMap, spacings } from "../../constants"
 import { CarouselArrowsLinks } from "../home/carousel/carousel-arrows"
 import { grid12 } from "../../styles"
 
@@ -22,16 +23,16 @@ interface IProps {
 }
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-areas: "navigation content social";
-  grid-template-columns: 3fr 7fr 2fr;
-  grid-gap: 20px;
   padding-bottom: 120px;
   ${grid12};
 `
 
 const Navigation = styled.div`
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 12;
+  grid-row: 1;
+  ${mq.b768} {
+    grid-column: 1 / span 3;
+  }
 `
 
 const NavigationInner = styled.div`
@@ -41,28 +42,52 @@ const NavigationInner = styled.div`
 `
 
 const ArrowsContainer = styled.div`
-  margin-top: 130px;
+  margin-top: ${spacings.space30}px;
   display: flex;
-  justify-content: flex-end;
+  ${mq.b768} {
+    margin-top: 130px;
+    grid-column: 1 / span 3;
+    justify-content: flex-end;
+  }
 `
 
 const Content = styled.div`
-  grid-column: 4 / span 7;
+  grid-row: 3;
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    grid-row: 1;
+    grid-column: 4 / span 7;
+  }
 `
 
 const BreadCrumbs = styled.div`
   font-size: ${fontSizes.size18}px;
   color: ${colors.grey2};
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  padding-top: 150px;
+  ${mq.b768} {
+    padding-bottom: 50px;
+    padding-top: 0;
+  }
 `
 
 const Social = styled.div`
-  grid-column: 11 / span 2;
-  margin-top: 73px; /* to align it with title */
+  grid-column: 1 / span 12;
+  margin-top: ${spacings.space30}px;
+  margin-bottom: ${spacings.space40}px;
+  grid-row: 2;
+  ${mq.b768} {
+    margin-top: 73px;
+    margin-bottom: 0;
+    grid-row: 1;
+    grid-column: 11 / span 2;
+  }
 `
 
 const StyledContentTitleSC = styled(StyledContent)`
-  padding-right: 50px;
+  ${mq.b768} {
+    padding-right: 50px;
+  }
 `
 
 const StyledContentSC = styled(StyledContent)`
@@ -85,22 +110,34 @@ export const Paper: React.FC<IProps> = ({
             <LineLeft />
             <ButtonInnerLeft>Research Papers</ButtonInnerLeft>
           </LinkButton>
-          <ArrowsContainer>
-            <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
-          </ArrowsContainer>
+          <MediaQuery minDeviceWidth={breaksMap.b768}>
+            <ArrowsContainer>
+              <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
+            </ArrowsContainer>
+          </MediaQuery>
         </NavigationInner>
       </Navigation>
       <Content>
         <BreadCrumbs>Research papers > {category} ></BreadCrumbs>
         <StyledContentTitleSC>
           <h2>{title}</h2>
+          <MediaQuery maxDeviceWidth={breaksMap.b768}>
+            <ArrowsContainer>
+              <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
+            </ArrowsContainer>
+            <Social>
+              <Share />
+            </Social>
+          </MediaQuery>
           <p>{where}</p>
         </StyledContentTitleSC>
         <StyledContentSC dangerouslySetInnerHTML={{ __html: html }} />
       </Content>
-      <Social>
-        <Share />
-      </Social>
+      <MediaQuery minDeviceWidth={breaksMap.b768}>
+        <Social>
+          <Share />
+        </Social>
+      </MediaQuery>
     </Wrapper>
   )
 }

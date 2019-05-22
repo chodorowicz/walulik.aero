@@ -25,3 +25,7 @@ export const paddingSides0 = css`
   padding-left: 0;
   padding-right: 0;
 `
+
+export const minHeightContent = css`
+  min-height: calc(100vh - 335px);
+`

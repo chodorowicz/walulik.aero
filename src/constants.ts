@@ -38,6 +38,7 @@ export const urls = {
   books: "/books",
   researchPapers: "/research-papers",
   contact: "/#contact",
+  privacyPolicy: "/privacy-policy",
 }
 
 export const sizes = {
@@ -51,6 +52,7 @@ export const spacings = {
   space50: 50,
   space60: 60,
   space80: 80,
+  space100: 100,
   space1of12: Number((1 / 12) * 100).toFixed(2),
   gridGap16: 16,
 }

@@ -7,8 +7,6 @@ import { ThemeProvider } from 'emotion-theming'
 import { Layout } from "../layout"
 import { gradient } from "../styles"
 import { SectionTopShort, WrapperContent } from "../components"
-import BooksPageBackground from "../images/books/books-bg@2x.jpg"
-import { SectionResearchPapers } from "./research-papers/section-reasearch-papers"
 import { Paper } from "./research-paper/paper";
 
 const PageWrapper = styled.div`

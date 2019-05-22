@@ -1,11 +1,19 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { colors, mq, spacings } from "../../constants"
+import { colors, mq, spacings, urls } from "../../constants"
 import { grid12 } from "../../styles"
-import { Button, ButtonInner, Title, Paragraph, WrapperContent } from "../../components"
+import {
+  Button,
+  ButtonInner,
+  LinkButton,
+  Title,
+  Paragraph,
+  WrapperContent,
+} from "../../components"
 import IkarCover from "../../images/about/cover_ikar@2x.png"
 import Line from "../../images/line.inline.svg"
+import { Link } from "gatsby"
 
 const Wrapper = styled.div`
   background-color: ${colors.darkBlue};
@@ -47,7 +55,7 @@ const ContainerButton = styled.div`
   justify-content: center;
   ${mq.b768} {
     padding-top: 80px;
-    justify-content: flex-end; 
+    justify-content: flex-end;
   }
 `
 
@@ -69,9 +77,9 @@ export const SectionPublications: React.FC = () => (
           <a href="#">journals</a>.
         </Paragraph>
         <ContainerButton>
-          <Button>
-            <ButtonInner>See my research papers</ButtonInner> <Line />
-          </Button>
+            <LinkButton to={urls.researchPapers}>
+              <ButtonInner>See my research papers</ButtonInner> <Line />
+            </LinkButton>
         </ContainerButton>
       </WrapperText>
       <WrapperImage>

@@ -68,9 +68,9 @@ export const CarouselArrows: React.FC<IProps> = ({ next, prev }) => {
 
 export const CarouselArrowsLinks: React.FC<IPropsLinks> = ({ nextLink = "", prevLink = "" }) => {
   return (
-    <div>
+    <ArrowsContainer>
       <CircleWithIconLinkTop to={nextLink}><Line /></CircleWithIconLinkTop>
       <CircleWithIconLink to={prevLink}><LineLeft /></CircleWithIconLink>
-    </div>
+    </ArrowsContainer>
   )
 }

@@ -12,6 +12,7 @@ import {
 } from "../constants"
 import LogoCars from "../images/logos/cars.svg"
 import { grid12 } from "../styles"
+import { urls } from "../constants"
 
 const WrapperOuterSC = styled.div`
   background-color: ${colors.white};
@@ -119,7 +120,7 @@ export function Footer(): JSX.Element {
           Designed by Furyarts &amp; chodorowicz
         </CopySection>
         <LinksSection>
-          <StandardLink href="#">Privacy Policy</StandardLink> |{" "}
+          <StandardLink href={urls.privacyPolicy}>Privacy Policy</StandardLink> |{" "}
           <StandardLink href="#">Cookies</StandardLink>
         </LinksSection>
       </Container>

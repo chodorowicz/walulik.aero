@@ -5,7 +5,7 @@ import MediaQuery from 'react-responsive';
 
 import { colors, fontSizes, fontFamily, urls, mq, spacings, breakPoints } from "../constants"
 import { Menu } from "../layout/menu"
-import { WrapperContent } from "./wrappers"
+import { WrapperContent, WrapperContentNoMobilePadding } from "./wrappers"
 import { TopSectionBackground } from "./top-section-background"
 import { MarkdownContainer } from "../components"
 import LogoJan from "../images/logo-jan.svg"
@@ -88,15 +88,18 @@ export const SectionTop: React.FC<IProps> = ({
 
 const SectionTopShortContainer = styled.div`
   position: relative;
-  height: 400px;
+  padding-bottom: ${spacings.space80}px;
+  ${mq.b768} {
+    padding-bottom: ${spacings.space100}px;
+  }
 `
 
 export const SectionTopShort: React.FC = () => {
   return (
     <SectionTopShortContainer>
-      <WrapperContent>
+      <WrapperContentNoMobilePadding>
         <LogoAndMenu />
-      </WrapperContent>
+      </WrapperContentNoMobilePadding>
     </SectionTopShortContainer>
   )
 }

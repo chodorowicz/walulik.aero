@@ -108,7 +108,7 @@ export const Menu: React.FC = () => {
   const [isMenuOpened, setMenuOpened] = React.useState(false)
   return (
     <>
-      <MediaQuery maxWidth={breakPoints.b768}>
+      <MediaQuery maxDeviceWidth={breakPoints.b768}>
         <VegeBurgerContainer>
           <VegeBurger onClick={() => setMenuOpened(true)} />
         </VegeBurgerContainer>

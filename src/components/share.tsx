@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from "@emotion/styled"
-import { fontWeight, fontSizes, colors } from '../constants';
+import { fontWeight, fontSizes, colors, mq, spacings } from '../constants';
 
 import LogoFacebook from "../images/book/facebook.svg"
 import LogoLinkedIn from "../images/book/linkedin.svg"
@@ -14,9 +14,15 @@ const ShareTitle = styled.h3`
 `; 
 
 const ShareLogosContainer = styled.div`
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 20px;
+  svg {
+    margin-right: ${spacings.space20}px;
+  }
+  ${mq.b768} {
+    grid-gap: 20px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column: 1 / span 3;
+  }
 `;
 
 export const Share: React.FC = () => {
