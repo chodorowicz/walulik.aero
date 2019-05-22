@@ -80,7 +80,7 @@ function useWindowDimensions() {
 
 export const Carousel: React.FC = () => {
   const [page, setPage] = useState(0)
-  const dimensions = useWindowDimensions(setPage);
+  const dimensions = useWindowDimensions();
 
   const result = useStaticQuery(graphql`
     query BooksQuery2 {

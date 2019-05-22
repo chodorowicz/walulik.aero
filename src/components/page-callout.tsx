@@ -13,3 +13,13 @@ export const PageCallout = styled.div`
     padding-bottom: 90px;
   }
 `;
+
+export const ResponsiveStyledPageCallout = styled(PageCallout)`
+  margin-top: -140px;
+
+  position: relative;
+  z-index: 1;
+  ${mq.b768} {
+    margin-top: -220px;
+  }
+`;

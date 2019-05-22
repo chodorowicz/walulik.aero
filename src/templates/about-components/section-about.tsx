@@ -3,23 +3,13 @@ import styled from "@emotion/styled"
 
 import { colors, mq, spacings } from "../../constants";
 import { gradient, grid12, paddingSides0 } from "../../styles";
-import { PageCallout, Title, Paragraph, WrapperContent } from "../../components";
+import { Title, Paragraph, WrapperContent, ResponsiveStyledPageCallout } from "../../components";
 import ImageAbout1 from "../../images/about-1@2x.jpg"
 import ImageAbout2 from "../../images/about-2@2x.jpg"
 import LogoCarsWzuw from "../../images/about/logo-cars-wzuw@2x.png";
 
 const Wrapper = styled.div`
   ${gradient};
-`;
-
-const StyledPageCallout = styled(PageCallout)`
-  margin-top: -140px;
-
-  position: relative;
-  z-index: 1;
-  ${mq.b768} {
-    margin-top: -220px;
-  }
 `;
 
 const WrapperContentFirstSC = styled(WrapperContent)`
@@ -82,10 +72,10 @@ const StyledParagraphText = styled(Paragraph)`
 export const SectionAbout: React.FC = () => (
   <Wrapper>
     <WrapperContentFirstSC>
-      <StyledPageCallout>
+      <ResponsiveStyledPageCallout>
         <Title color={colors.white} style={{ marginBottom: "100px" }}>About</Title>
         <Paragraph color={colors.white}>Jan has been specialising in aviation law and policy and in corporate law for over 10 years. He started his legal career at Weil in a commercial law department. Since 2008 he has been practicing individually as a business lawyer specialising in commercial law, aviation law, administrative law and tax law. Jan has successfully led numerous corporate restructuring projects, and has been active as an aviation expert in consulting and training projects for the industry and the government. He is a member of the Warsaw Bar Association.</Paragraph>
-      </StyledPageCallout>
+      </ResponsiveStyledPageCallout>
     </WrapperContentFirstSC>
     <StyledWrapperContent>
       <ImagesColumn>
