@@ -1,43 +1,68 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { colors } from "../../constants";
-import { gradient, grid12 } from "../../styles";
+import { colors, mq, spacings } from "../../constants";
+import { gradient, grid12, paddingSides0 } from "../../styles";
 import { PageCallout, Title, Paragraph, WrapperContent } from "../../components";
 import ImageAbout1 from "../../images/about-1@2x.jpg"
 import ImageAbout2 from "../../images/about-2@2x.jpg"
 import LogoCarsWzuw from "../../images/about/logo-cars-wzuw@2x.png";
 
 const Wrapper = styled.div`
-  padding-left: 100px;
-  padding-right: 100px;
   ${gradient};
 `;
 
 const StyledPageCallout = styled(PageCallout)`
-  margin-top: -220px;
+  margin-top: -140px;
+
   position: relative;
   z-index: 1;
+  ${mq.b768} {
+    margin-top: -220px;
+  }
 `;
 
+const WrapperContentFirstSC = styled(WrapperContent)`
+  ${paddingSides0};
+`
+
 const StyledWrapperContent = styled(WrapperContent)`
-  padding-top: 165px;
-  padding-bottom: 130px;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
+  padding-top: 100px;
+  padding-bottom: 100px;
   ${grid12};
+  ${mq.b768} {
+    padding-top: 165px;
+    padding-bottom: 130px;
+  }
 `;
 
 const ImagesColumn = styled.div`
-  grid-column: 2 / span 4;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-gap: 70px;
+
+  grid-column: 1 / span 12;
+  grid-row: 2;
+  max-width: 100%;
+  img {
+    max-width: 100%;
+  }
+  ${mq.b768} {
+    grid-column: 2 / span 4;
+    grid-row: 1;
+  }
 `;
 
 const TextColumn = styled.div`
-  grid-column: 7 / span 5;
+  grid-column: 1 / span 12;
+  grid-row: 1;
   position: relative;
+  margin-bottom: ${spacings.space50}px;
+  ${mq.b768} {
+    grid-column: 7 / span 5;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
 `;
 
 const StyledTitleText = styled(Title)`
@@ -47,18 +72,21 @@ const StyledTitleText = styled(Title)`
 `;
 
 const StyledParagraphText = styled(Paragraph)`
-  margin-bottom: 108px;
+  margin-bottom: ${spacings.space50}px;
+  ${mq.b768} {
+    margin-bottom: 108px;
+  }
 `;
 
 
 export const SectionAbout: React.FC = () => (
   <Wrapper>
-    <WrapperContent>
+    <WrapperContentFirstSC>
       <StyledPageCallout>
         <Title color={colors.white} style={{ marginBottom: "100px" }}>About</Title>
         <Paragraph color={colors.white}>Jan has been specialising in aviation law and policy and in corporate law for over 10 years. He started his legal career at Weil in a commercial law department. Since 2008 he has been practicing individually as a business lawyer specialising in commercial law, aviation law, administrative law and tax law. Jan has successfully led numerous corporate restructuring projects, and has been active as an aviation expert in consulting and training projects for the industry and the government. He is a member of the Warsaw Bar Association.</Paragraph>
       </StyledPageCallout>
-    </WrapperContent>
+    </WrapperContentFirstSC>
     <StyledWrapperContent>
       <ImagesColumn>
         <img src={ImageAbout1} />
