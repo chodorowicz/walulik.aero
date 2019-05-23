@@ -11,6 +11,17 @@ import {
   mq,
 } from "../constants"
 import LogoCars from "../images/logos/cars.svg"
+// import ResearchId from "../images/logos/researcherid.svg"
+import LogoP from "../images/logos/p.svg"
+import LogoRoutledge from "../images/logos/routledge.svg"
+import LogoScopus from "../images/logos/scopus.svg"
+import LogoLinkedin from "../images/logos/linkedin.svg"
+import LogoOrcid from "../images/logos/orcid.svg"
+import LogoAcademia from "../images/logos/academia.svg"
+import LogoBlob from "../images/logos/blob.svg"
+import LogoSSRN from "../images/logos/ssrn.svg"
+import LogoResearchgate from "../images/logos/researchgate.svg"
+import LogoPBN from "../images/logos/pbn.svg"
 import { grid12 } from "../styles"
 import { urls } from "../constants"
 
@@ -72,7 +83,13 @@ const Title = styled.h3`
 `
 
 const Logos = styled.div`
-  display: flex;
+  display: grid;
+  grid-gap: 30px;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  svg { 
+    margin-right: 20px;
+  }
 `
 
 const ContactInfo = styled.div``
@@ -96,6 +113,16 @@ export function Footer(): JSX.Element {
           <Title>Find Jan at:</Title>
           <Logos>
             <LogoCars />
+            <LogoP />
+            <LogoRoutledge />
+            <LogoScopus />
+            <LogoLinkedin />
+            <LogoOrcid />
+            <LogoAcademia />
+            <LogoBlob />
+            <LogoSSRN />
+            <LogoResearchgate />
+            <LogoPBN />
           </Logos>
         </ContainerLeft>
         <ContainerRight>

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { Layout } from "../layout"
 import { SectonPhotoText, SectionBooks, SectionPapers, SectionContact } from "./home";
 import { SectionTop } from "../components/section-top";
-import HomePageImage from "../images/home-page-bg@2x.jpg"
+import HomePageImage from "../images/home-page-bg@2x-optimized.jpg"
 import { HomePageTemplateQuery } from "../generated/graphql"
 
 interface IProps {

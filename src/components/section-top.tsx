@@ -38,6 +38,9 @@ const Title = styled.h1`
 const TopSectionSC = styled(TopSectionBackground)<{ isHome: boolean }>`
   background-position: center ${props => props.isHome ? "right -200px" : "right"};
   display: flex;
+  ${mq.b768} {
+    background-position: center ${props => props.isHome ? "right" : "right"};
+  }
 `
 
 const LogoMenuContainerSC = styled.div`

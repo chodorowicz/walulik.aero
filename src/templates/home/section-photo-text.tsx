@@ -43,8 +43,8 @@ const TextContent = styled.div`
   @media (min-width: ${breakPoints.b768}px) {
     padding-left: 0;
     padding-right: 0;
-    padding-bottom: ${spacings.space40}px;
-    padding-top: ${spacings.space40}px;
+    padding-bottom: ${spacings.space150}px;
+    padding-top: ${spacings.space150}px;
     grid-column: 6 / span 6;
   }
 `
