@@ -12,7 +12,7 @@ import {
 } from "../../components"
 import Line from "../../images/line.inline.svg"
 import { gradient, grid12, paddingSides20 } from "../../styles"
-import { breakPoints, spacings } from "../../constants"
+import { breakPoints, spacings, mq } from "../../constants"
 
 const WrapperOuter = styled.div`
   ${gradient};
@@ -49,6 +49,15 @@ const TextContent = styled.div`
   }
 `
 
+const ButtonContainerSC = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: ${spacings.space30}px;
+  ${mq.b768} {
+    margin-top: ${spacings.space60}px;
+  }
+`
+
 export const SectonPhotoText: React.FC<any> = () => {
   const data = useStaticQuery(graphql`
     query ImageQuery {
@@ -79,12 +88,12 @@ export const SectonPhotoText: React.FC<any> = () => {
               of numerous publications on regulatory issues in aviation. Member
               of the Warsaw Bar Association.
             </Paragraph>
-            <div>
+            <ButtonContainerSC>
               <Button>
                 <ButtonInner>learn more</ButtonInner>
                 <Line />
               </Button>
-            </div>
+            </ButtonContainerSC>
           </TextContent>
         </Wrapper>
       </WrapperContentNoMobilePadding>

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { SectionTitle, WrapperContent, WrapperContentNoMobilePadding } from "../../components"
+import { SectionTitle, WrapperContentNoMobilePadding } from "../../components"
 import { ContactForm } from "./contact-form/contact-form"
 import { colors, fontSizes, fontFamily, fontWeight, spacings, mq } from "../../constants"
 import { grid12, paddingSides20, paddingSides0 } from "../../styles"
@@ -27,11 +27,11 @@ const InfoSide = styled.div`
 `
 
 const ContactFormWrapperSC = styled.div`
+  background-color: ${colors.darkBlue};
   grid-column: 1 / span 12;
   ${mq.b768} {
     grid-column: 7 / 13;
   };
-  background-color: ${colors.darkBlue};
 `
 
 const ContactFormWrapperInnerSC = styled.div`
@@ -39,11 +39,14 @@ const ContactFormWrapperInnerSC = styled.div`
   background-color: ${colors.darkBlue};
 `
 
-const InfoSideTitle = styled.h2`
+const InfoSideTitle = styled.h3`
   font-size: ${fontSizes.largePlus}px;
   font-family: ${fontFamily.roboto};
   font-weight: ${fontWeight.bold};
   color: ${colors.darkBlue};
+  ${mq.b768} {
+    margin-top: ${spacings.space100}px;
+  }
 `;
 
 const InfoSideDetails = styled.div`

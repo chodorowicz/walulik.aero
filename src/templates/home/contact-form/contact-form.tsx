@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "@emotion/styled"
 
-import { colors, fontSizes, fontFamily, spacings } from "../../../constants"
+import { colors, fontSizes, fontFamily, spacings, mq } from "../../../constants"
 import { Button, ButtonInner } from "../../../components"
 import Line from "../../../images/line.inline.svg"
 import { paddingSides20 } from "../../../styles";
@@ -11,6 +11,10 @@ const Container = styled.div`
   padding-top: 50px;
   padding-bottom: 50px;
   ${paddingSides20};
+  ${mq.b768} {
+    padding-left: ${spacings.space60}px;
+    padding-right: ${spacings.space60}px;
+  }
 `
 
 const Title = styled.h3`
