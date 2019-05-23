@@ -22,6 +22,11 @@ import LogoBlob from "../images/logos/blob.svg"
 import LogoSSRN from "../images/logos/ssrn.svg"
 import LogoResearchgate from "../images/logos/researchgate.svg"
 import LogoPBN from "../images/logos/pbn.svg"
+import LogoResearchIdSrc from "../images/logos/researcherid.png"
+import LogoGoogleScholarSrc from "../images/logos/google-scholar.png"
+import LogoNaukaPolska from "../images/logos/nauka-polska.png"
+import LogoSSWR from "../images/logos/sswr.png"
+import LogoInventorum from "../images/logos/inventorum.png"
 import { grid12 } from "../styles"
 import { urls } from "../constants"
 
@@ -83,17 +88,12 @@ const Title = styled.h3`
 `
 
 const Logos = styled.div`
-  display: grid;
-  grid-gap: 15px;
-  grid-row-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  ${mq.b768} {
-    grid-gap: 30px;
-    grid-template-columns: repeat(6, 1fr);
-  }
-  svg { 
-    margin-right: 20px;
+  svg, img { 
+    margin-right: 30px;
+    margin-bottom: 30px;
   }
 `
 
@@ -118,15 +118,20 @@ export function Footer(): JSX.Element {
           <Title>Find Jan at:</Title>
           <Logos>
             <LogoCars />
+            <img src={LogoResearchIdSrc} width={110} />
             <LogoP />
             <LogoRoutledge />
             <LogoScopus />
             <LogoLinkedin />
+            <img src={LogoGoogleScholarSrc} width={60} />
             <LogoOrcid />
             <LogoAcademia />
             <LogoBlob />
             <LogoSSRN />
             <LogoResearchgate />
+            <img src={LogoNaukaPolska} width={70} />
+            <img src={LogoSSWR} width={70} />
+            <img src={LogoInventorum} width={80} />
             <LogoPBN />
           </Logos>
         </ContainerLeft>
