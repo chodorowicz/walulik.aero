@@ -1,7 +1,7 @@
 ---
 templateKey: book-page
 title: Harmonising
-image: /assets/harmonising_bok.png
+image: /assets/rutlege_bok.png
 text: |-
   Harmonising law
 publisher: bbb
