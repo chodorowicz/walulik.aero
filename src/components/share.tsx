@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from "@emotion/styled"
 import { fontWeight, fontSizes, colors, mq, spacings } from '../constants';
 
-import LogoFacebook from "../images/book/facebook.svg"
-import LogoLinkedIn from "../images/book/linkedin.svg"
-import LogoTwitter from "../images/book/twitter.svg"
+import LogoFacebook from "../images/book/facebook"
+import LogoLinkedIn from "../images/book/linkedin"
+import LogoTwitter from "../images/book/twitter"
 
 const ShareTitle = styled.h3`
   margin-top: 0;
