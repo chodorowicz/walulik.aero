@@ -84,9 +84,14 @@ const Title = styled.h3`
 
 const Logos = styled.div`
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 15px;
+  grid-row-gap: 30px;
   align-items: center;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  ${mq.b768} {
+    grid-gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+  }
   svg { 
     margin-right: 20px;
   }

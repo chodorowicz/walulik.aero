@@ -27,11 +27,12 @@ const Title = styled.h1`
   color: ${colors.white};
   position: absolute;
   bottom: 0;
+  margin-bottom: 50px;
 
   font-size: ${fontSizes.size36}px;
   ${mq.b768} {
-    bottom: 15%;
     font-size: ${fontSizes.xxLarge}px;
+    margin-bottom: 120px;
   }
 `
 

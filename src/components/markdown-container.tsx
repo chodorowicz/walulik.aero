@@ -1,6 +1,7 @@
 import * as React from "react";
 import commonmark from "commonmark";
 import styled from "@emotion/styled"
+import striptags from "striptags"
 
 interface IProps {
   content: string;
@@ -17,8 +18,9 @@ export const MarkdownContainer: React.FC<IProps> = React.memo(({ content }) => {
   const writer = new commonmark.HtmlRenderer();
   const parsed = reader.parse(content);
   const result = writer.render(parsed);
+  const strippedResult = striptags(result, "<br>")
 
   return (
-    <StyledText dangerouslySetInnerHTML={{ __html: result }} />
+    <StyledText dangerouslySetInnerHTML={{ __html: strippedResult }} />
   );
 });
