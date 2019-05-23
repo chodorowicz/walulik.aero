@@ -42,17 +42,6 @@ const ResearchPapersPage: React.FC = (props) => {
 
 export default ResearchPapersPage
 
-// export const pageQuery = graphql`
-//   query ResearchPapersPageTemplate {
-//     markdownRemark(frontmatter: { templateKey: { eq: "research-papers-page" } }) {
-//       html
-//       frontmatter {
-//         title
-//       }
-//     }
-//   }
-// `
-
 export const pageQuery = graphql`
   query ResearchPageTemplate($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {

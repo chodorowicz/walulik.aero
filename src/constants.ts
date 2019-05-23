@@ -53,6 +53,7 @@ export const spacings = {
   space60: 60,
   space80: 80,
   space100: 100,
+  space120: 120,
   space150: 150,
   space1of12: Number((1 / 12) * 100).toFixed(2),
   gridGap16: 16,

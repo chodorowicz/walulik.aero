@@ -94,16 +94,14 @@ const SectionTopShortContainer = styled.div`
   position: relative;
   padding-bottom: ${spacings.space80}px;
   ${mq.b768} {
-    padding-bottom: ${spacings.space100}px;
+    padding-bottom: ${spacings.space120}px;
   }
 `
 
 export const SectionTopShort: React.FC = () => {
   return (
     <SectionTopShortContainer>
-      <WrapperContentNoMobilePadding>
-        <LogoAndMenu />
-      </WrapperContentNoMobilePadding>
+      <LogoAndMenu />
     </SectionTopShortContainer>
   )
 }
