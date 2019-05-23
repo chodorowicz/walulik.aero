@@ -30,6 +30,9 @@ const WrapperImageSC = styled.div`
     padding-bottom: 0;
     grid-column: 1 / span 4;
   }
+  img {
+    transform: scale(1.15);
+  }
 `
 
 const TextContent = styled.div`
