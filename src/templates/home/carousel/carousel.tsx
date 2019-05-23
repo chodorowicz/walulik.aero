@@ -60,10 +60,14 @@ const BookContainer = styled.div`
   }
 `
 
+function isWindow() {
+  return typeof window !== "undefined"
+}
+
 function useWindowDimensions() {
   const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: isWindow() ? window.innerWidth : 1000,
+    height: isWindow() ? window.innerHeight : 1000,
   })
   React.useEffect(() => {
     const handleResize = () => {
