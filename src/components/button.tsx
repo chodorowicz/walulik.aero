@@ -21,7 +21,6 @@ export const Button = styled.button`
     background: ${colors.accent};
     ${transition};
     path, line {
-      fill: ${colors.white};
       stroke: ${colors.white};
     }
   }
