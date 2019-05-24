@@ -54,6 +54,7 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-typescript",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-transition-link",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

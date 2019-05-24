@@ -154,7 +154,7 @@ export function Footer(): JSX.Element {
         </ContainerRight>
         <CopySection>
           &copy; {new Date().getFullYear()} walulik.aero | All rights reserved |
-          Designed by Furyarts &amp; chodorowicz
+          Designed by <StandardLink href="http://www.furyarts.pl/" target="_blank">Furyarts</StandardLink> &amp; <StandardLink href="https://www.chodorowicz.com/" target="_blank">chodorowicz</StandardLink>
         </CopySection>
         <LinksSection>
           <StandardLink href={urls.privacyPolicy}>Privacy Policy</StandardLink> |{" "}
