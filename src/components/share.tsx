@@ -25,9 +25,9 @@ const ShareLogosContainer = styled.div`
   }
 `;
 
-export const Share: React.FC = () => {
+export const Share: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div>
+    <div className={className}>
       <ShareTitle>Share:</ShareTitle>
       <ShareLogosContainer>
         <LogoFacebook />

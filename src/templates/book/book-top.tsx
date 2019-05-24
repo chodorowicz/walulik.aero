@@ -3,7 +3,6 @@ import styled from "@emotion/styled"
 import Img from "gatsby-image"
 
 import {
-  Button,
   ButtonInnerLeft,
   WrapperContent,
   MarkdownContainer,
@@ -11,12 +10,16 @@ import {
 } from "../../components"
 import LineLeft from "../../images/line-left.inline.svg"
 import { CarouselArrowsLinks } from "../home/carousel/carousel-arrows"
-import { colors, fontSizes, fontWeight, urls } from "../../constants"
-import { grid12 } from "../../styles"
+import { colors, fontSizes, fontWeight, urls, mq } from "../../constants"
+import { grid12, paddingSides0 } from "../../styles"
 
 const StyledWrapperContent = styled(WrapperContent)`
-  padding-top: 176px;
-  padding-bottom: 176px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  ${paddingSides0};
+  ${mq.b768} {
+    ${paddingSides0};
+  }
 `
 
 const Container = styled.div`
@@ -27,18 +30,31 @@ const Container = styled.div`
 `
 
 const NavigationWrapper = styled.div`
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 12;
+  order: 3;
+  ${mq.b768} {
+    order: unset;;
+    grid-column: 1 / span 3;
+  }
 `
 
 const BookNavigation = styled.div`
-  display: inline-flex;
-  flex-direction: column;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
+  margin-top: 50px;
+  ${mq.b768} { 
+    margin-top: unset;
+    display: inline-flex;
+    flex-direction: column;
+  }
 `
 
 const BackButton = styled(LinkButton)`
-  margin-top: 20px;
+  ${mq.b768} { 
+    margin-top: 20px;
+  }
 `
 
 const ArrowsContainer = styled.div`
@@ -47,17 +63,35 @@ const ArrowsContainer = styled.div`
 `
 
 const BookContainer = styled.div`
-  grid-column: 4 / span 4;
+  grid-column: 1 / span 12;
+  overflow: hidden;
+  ${mq.b768} {
+    grid-column: 4 / span 5;
+  }
+`
+
+const BookContainerInner = styled.div`
+  position: relative;
+  right: -11%;
+  margin-bottom: 30px;
+  ${mq.b768} {
+    margin-bottom: 0;
+    right: 0;
+  }
 `
 
 const InfoContainer = styled.div`
-  grid-column: 8 / span 4;
+  grid-column: 9 / span 4;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: ${colors.white};
   font-size: ${fontSizes.size18};
   font-weight: ${fontWeight.light};
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    grid-column: 9 / span 4;
+  }
 `
 
 const TextTitle = styled.h2`
@@ -97,7 +131,9 @@ export const BookTop: React.FC<IProps> = ({
           </BookNavigation>
         </NavigationWrapper>
         <BookContainer>
-          <Img fluid={fluid} />
+          <BookContainerInner>
+            <Img fluid={fluid} />
+          </BookContainerInner>
         </BookContainer>
         <InfoContainer>
           <TextTitle>{title}</TextTitle>
