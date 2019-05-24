@@ -68,7 +68,7 @@ export const SectionContact: React.FC<any> = () => {
     <WrapperContentNoMobilePadding>
       <Wrapper>
         <InfoSide>
-          <SectionTitle>Contact</SectionTitle>
+          <SectionTitle id="contact">Contact</SectionTitle>
           <InfoSideTitle>
             Jan Walulik<br />
             Aviation Research &amp; Consulting

@@ -9,6 +9,9 @@ export const Layout: React.FC = ({ children }) => (
   <div>
     <Global
       styles={css`
+        html {
+          scroll-behavior: smooth;
+        }
         body {
           font-family: ${fontFamily.roboto};
           margin: 0;
