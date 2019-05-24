@@ -5,6 +5,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import { CarouselCounter } from "./carousel-counter"
 import { CarouselArrows } from "./carousel-arrows"
 import { spacings, breaksMap, mq } from "../../../constants"
+import { isWindow } from "../../../utils"
 
 export function modulo(mod: number): (n: number) => number {
   return (n: number) => ((n % mod) + mod) % mod
@@ -59,10 +60,6 @@ const BookContainer = styled.div`
     max-width: 100%;
   }
 `
-
-function isWindow() {
-  return typeof window !== "undefined"
-}
 
 function useWindowDimensions() {
   const [dimensions, setDimensions] = useState({

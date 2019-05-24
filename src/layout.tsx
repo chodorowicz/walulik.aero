@@ -4,6 +4,7 @@ import { Global, css } from "@emotion/core"
 
 import { colors, fontFamily } from "./constants"
 import { Footer } from "./layout/footer";
+import { LogoAndMenu } from "./components";
 
 export const Layout: React.FC = ({ children }) => (
   <div>
@@ -37,6 +38,7 @@ export const Layout: React.FC = ({ children }) => (
       />
       <meta name="viewport" content="width=device-width, minimum-scale=1, minimal-ui"></meta>
     </Helmet>
+    <LogoAndMenu />
     {children}
     <Footer />
   </div>

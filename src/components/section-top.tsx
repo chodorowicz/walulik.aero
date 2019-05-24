@@ -1,9 +1,19 @@
 import * as React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import MediaQuery from 'react-responsive';
+import MediaQuery from "react-responsive"
+import { useWindowSize, useWindowScrollPosition} from "../utils";
 
-import { colors, fontSizes, fontFamily, urls, mq, spacings, breakPoints } from "../constants"
+import {
+  colors,
+  fontSizes,
+  fontFamily,
+  urls,
+  mq,
+  spacings,
+  breakPoints,
+  breaksMap,
+} from "../constants"
 import { Menu } from "../layout/menu"
 import { WrapperContent, WrapperContentNoMobilePadding } from "./wrappers"
 import { TopSectionBackground } from "./top-section-background"
@@ -37,10 +47,11 @@ const Title = styled.h1`
 `
 
 const TopSectionSC = styled(TopSectionBackground)<{ isHome: boolean }>`
-  background-position: center ${props => props.isHome ? "right -200px" : "right"};
+  background-position: center
+    ${props => (props.isHome ? "right -200px" : "right")};
   display: flex;
   ${mq.b768} {
-    background-position: center ${props => props.isHome ? "right" : "right"};
+    background-position: center ${props => (props.isHome ? "right" : "right")};
   }
 `
 
@@ -48,24 +59,45 @@ const LogoMenuContainerSC = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: ${spacings.space30}px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* padding-top: ${spacings.space30}px; */
   ${mq.b768} {
-    padding-top: ${spacings.space60}px;
+    /* padding-top: ${spacings.space60}px; */
   }
 `
 
-const LogoAndMenu: React.FC = () => {
+const WrapperSticky = styled.div<{ isSticky: boolean, offset: number }>`
+  position: ${props => (props.isSticky ? "fixed" : "absolute")};
+  background-color: ${props =>
+    props.isSticky ? colors.darkBlue : "transparent"};
+  top: ${props => (props.isSticky ? "0px" : `${props.offset}px;`)};
+  z-index: 4;
+  width: 100%;
+  transition: background-color 200ms;
+`
+
+export const LogoAndMenu: React.FC = () => {
+  const { y } = useWindowScrollPosition()
+  const { innerWidth } = useWindowSize()
+  const offset = innerWidth >= breaksMap.b768 ? 40 : 20;
+  const isSticky = y > offset
+
   return (
-    <LogoMenuContainerSC>
-      <HomePageTitle>
-        <Link to={urls.home}>
-          <MediaQuery minDeviceWidth={breakPoints.b768}>
-            {matches => matches ? <LogoJan /> : <LogoJanSmall />}
-          </MediaQuery>
-        </Link>
-      </HomePageTitle>
-      <Menu />
-    </LogoMenuContainerSC>
+    <WrapperSticky isSticky={isSticky} offset={offset}>
+      <WrapperContent>
+        <LogoMenuContainerSC>
+          <HomePageTitle>
+            <Link to={urls.home}>
+              <MediaQuery minDeviceWidth={breakPoints.b768}>
+                {matches => (matches ? <LogoJan /> : <LogoJanSmall />)}
+              </MediaQuery>
+            </Link>
+          </HomePageTitle>
+          <Menu />
+        </LogoMenuContainerSC>
+      </WrapperContent>
+    </WrapperSticky>
   )
 }
 
@@ -78,7 +110,6 @@ export const SectionTop: React.FC<IProps> = ({
   return (
     <TopSectionSC background={background || ""} isHome={isHome}>
       <WrapperContent>
-        <LogoAndMenu />
         {isHome && claim && (
           <Title>
             <MarkdownContainer content={claim} />
@@ -92,18 +123,15 @@ export const SectionTop: React.FC<IProps> = ({
 
 const SectionTopShortContainer = styled.div`
   position: relative;
-  padding-bottom: ${spacings.space80}px;
+  /* padding-bottom: ${spacings.space80}px; */
+  padding-bottom: 110px;
   ${mq.b768} {
-    padding-bottom: ${spacings.space120}px;
+    padding-bottom: 150px;
   }
 `
 
 export const SectionTopShort: React.FC = () => {
-  return (
-    <SectionTopShortContainer>
-      <LogoAndMenu />
-    </SectionTopShortContainer>
-  )
+  return <SectionTopShortContainer />
 }
 
 const SectionContainerBook = styled.div`
@@ -114,10 +142,7 @@ const SectionContainerBook = styled.div`
 export const SectionTopBooks: React.FC = ({ children }) => {
   return (
     <SectionContainerBook>
-      <WrapperContent>
-        <LogoAndMenu />
-        {children}
-      </WrapperContent>
+      <WrapperContent>{children}</WrapperContent>
     </SectionContainerBook>
   )
 }

@@ -7,6 +7,7 @@ import { Carousel } from "./carousel/carousel"
 import { urls, spacings, mq } from "../../constants"
 import { grid12 } from "../../styles"
 
+
 const Wrapper = styled.div`
   position: relative;
   padding-top: 98px;

@@ -76,7 +76,7 @@ const CloseContainer = styled("div")`
   z-index: 3;
   position: fixed;
   right: ${spacings.space20}px;
-  top: ${spacings.space30 + 5}px;
+  /* top: ${spacings.space30 + 5}px; */
   cursor: pointer;
 `
 

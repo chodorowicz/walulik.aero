@@ -14,10 +14,11 @@ import { colors, fontSizes, fontWeight, urls, mq } from "../../constants"
 import { grid12, paddingSides0 } from "../../styles"
 
 const StyledWrapperContent = styled(WrapperContent)`
-  padding-top: 120px;
+  padding-top: 150px;
   padding-bottom: 120px;
   ${paddingSides0};
   ${mq.b768} {
+    padding-top: 180px;
     ${paddingSides0};
   }
 `
