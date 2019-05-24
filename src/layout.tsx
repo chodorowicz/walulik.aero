@@ -15,6 +15,12 @@ export const Layout: React.FC = ({ children }) => (
           background-color: ${colors.whiteOff};
           color: ${colors.darkBlue};
         }
+        a {
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       `}
     />
     <Helmet>
