@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import posed, { PoseGroup } from "react-pose"
 
 import { CarouselCounter } from "./carousel-counter"
 import { CarouselArrows } from "./carousel-arrows"
@@ -37,9 +38,18 @@ const CarouselArrowsContainer = styled.div`
   display: flex;
   ${mq.b768} {
     margin-bottom: 70px;
-    flex-direction: column;  
+    flex-direction: column;
   }
 `
+
+const BookPose = posed.div({
+  enter: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } },
+  exit: {
+    x: ({ animateDirection }) => (animateDirection === "right" ? 100 : -100),
+    opacity: 0,
+    transition: { type: "spring", stiffness: 100 },
+  },
+})
 
 const Books = styled.div`
   display: grid;
@@ -52,7 +62,7 @@ const Books = styled.div`
 `
 
 const BookContainer = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: center;
   position: relative;
   right: -11%;
@@ -74,14 +84,17 @@ function useWindowDimensions() {
       })
     }
     window.addEventListener("resize", handleResize)
-    return () => { window.removeEventListener("resize", handleResize) }
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
   }, [])
-  return dimensions.width;
+  return dimensions.width
 }
 
 export const Carousel: React.FC = () => {
   const [page, setPage] = useState(0)
-  const dimensions = useWindowDimensions();
+  const [animateDirection, setAnimateDirection] = useState("next")
+  const dimensions = useWindowDimensions()
 
   const result = useStaticQuery(graphql`
     query BooksQuery2 {
@@ -111,15 +124,21 @@ export const Carousel: React.FC = () => {
     }
   `)
 
-  const ITEMS_PER_PAGE = dimensions >= breaksMap.b768 ? 3 : 1;
+  const ITEMS_PER_PAGE = dimensions >= breaksMap.b768 ? 3 : 1
   const { edges } = result.books
   const numberOfPages = Math.ceil(edges.length / ITEMS_PER_PAGE)
   const modNumberOfPages = modulo(numberOfPages)
   if (modNumberOfPages > page) {
-    setPage(modNumberOfPages);
+    setPage(modNumberOfPages)
   }
-  const nextPage = () => setPage(modNumberOfPages(page + 1))
-  const prevPage = () => setPage(modNumberOfPages(page - 1))
+  const nextPage = () => { 
+    setPage(modNumberOfPages(page + 1))
+    setAnimateDirection("right")
+  }
+  const prevPage = () => {
+    setPage(modNumberOfPages(page - 1))
+    setAnimateDirection("left")
+  }
 
   const indexOfFirstItem = page * ITEMS_PER_PAGE
   const edgesToDisplay = result.books.edges.slice(
@@ -128,27 +147,29 @@ export const Carousel: React.FC = () => {
   )
 
   return (
-    <div>
-      <CarouselMain>
-        <NavigationSC>
-          <CarouselArrowsContainer>
-            <CarouselArrows next={nextPage} prev={prevPage} />
-          </CarouselArrowsContainer>
-          <CarouselCounter current={page + 1} max={numberOfPages} />
-        </NavigationSC>
-        <Books>
+    <CarouselMain>
+      <NavigationSC>
+        <CarouselArrowsContainer>
+          <CarouselArrows next={nextPage} prev={prevPage} />
+        </CarouselArrowsContainer>
+        <CarouselCounter current={page + 1} max={numberOfPages} />
+      </NavigationSC>
+      <Books>
+        <PoseGroup flipMove={true} animateDirection={animateDirection}>
           {edgesToDisplay.map(edge => (
-            <BookContainer>
-              {/* <Img fixed={edge.node.frontmatter.image.childImageSharp.fixed} /> */}
-              <Link to={edge.node.fields.slug}>
-                <img
-                  src={edge.node.frontmatter.image.childImageSharp.fixed.src}
-                />
-              </Link>
-            </BookContainer>
+            <BookPose key={edge.node.fields.slug}>
+              <BookContainer key={edge.node.fields.slug}>
+                {/* <Img fixed={edge.node.frontmatter.image.childImageSharp.fixed} /> */}
+                <Link to={edge.node.fields.slug}>
+                  <img
+                    src={edge.node.frontmatter.image.childImageSharp.fixed.src}
+                  />
+                </Link>
+              </BookContainer>
+            </BookPose>
           ))}
-        </Books>
-      </CarouselMain>
-    </div>
+        </PoseGroup>
+      </Books>
+    </CarouselMain>
   )
 }
