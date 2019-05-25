@@ -7,6 +7,7 @@ import {
   WrapperContent,
   MarkdownContainer,
   LinkButton,
+  AnimatedLink,
 } from "../../components"
 import LineLeft from "../../images/line-left.inline.svg"
 import { CarouselArrowsLinks } from "../home/carousel/carousel-arrows"
@@ -121,10 +122,7 @@ export const BookTop: React.FC<IProps> = ({
         <NavigationWrapper>
           <BookNavigation>
             <div>
-              <BackButton to={urls.books}>
-                <LineLeft />
-                <ButtonInnerLeft>Books</ButtonInnerLeft>
-              </BackButton>
+              <AnimatedLink to={urls.books} direction="left">Books</AnimatedLink>
             </div>
             <ArrowsContainer>
               <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />

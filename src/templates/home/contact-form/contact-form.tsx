@@ -2,8 +2,7 @@ import * as React from "react"
 import styled from "@emotion/styled"
 
 import { colors, fontSizes, fontFamily, spacings, mq } from "../../../constants"
-import { Button, ButtonInner } from "../../../components"
-import Line from "../../../images/line.inline.svg"
+import { AnimatedButtonRight } from "../../../components"
 import { paddingSides20 } from "../../../styles";
 
 const Container = styled.div`
@@ -96,10 +95,7 @@ export const ContactForm: React.FC = () => {
           }}
         />
         <ButtonSectionSC>
-          <Button>
-            <ButtonInner>Send</ButtonInner>
-            <Line />
-          </Button>
+          <AnimatedButtonRight>Send</AnimatedButtonRight>
         </ButtonSectionSC>
       </form>
     </Container>

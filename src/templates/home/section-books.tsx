@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { LinkButton, ButtonInner, SectionTitle, WrapperContent } from "../../components"
-import Line from "../../images/line.inline.svg"
+import { SectionTitle, WrapperContent, AnimatedLink } from "../../components"
 import { Carousel } from "./carousel/carousel"
 import { urls, spacings, mq } from "../../constants"
 import { grid12 } from "../../styles"
@@ -50,10 +49,7 @@ export const SectionBooks: React.FC<any> = () => {
           <Carousel />
         </CarouselWrapper>
         <BottomSection>
-          <LinkButton to={urls.books}>
-            <ButtonInner>see all books</ButtonInner>
-            <Line />
-          </LinkButton>
+          <AnimatedLink to={urls.books}>see all books</AnimatedLink>
         </BottomSection>
       </WrapperContentSC>
     </Wrapper>

@@ -6,11 +6,9 @@ import styled from "@emotion/styled"
 import {
   Title,
   Paragraph,
-  Button,
-  ButtonInner,
-  WrapperContentNoMobilePadding
+  WrapperContentNoMobilePadding,
+  AnimatedButtonRight
 } from "../../components"
-import Line from "../../images/line.inline.svg"
 import { gradient, grid12, paddingSides20 } from "../../styles"
 import { breakPoints, spacings, mq } from "../../constants"
 
@@ -92,10 +90,7 @@ export const SectonPhotoText: React.FC<any> = () => {
               of the Warsaw Bar Association.
             </Paragraph>
             <ButtonContainerSC>
-              <Button>
-                <ButtonInner>learn more</ButtonInner>
-                <Line />
-              </Button>
+              <AnimatedButtonRight>learn more</AnimatedButtonRight>
             </ButtonContainerSC>
           </TextContent>
         </Wrapper>
