@@ -19,7 +19,6 @@ const CircleWithIcon = styled.button`
   &:hover {
     background-color: ${colors.accent};
     path, line {
-      fill: ${colors.white};
       stroke: ${colors.white};
     }
   }
