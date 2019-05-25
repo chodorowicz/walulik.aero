@@ -23,6 +23,7 @@ const ShareLogosContainer = styled.div`
     grid-template-rows: repeat(3, 1fr);
     grid-column: 1 / span 3;
   }
+  
 `;
 
 export const Share: React.FC<{ className?: string }> = ({ className }) => {

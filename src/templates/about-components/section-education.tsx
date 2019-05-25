@@ -1,15 +1,16 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { colors, fontSizes, mq, spacings } from "../../constants"
+import { colors, fontSizes, mq, urls } from "../../constants"
 import {
   Button,
   ButtonInner,
   Paragraph,
   WrapperContent,
   SectionTitle,
+  AnimatedLink
 } from "../../components"
-import { grid12, paddingSides20, paddingSides0 } from "../../styles"
+import { grid12, paddingSides20 } from "../../styles"
 import Line from "../../images/line.inline.svg"
 import ImageEducation from "../../images/about/education@2x.png"
 
@@ -112,7 +113,7 @@ export const SectionEducation: React.FC = () => (
               Jan can be contacted by email or on social media. Jan speaks
               English, Polish, German and Russian.
             </Paragraph>
-            <Button><ButtonInner>Contact Jan</ButtonInner><Line /></Button>
+            <AnimatedLink to={urls.contact}>Contact Jan</AnimatedLink>
           </ContactBoxInner>
         </ContactBox>
       </ColumnText>

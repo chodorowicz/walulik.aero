@@ -40,7 +40,7 @@ export const Book: React.FC<IBooks> = ({ source, title, publisher, url, classNam
       <Link to={url}><BookImage src={source} /></Link>
       <Info>
         <strong>{title}</strong><br />
-        {publisher}
+        Publisher: {publisher}
       </Info>
     </BookContainer>
   )
