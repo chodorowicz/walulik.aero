@@ -5,6 +5,7 @@ import { Layout } from "../layout"
 import { SectionTopBooks } from "../components"
 import { BookTop } from "./book/book-top"
 import { BookContent } from "./book/book-content"
+import { BookExtra } from "./book/book-extra"
 
 interface IProps {
   data: {
@@ -19,7 +20,7 @@ interface IProps {
 const BookPage: React.FC<IProps> = props => {
   const { data, pageContext } = props
   const { html, frontmatter } = props.data.markdownRemark
-  const { image, text, title, extraBadge } = frontmatter
+  const { image, text, title, extraBadge, extraBg, extraContentRight, extraContentLeft } = frontmatter
   const { next, prev } = pageContext
   const nextLink = next && next.fields.slug
   const prevLink = prev && prev.fields.slug
@@ -37,6 +38,7 @@ const BookPage: React.FC<IProps> = props => {
         />
       </SectionTopBooks>
       <BookContent html={html} />
+      {extraBg && <BookExtra extraBg={extraBg} extraContentRight={extraContentRight} extraContentLeft={extraContentLeft}/>}
     </Layout>
   )
 }
@@ -61,6 +63,15 @@ export const pageQuery = graphql`
         extraBadge {
           childImageSharp {
             fluid(maxWidth: 200, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        extraContentRight
+        extraContentLeft
+        extraBg {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

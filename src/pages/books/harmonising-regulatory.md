@@ -9,6 +9,10 @@ text: |-
   Jan Walulik (ed.). Contributors: Shadi A. Alshdaifat, Elena Carpanelli, Paul S. Dempsey, Piotr P. Dziubak, Elmar M. Giemulla, Peter P.C. Haanappel, Agnieszka Kunert-Diallo, Bashar H. Malkawi, Pablo Mendes de Leon, Małgorzata Polkowska, Andrea Trimarchi, Frans G. von der Dunk, Jan Walulik, Paweł Zagrajek, Marek Żylicz.
 publisher: Routledge
 extraBadge: /assets/airline-regulatory.png
+extraContentRight: |-
+  In 2017, I invited a group of renowned aviation and aerospace experts to the Airline Regulatory and Antitrust Conference at the Centre for Antitrust and Regulatory Studies, Faculty of Management, University of Warsaw, Poland. Our approach was to discuss and reconcile distinct perspectives on air law issues and provide possibly unbiased solutions, which could serve as base for future harmonisation of international arrangements. Harmonising Regulatory and Antitrust Regimes for International Air Transport presents the results of this vivid debate. 
+extraContentLeft: |-
+extraBg: /assets/harmonising-extra-bg.jpg
 ---
 
 ## Harmonising Regulatory and Antitrust Regimes for International Air Transport
@@ -22,7 +26,3 @@ This is followed by a debate on international harmonisation of air policy and ec
 The discussion extends to competition and possible conflicts between air transport law and other legal regimes, including space law, environmental law (carbon offsetting schemes) and labour law, which are relevant to aviation and growing aerospace activities. The study also contributes to some specific regulatory problems, such as possible regulation of space tourism under air law, airline ownership and control, balance between aviation safety and airline liberalisation, development of regional liberalisation initiatives and solutions to eliminate air connectivity gaps.
 
 The unique feature of the book is that it reconciles distinct perspectives on these issues presented by renowned aviation and aerospace experts who represent world’s key air transport markets and air law academic centres.
-
-
-
-, 
