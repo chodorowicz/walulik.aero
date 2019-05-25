@@ -17,14 +17,15 @@ const Social = styled(Share)`
   margin-bottom: 20px;
   ${mq.b768} {
     margin-bottom: unset;
-    grid-column: 3 / span 1;
+    grid-column: 11  / span 1;
   }
 `
 
 const Content = styled.div`
 grid-column: 1 / span 12;
 ${mq.b768} {
-  grid-column: 4 / span 7;
+  grid-row: 1;
+  grid-column: 2 / span 8;
 }
 `
 
