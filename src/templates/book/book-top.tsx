@@ -109,12 +109,20 @@ interface IProps {
   prevLink: string
 }
 
+const ExtraBadgeSC = styled.div`
+  max-width: 100px;
+  img {
+    max-width: 100%;
+  }
+`
+
 export const BookTop: React.FC<IProps> = ({
   fluid,
   text,
   title,
   nextLink,
   prevLink,
+  extraBadge,
 }) => {
   return (
     <StyledWrapperContent>
@@ -135,6 +143,7 @@ export const BookTop: React.FC<IProps> = ({
           </BookContainerInner>
         </BookContainer>
         <InfoContainer>
+          {extraBadge && <ExtraBadgeSC><img src={extraBadge.childImageSharp.fluid.src} /></ExtraBadgeSC>}
           <TextTitle>{title}</TextTitle>
           <MarkdownContainer content={text} />
         </InfoContainer>

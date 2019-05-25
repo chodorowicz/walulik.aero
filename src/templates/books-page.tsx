@@ -42,7 +42,14 @@ export const booksListFields = graphql`
           publisher
           image {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
+              fluid(maxWidth: 1048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          extraBadge {
+            childImageSharp {
+              fluid(maxWidth: 200, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

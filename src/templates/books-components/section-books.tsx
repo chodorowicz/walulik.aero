@@ -65,6 +65,7 @@ export const SectionBooks: React.FC<IProps> = ({ books, text, title }) => (
             title={book.node.frontmatter.title}
             publisher={book.node.frontmatter.publisher}
             url={book.node.fields.slug}
+            extraBadge={book.node.frontmatter.extraBadge}
           />
         ))}
       </BooksWrapper>

@@ -9,7 +9,7 @@
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "npm run clean && npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "grapqhl": "graphql-codegen --config codegen.yml"

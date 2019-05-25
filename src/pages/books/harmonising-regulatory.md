@@ -8,6 +8,7 @@ text: |-
   \
   Jan Walulik (ed.). Contributors: Shadi A. Alshdaifat, Elena Carpanelli, Paul S. Dempsey, Piotr P. Dziubak, Elmar M. Giemulla, Peter P.C. Haanappel, Agnieszka Kunert-Diallo, Bashar H. Malkawi, Pablo Mendes de Leon, Małgorzata Polkowska, Andrea Trimarchi, Frans G. von der Dunk, Jan Walulik, Paweł Zagrajek, Marek Żylicz.
 publisher: Routledge
+extraBadge: /assets/airline-regulatory.png
 ---
 
 ## Harmonising Regulatory and Antitrust Regimes for International Air Transport

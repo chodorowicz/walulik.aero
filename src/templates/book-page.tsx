@@ -19,7 +19,7 @@ interface IProps {
 const BookPage: React.FC<IProps> = props => {
   const { data, pageContext } = props
   const { html, frontmatter } = props.data.markdownRemark
-  const { image, text, title } = frontmatter
+  const { image, text, title, extraBadge } = frontmatter
   const { next, prev } = pageContext
   const nextLink = next && next.fields.slug
   const prevLink = prev && prev.fields.slug
@@ -29,6 +29,7 @@ const BookPage: React.FC<IProps> = props => {
       <SectionTopBooks>
         <BookTop
           fluid={image.childImageSharp.fluid}
+          extraBadge={extraBadge}
           text={text}
           title={title}
           nextLink={nextLink}
@@ -52,7 +53,14 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
+            fluid(maxWidth: 1048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        extraBadge {
+          childImageSharp {
+            fluid(maxWidth: 200, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

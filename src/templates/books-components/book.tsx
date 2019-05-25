@@ -10,9 +10,11 @@ interface IBooks {
   publisher: string
   url: string;
   className?: string;
+  extraBadge?: any;
 }
 
 const BookContainer = styled.div`
+  position: relative;
   margin-bottom: 30px;
   margin-top: 30px;
   ${mq.b768} {
@@ -34,9 +36,21 @@ const Info = styled.div`
   text-align: center;
 `
 
-export const Book: React.FC<IBooks> = ({ source, title, publisher, url, className }) => {
+const ExtraBadgeSC = styled.div`
+  max-width: 95px;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  z-index: 1;
+  img {
+    max-width: 100%;
+  }
+`
+
+export const Book: React.FC<IBooks> = ({ source, title, publisher, url, className, extraBadge }) => {
   return (
     <BookContainer className={className}>
+      {extraBadge && <ExtraBadgeSC><img src={extraBadge.childImageSharp.fluid.src} /></ExtraBadgeSC>}
       <Link to={url}><BookImage src={source} /></Link>
       <Info>
         <strong>{title}</strong><br />
