@@ -48,6 +48,15 @@ module.exports = {
               destinationDir: 'static',
             },
           },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `100`,
+              icon: false,
+              maintainCase: false,
+              removeAccents: true,
+            },
+          },
         ],
       },
     },
