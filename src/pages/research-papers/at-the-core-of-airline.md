@@ -1,7 +1,7 @@
 ---
 title: "At the core of airline foreign investment restrictions: A study of 121 countries"
-where: "([in:] M. Bernatt, A. Jurkowska-Gomułka, M. Namysłowska, Anna Piszcz (eds.), Challenges to Competition Law and Market Regulation. Jubilee Book Dedicated to Professor Tadeusz Skoczny, Warsaw: C.H. Beck, 2017, pp. 481–490)"
-category: Airline finance
+where: "(Transport Policy, 2016, Vol. 49, pp. 234–251)"
+category: Economic regulation
 templateKey: research-paper
 ---
 

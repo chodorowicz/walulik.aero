@@ -52,6 +52,7 @@ const ContentSC = styled.div`
   padding-top: ${spacings.space60}px;
   grid-column: 1 / span 12;
   ${mq.b768} {
+    padding-top: 0;
     grid-column: 5 / span 7;
   }
 `
