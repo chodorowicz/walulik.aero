@@ -4,8 +4,9 @@ import slugify from "@sindresorhus/slugify"
 
 import { LinkButton } from "../../components"
 import { IPaper } from "MyTypes"
-import { colors, fontSizes, fontWeight, fontFamily, mq, spacings } from "../../constants"
+import { colors, fontSizes, fontWeight, mq, spacings } from "../../constants"
 import { grid12, paddingSides20, paddingSides0 } from "../../styles"
+import posed, { PoseGroup } from "react-pose"
 
 const Grid = styled.div`
   padding-top: 80px;
@@ -58,10 +59,9 @@ const ContentSC = styled.div`
 `
 
 const PaperSC = styled.div`
-  &:not(:last-child) {
-    border-bottom: 1px solid ${colors.grey};
-    padding-bottom: 30px;
-  }
+  border-bottom: 1px solid ${colors.grey};
+  margin-bottom: 30px;
+  padding-bottom: 30px;
 `
 
 const Title = styled.h2`
@@ -86,6 +86,13 @@ const StyledLinkButton = styled(LinkButton)`
   padding-top: 8px;
   padding-bottom: 8px;
 `
+
+const PosedPaper = posed.div({
+  enter: { x: 0, opacity: 1 },
+  exit: { x: 150, opacity: 0 },
+})
+
+const PosedPaperSC = styled(PosedPaper)``
 
 export const PapersList: React.FC<IProps> = ({
   categories,
@@ -121,17 +128,21 @@ export const PapersList: React.FC<IProps> = ({
         </NavigationInner>
       </NavigationContainer>
       <ContentSC>
-        {filteredPapers.map(({ node }) => (
-          <PaperSC>
-            <Title>{node.frontmatter.title}</Title>
-            <Where>{node.frontmatter.where}</Where>
-            <ButtonAreaSC>
-              <StyledLinkButton to={node.fields.slug}>
-                See More
-              </StyledLinkButton>
-            </ButtonAreaSC>
-          </PaperSC>
-        ))}
+        <PoseGroup>
+          {filteredPapers.map(({ node }) => (
+            <PosedPaperSC key={node.frontmatter.title}>
+              <PaperSC>
+                <Title>{node.frontmatter.title}</Title>
+                <Where>{node.frontmatter.where}</Where>
+                <ButtonAreaSC>
+                  <StyledLinkButton to={node.fields.slug}>
+                    See More
+                  </StyledLinkButton>
+                </ButtonAreaSC>
+              </PaperSC>
+            </PosedPaperSC>
+          ))}
+        </PoseGroup>
       </ContentSC>
     </Grid>
   )
