@@ -37,6 +37,7 @@ export const urls = {
   about: "/about",
   books: "/books",
   researchPapers: "/research-papers",
+  researchPapersList: "/research-papers#list",
   contact: "/#contact",
   privacyPolicy: "/privacy-policy",
 }

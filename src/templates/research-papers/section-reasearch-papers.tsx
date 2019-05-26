@@ -38,7 +38,7 @@ export const SectionResearchPapers: React.FC<IProps> = ({
   <Wrapper>
     <WrapperContentNoMobilePadding>
       <StyledPageCallout>
-        <Title color={colors.white} style={{ marginBottom: "100px" }}>
+        <Title color={colors.white} style={{ marginBottom: "100px" }} name="list">
           {title}
         </Title>
         <StyledCalloutContent>

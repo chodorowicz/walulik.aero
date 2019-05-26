@@ -67,7 +67,7 @@ const LinkedPaperBox: React.FC<{ section: string }> = ({
   section,
 }) => {
   return (
-    <LinkSC to={`/${urls.researchPapers}?section=${slugify(section)}`}>
+    <LinkSC to={`/${urls.researchPapers}?section=${slugify(section)}#list`}>
       <PaperBoxSC text={section}>
         {children}
       </PaperBoxSC>
@@ -95,7 +95,7 @@ export const SectionPapers: React.FC<any> = () => {
           <LinkedPaperBox section="Airline finance">
           <IconAirlineFinance />
           </LinkedPaperBox>
-          <LinkedPaperBox section="Safety and security">
+          <LinkedPaperBox section="Aviation safety and security">
             <IconSecurity />
           </LinkedPaperBox>
           <LinkedPaperBox section="Aviation criminal law">
