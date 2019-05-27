@@ -40,18 +40,22 @@ const LinkSC = styled(Link)`
   }
 `
 
+const transitionPose = {
+  duration: 300,
+}
+
 const ArrowContainerLeft = posed.div({
-  hidden: { opacity: 1, x: -60 },
-  visible: { opacity: 1, x: -10 },
+  hidden: { x: -60, transition: transitionPose,},
+  visible: { x: -10, transition: transitionPose,},
 })
 
 const ButtonPose = posed.div({
-  hidden: { opacity: 1, x: 0 },
-  visible: { opacity: 1, x: 30 },
+  hidden: { x: 0, transition: transitionPose,},
+  visible: { x: 30, transition: transitionPose,},
 })
 const ArrowContainer = posed.div({
-  hidden: { opacity: 1, x: 100 },
-  visible: { opacity: 1, x: 0 },
+  hidden: { x: 100, transition: transitionPose,},
+  visible: { x: 0, transition: transitionPose,},
 })
 
 export const AnimatedButtonRight: React.FC<{ className?: string }> = ({
@@ -82,17 +86,18 @@ export const AnimatedButtonRight: React.FC<{ className?: string }> = ({
 }
 
 const ArrowContainerAppear = posed.div({
-  hidden: { opacity: 1, x: 60 },
-  visible: { opacity: 1, x: -10 },
+  hidden: { opacity: 1, x: 60, transition: transitionPose,},
+  visible: { opacity: 1, x: -10, transition: transitionPose,},
+  
 })
 
 const ButtonPoseRight = posed.div({
-  hidden: { opacity: 1, x: 0 },
-  visible: { opacity: 1, x: -30 },
+  hidden: { opacity: 1, x: 0 , transition: transitionPose,},
+  visible: { opacity: 1, x: -30, transition: transitionPose, },
 })
 const ArrowContainerRight = posed.div({
-  hidden: { opacity: 1, x: -100 },
-  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 1, x: -100, transition: transitionPose, },
+  visible: { opacity: 1, x: 0, transition: transitionPose, },
 })
 
 export const AnimatedButtonLeft: React.FC<{ className?: string }> = ({

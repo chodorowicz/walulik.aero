@@ -1,10 +1,11 @@
 import styled from "@emotion/styled"
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
+import posed from "react-pose"
 
 import { colors, mq, spacings } from "../../../constants"
-import Line from "../../../images/line.inline.svg";
-import LineLeft from "../../../images/line-left.inline.svg";
+import Line from "../../../images/line.inline.svg"
+import LineLeft from "../../../images/line-left.inline.svg"
 
 const CircleWithIcon = styled.button`
   width: 69px;
@@ -16,18 +17,21 @@ const CircleWithIcon = styled.button`
   align-items: center;
   background-color: transparent;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
   &:hover {
     background-color: ${colors.accent};
-    path, line {
+    path,
+    line {
       stroke: ${colors.white};
     }
   }
   margin-right: ${spacings.space20}px;
   ${mq.b768} {
-   margin-right: 0; 
-   margin-bottom: ${spacings.space20}px;
+    margin-right: 0;
+    margin-bottom: ${spacings.space20}px;
   }
-`;
+`
 
 const ArrowsContainer = styled.div`
   display: flex;
@@ -36,40 +40,108 @@ const ArrowsContainer = styled.div`
   }
 `
 
-const CircleWithIconTop = styled(CircleWithIcon)`
+interface IProps {
+  prev: () => void
+  next: () => void
+}
+
+interface IPropsLinks {
+  prevLink?: string
+  nextLink?: string
+}
+
+const transitionPose = {
+  duration: 300,
+}
+
+const AnimatedArrowRight = posed.div({
+  active: { x: 60, transition: transitionPose },
+  default: { x: 0, transition: transitionPose },
+})
+const AnimatedArrowAppear = posed.div({
+  hidden: { x: -160, transition: transitionPose },
+  visible: { x: 15, transition: transitionPose },
+})
+
+const AnimatedArrowAppearSC = styled(AnimatedArrowAppear)`
+  position: absolute;
+  left: 0;
+`
+
+const AnimatedCircleRight: React.FC<{ onClick?: any }> = props => {
+  const [isHover, setHover] = useState(false)
+  return (
+    <CircleWithIcon
+      {...props}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <AnimatedArrowAppearSC pose={isHover ? "visible" : "hidden"}>
+        <Line />
+      </AnimatedArrowAppearSC>
+      <AnimatedArrowRight pose={isHover ? "active" : "default"}>
+        <Line />
+      </AnimatedArrowRight>
+    </CircleWithIcon>
+  )
+}
+
+const AnimatedArrowLeft = posed.div({
+  active: { x: -60, transition: transitionPose },
+  default: { x: 0, transition: transitionPose },
+})
+const AnimatedArrowAppear2 = posed.div({
+  hidden: { x: 160, transition: transitionPose },
+  visible: { x: 15, transition: transitionPose },
+})
+
+const AnimatedArrowAppearSC2 = styled(AnimatedArrowAppear2)`
+  position: absolute;
+  left: 0;
+`
+
+const AnimatedCircleLeft: React.FC<{ onClick?: any }> = props => {
+  const [isHover, setHover] = useState(false)
+  return (
+    <CircleWithIcon
+      {...props}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <AnimatedArrowAppearSC2 pose={isHover ? "visible" : "hidden"}>
+        <LineLeft />
+      </AnimatedArrowAppearSC2>
+      <AnimatedArrowLeft pose={isHover ? "active" : "default"}>
+        <LineLeft />
+      </AnimatedArrowLeft>
+    </CircleWithIcon>
+  )
+}
+
+const CircleWithIconTop = styled(AnimatedCircleRight)`
   order: 2;
   ${mq.b768} {
     margin-bottom: 30px;
   }
-`;
-
-const CircleWithIconLink = CircleWithIcon.withComponent(Link);
-const CircleWithIconLinkTop = CircleWithIconTop.withComponent(Link);
-
-interface IProps {
-  prev: () => void;
-  next: () => void;
-}
-
-interface IPropsLinks {
-  prevLink?: string;
-  nextLink?: string;
-}
+`
 
 export const CarouselArrows: React.FC<IProps> = ({ next, prev }) => {
   return (
     <ArrowsContainer>
-      <CircleWithIconTop onClick={next}><Line /></CircleWithIconTop>
-      <CircleWithIcon onClick={prev}><LineLeft /></CircleWithIcon>
+      <CircleWithIconTop onClick={next} />
+      <AnimatedCircleLeft onClick={prev} />
     </ArrowsContainer>
   )
 }
 
-export const CarouselArrowsLinks: React.FC<IPropsLinks> = ({ nextLink = "", prevLink = "" }) => {
+export const CarouselArrowsLinks: React.FC<IPropsLinks> = ({
+  nextLink = "",
+  prevLink = "",
+}) => {
   return (
     <ArrowsContainer>
-      <CircleWithIconLinkTop to={nextLink}><Line /></CircleWithIconLinkTop>
-      <CircleWithIconLink to={prevLink}><LineLeft /></CircleWithIconLink>
+      <Link to={nextLink}><AnimatedCircleLeft /></Link>
+      <Link to={prevLink}><CircleWithIconTop /></Link>
     </ArrowsContainer>
   )
 }

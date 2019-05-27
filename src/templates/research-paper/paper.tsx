@@ -3,12 +3,10 @@ import styled from "@emotion/styled"
 import MediaQuery from "react-responsive"
 
 import {
-  LinkButton,
-  ButtonInnerLeft,
   StyledContent,
   Share,
+  AnimatedLink,
 } from "../../components"
-import LineLeft from "../../images/line-left.inline.svg"
 import { urls, fontSizes, colors, mq, breaksMap, spacings } from "../../constants"
 import { CarouselArrowsLinks } from "../home/carousel/carousel-arrows"
 import { grid12 } from "../../styles"
@@ -106,10 +104,7 @@ export const Paper: React.FC<IProps> = ({
     <Wrapper>
       <Navigation>
         <NavigationInner>
-          <LinkButton to={urls.researchPapers}>
-            <LineLeft />
-            <ButtonInnerLeft>Research Papers</ButtonInnerLeft>
-          </LinkButton>
+          <AnimatedLink to={urls.researchPapers} direction="left">Research Papers</AnimatedLink>
           <MediaQuery minDeviceWidth={breaksMap.b768}>
             <ArrowsContainer>
               <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
