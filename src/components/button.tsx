@@ -144,7 +144,9 @@ export const AnimatedLink: React.FC<{ to: string; direction?: string }> = ({
 }
 
 export const LinkButton = styled(Button.withComponent(Link))`
-  text-decoration: none;
+  &, &:hover {
+    text-decoration: none;
+  }
 `
 
 export const ButtonInner = styled.span`
