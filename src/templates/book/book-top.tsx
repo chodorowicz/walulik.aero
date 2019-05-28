@@ -3,13 +3,10 @@ import styled from "@emotion/styled"
 import Img from "gatsby-image"
 
 import {
-  ButtonInnerLeft,
   WrapperContent,
   MarkdownContainer,
-  LinkButton,
   AnimatedLink,
 } from "../../components"
-import LineLeft from "../../images/line-left.inline.svg"
 import { CarouselArrowsLinks } from "../home/carousel/carousel-arrows"
 import { colors, fontSizes, fontWeight, urls, mq } from "../../constants"
 import { grid12, paddingSides0 } from "../../styles"
@@ -50,12 +47,6 @@ const BookNavigation = styled.div`
     margin-top: unset;
     display: inline-flex;
     flex-direction: column;
-  }
-`
-
-const BackButton = styled(LinkButton)`
-  ${mq.b768} { 
-    margin-top: 20px;
   }
 `
 

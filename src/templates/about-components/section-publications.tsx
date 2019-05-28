@@ -4,16 +4,12 @@ import styled from "@emotion/styled"
 import { colors, mq, spacings, urls } from "../../constants"
 import { grid12 } from "../../styles"
 import {
-  Button,
-  ButtonInner,
-  LinkButton,
+  AnimatedLink,
   Title,
   Paragraph,
   WrapperContent,
 } from "../../components"
 import IkarCover from "../../images/about/cover_ikar@2x.png"
-import Line from "../../images/line.inline.svg"
-import { Link } from "gatsby"
 
 const Wrapper = styled.div`
   background-color: ${colors.darkBlue};
@@ -77,9 +73,7 @@ export const SectionPublications: React.FC = () => (
           <a href="#">journals</a>.
         </Paragraph>
         <ContainerButton>
-            <LinkButton to={urls.researchPapers}>
-              <ButtonInner>See my research papers</ButtonInner> <Line />
-            </LinkButton>
+          <AnimatedLink to={urls.researchPapers}>See my research papers</AnimatedLink>
         </ContainerButton>
       </WrapperText>
       <WrapperImage>
