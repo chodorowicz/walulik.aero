@@ -14,6 +14,7 @@ import {
 } from "../constants"
 import VegeBurger from "../images/vege-burger.svg"
 import Close from "../images/close.svg"
+import LogoJan from "../images/logo-jan.svg"
 import LogoJanSmall from "../images/logo-small.svg"
 
 const MenuWrapper = styled.nav`
@@ -62,9 +63,12 @@ const MobileMenu = styled.div`
   }
 `
 
-const LogoJanSmallSC = styled(LogoJanSmall)`
+const topPadding = 30;
+
+const LogoJanSmallSC = styled.div`
   z-index: 3;
   position: fixed;
+  top: ${topPadding}px;
   left: ${spacings.space20}px;
 `
 
@@ -75,9 +79,14 @@ const VegeBurgerContainer = styled.div`
 const CloseContainer = styled("div")`
   z-index: 3;
   position: fixed;
+  top: ${topPadding}px;
   right: ${spacings.space20}px;
   /* top: ${spacings.space30 + 5}px; */
   cursor: pointer;
+`
+
+const HomePageTitle = styled.h2`
+  margin: 0;
 `
 
 const commonLinkProps = {
@@ -108,13 +117,28 @@ export const Menu: React.FC = () => {
   const [isMenuOpened, setMenuOpened] = React.useState(false)
   return (
     <>
+      {!isMenuOpened && (
+        <HomePageTitle>
+          <Link to={urls.home}>
+            <MediaQuery minDeviceWidth={breakPoints.b768}>
+              {matches => (matches ? <LogoJan /> : <LogoJanSmall />)}
+            </MediaQuery>
+          </Link>
+        </HomePageTitle>
+      )}
       <MediaQuery maxDeviceWidth={breakPoints.b768}>
-        <VegeBurgerContainer>
-          <VegeBurger onClick={() => setMenuOpened(true)} />
-        </VegeBurgerContainer>
+        {!isMenuOpened && (
+          <VegeBurgerContainer>
+            <VegeBurger onClick={() => setMenuOpened(true)} />
+          </VegeBurgerContainer>
+        )}
         {isMenuOpened && (
           <>
-            <LogoJanSmallSC />
+            <LogoJanSmallSC>
+              <Link to={urls.home}>
+                <LogoJanSmall />
+              </Link>
+            </LogoJanSmallSC>
             <CloseContainer
               onClick={() => {
                 setMenuOpened(false)
@@ -124,7 +148,11 @@ export const Menu: React.FC = () => {
             </CloseContainer>
           </>
         )}
-        {isMenuOpened && <MobileMenu><Links /></MobileMenu>}
+        {isMenuOpened && (
+          <MobileMenu>
+            <Links />
+          </MobileMenu>
+        )}
       </MediaQuery>
       <MediaQuery minDeviceWidth={breakPoints.b768}>
         <MenuWrapper>

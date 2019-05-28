@@ -1,35 +1,25 @@
 import * as React from "react"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
-import MediaQuery from "react-responsive"
 import { useWindowSize, useWindowScrollPosition} from "../utils";
 
 import {
   colors,
   fontSizes,
   fontFamily,
-  urls,
   mq,
   spacings,
-  breakPoints,
   breaksMap,
 } from "../constants"
 import { Menu } from "../layout/menu"
-import { WrapperContent, WrapperContentNoMobilePadding } from "./wrappers"
+import { WrapperContent } from "./wrappers"
 import { TopSectionBackground } from "./top-section-background"
 import { MarkdownContainer } from "../components"
-import LogoJan from "../images/logo-jan.svg"
-import LogoJanSmall from "../images/logo-small.svg"
 
 interface IProps {
   background?: string
   isHome: boolean
   claim?: string
 }
-
-const HomePageTitle = styled.h2`
-  margin: 0;
-`
 
 const Title = styled.h1`
   font-size: ${fontSizes.xxLarge}px;
@@ -87,13 +77,6 @@ export const LogoAndMenu: React.FC = () => {
     <WrapperSticky isSticky={isSticky} offset={offset}>
       <WrapperContent>
         <LogoMenuContainerSC>
-          <HomePageTitle>
-            <Link to={urls.home}>
-              <MediaQuery minDeviceWidth={breakPoints.b768}>
-                {matches => (matches ? <LogoJan /> : <LogoJanSmall />)}
-              </MediaQuery>
-            </Link>
-          </HomePageTitle>
           <Menu />
         </LogoMenuContainerSC>
       </WrapperContent>

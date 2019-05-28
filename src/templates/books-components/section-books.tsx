@@ -61,6 +61,7 @@ export const SectionBooks: React.FC<IProps> = ({ books, text, title }) => (
       <BooksWrapper>
         {books.map(book => (
           <BookSC
+            key={book.node.fields.slug}
             source={book.node.frontmatter.image.childImageSharp.fluid.src}
             title={book.node.frontmatter.title}
             publisher={book.node.frontmatter.publisher}

@@ -6,10 +6,11 @@ import posed from "react-pose"
 import { colors, mq, spacings } from "../../../constants"
 import Line from "../../../images/line.inline.svg"
 import LineLeft from "../../../images/line-left.inline.svg"
+import { useWindowSize } from "../../../utils"
 
 const CircleWithIcon = styled.button`
-  width: 69px;
-  height: 69px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: solid 3px ${colors.accent};
   display: flex;
@@ -28,6 +29,8 @@ const CircleWithIcon = styled.button`
   }
   margin-right: ${spacings.space20}px;
   ${mq.b768} {
+    width: 69px;
+    height: 69px;
     margin-right: 0;
     margin-bottom: ${spacings.space20}px;
   }
@@ -60,7 +63,7 @@ const AnimatedArrowRight = posed.div({
 })
 const AnimatedArrowAppear = posed.div({
   hidden: { x: -160, transition: transitionPose },
-  visible: { x: 15, transition: transitionPose },
+  visible: { x: ({ isMobile }: { isMobile: boolean}) => isMobile ? 0 : 15, transition: transitionPose },
 })
 
 const AnimatedArrowAppearSC = styled(AnimatedArrowAppear)`
@@ -70,16 +73,18 @@ const AnimatedArrowAppearSC = styled(AnimatedArrowAppear)`
 
 const AnimatedCircleRight: React.FC<{ onClick?: any }> = props => {
   const [isHover, setHover] = useState(false)
+  const size = useWindowSize();
+  const isMobile = size.innerWidth <= 768;
   return (
     <CircleWithIcon
       {...props}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <AnimatedArrowAppearSC pose={isHover ? "visible" : "hidden"}>
+      <AnimatedArrowAppearSC pose={isHover ? "visible" : "hidden"} isMobile={isMobile}>
         <Line />
       </AnimatedArrowAppearSC>
-      <AnimatedArrowRight pose={isHover ? "active" : "default"}>
+      <AnimatedArrowRight pose={isHover ? "active" : "default"} isMobile={isMobile}>
         <Line />
       </AnimatedArrowRight>
     </CircleWithIcon>
@@ -92,7 +97,7 @@ const AnimatedArrowLeft = posed.div({
 })
 const AnimatedArrowAppear2 = posed.div({
   hidden: { x: 160, transition: transitionPose },
-  visible: { x: 15, transition: transitionPose },
+  visible: { x: ({ isMobile }: { isMobile: boolean}) => isMobile ? 0 : 15, transition: transitionPose },
 })
 
 const AnimatedArrowAppearSC2 = styled(AnimatedArrowAppear2)`
@@ -102,13 +107,15 @@ const AnimatedArrowAppearSC2 = styled(AnimatedArrowAppear2)`
 
 const AnimatedCircleLeft: React.FC<{ onClick?: any }> = props => {
   const [isHover, setHover] = useState(false)
+  const size = useWindowSize();
+  const isMobile = size.innerWidth <= 768;
   return (
     <CircleWithIcon
       {...props}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <AnimatedArrowAppearSC2 pose={isHover ? "visible" : "hidden"}>
+      <AnimatedArrowAppearSC2 pose={isHover ? "visible" : "hidden"} isMobile={isMobile}>
         <LineLeft />
       </AnimatedArrowAppearSC2>
       <AnimatedArrowLeft pose={isHover ? "active" : "default"}>

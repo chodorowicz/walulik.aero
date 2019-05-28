@@ -26,6 +26,7 @@ const NavigationSC = styled.div`
   order: 1;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: ${spacings.space40}px;
 
   ${mq.b768} {
@@ -128,7 +129,7 @@ export const Carousel: React.FC = () => {
   const { edges } = result.books
   const numberOfPages = Math.ceil(edges.length / ITEMS_PER_PAGE)
   const modNumberOfPages = modulo(numberOfPages)
-  if (modNumberOfPages > page) {
+  if (modNumberOfPages(page) > page) {
     setPage(modNumberOfPages)
   }
   const nextPage = () => { 
