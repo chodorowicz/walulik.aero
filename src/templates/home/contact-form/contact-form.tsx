@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 
 import { colors, fontSizes, fontFamily, spacings, mq } from "../../../constants"
 import { AnimatedButtonRight } from "../../../components"
-import { paddingSides20 } from "../../../styles";
+import { paddingSides20 } from "../../../styles"
 
 const Container = styled.div`
   color: ${colors.white};
@@ -24,11 +24,16 @@ const Title = styled.h3`
 `
 
 const SectionSC = styled.div`
+  position: relative;
+  padding-top: 20px;
   margin-bottom: ${spacings.space40}px;
 `
 
 const LabelSC = styled.label`
+  position: absolute;
+  top: 20px;
   font-size: ${fontSizes.size18}px;
+  transition: all 0.3s;
 `
 
 const InputSC = styled.input`
@@ -39,6 +44,11 @@ const InputSC = styled.input`
   color: ${colors.white};
   font-size: ${fontSizes.size28}px;
   width: 100%;
+  &:focus ~ label,
+  &.notEmpty ~ label {
+    top: 0px;
+    font-size: ${fontSizes.size15}px;
+  }
 `
 
 const TextareaSC = styled.textarea`
@@ -49,6 +59,11 @@ const TextareaSC = styled.textarea`
   width: 100%;
   color: ${colors.white};
   font-size: ${fontSizes.size28}px;
+  &:focus ~ label,
+  &.notEmpty ~ label {
+    top: 0px;
+    font-size: ${fontSizes.size15}px;
+  }
 `
 
 const ButtonSectionSC = styled.div`
@@ -70,30 +85,42 @@ export const ContactForm: React.FC = () => {
         }}
       >
         <SectionSC>
-          <LabelSC>name</LabelSC>
           <InputSC
+            id="name"
             value={name}
             onChange={event => {
               setName(event.currentTarget.value)
             }}
+            required
+            className={name !== "" && "notEmpty"}
           />
+          <LabelSC for="name">name</LabelSC>
         </SectionSC>
         <SectionSC>
-          <LabelSC>e-mail</LabelSC>
           <InputSC
+            id="email"
             value={email}
             onChange={event => {
               setEmail(event.currentTarget.value)
             }}
+            required
+            type="email"
+            className={email !== "" && "notEmpty"}
           />
+          <LabelSC for="email">e-mail</LabelSC>
         </SectionSC>
-        <LabelSC>message</LabelSC>
-        <TextareaSC
-          value={message}
-          onChange={event => {
-            setMessage(event.currentTarget.value)
-          }}
-        />
+        <SectionSC>
+          <TextareaSC
+            id="message"
+            value={message}
+            onChange={event => {
+              setMessage(event.currentTarget.value)
+            }}
+            required
+            className={message !== "" && "notEmpty"}
+          />
+          <LabelSC for="message">message</LabelSC>
+        </SectionSC>
         <ButtonSectionSC>
           <AnimatedButtonRight>Send</AnimatedButtonRight>
         </ButtonSectionSC>
