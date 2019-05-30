@@ -27,7 +27,7 @@ const CircleWithIcon = styled.button`
       stroke: ${colors.white};
     }
   }
-  margin-right: ${spacings.space20}px;
+  margin-right: 10px;
   ${mq.b768} {
     width: 69px;
     height: 69px;
