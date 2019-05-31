@@ -109,6 +109,10 @@ const StandardLink = styled.a`
   color: ${colors.darkBlue};
 `
 
+const FooterLink: React.FC<{ href: string }> = ({ href, children }) => {
+  return <a href={href} target="_blank">{children}</a>;
+}
+
 export function Footer(): JSX.Element {
   return (
     <WrapperOuterSC>
@@ -117,22 +121,21 @@ export function Footer(): JSX.Element {
         <ContainerLeft>
           <Title>Find Jan at:</Title>
           <Logos>
-            <LogoCars />
-            <img src={LogoResearchIdSrc} width={110} />
-            <LogoP />
-            <LogoRoutledge />
-            <LogoScopus />
-            <LogoLinkedin />
-            <img src={LogoGoogleScholarSrc} width={60} />
-            <LogoOrcid />
-            <LogoAcademia />
-            <LogoBlob />
-            <LogoSSRN />
-            <LogoResearchgate />
-            <img src={LogoNaukaPolska} width={70} />
-            <img src={LogoSSWR} width={70} />
-            <img src={LogoInventorum} width={80} />
-            <LogoPBN />
+            <FooterLink href="https://www.cars.wz.uw.edu.pl/laboratories-02.html"><LogoCars /></FooterLink>
+            <FooterLink href="https://publons.com/researcher/1694797/jan-walulik/"><LogoP /></FooterLink>
+            <FooterLink href="https://www.routledge.com/authors/i15817-jan-walulik"><LogoRoutledge /></FooterLink>
+            <FooterLink href="https://www.scopus.com/authid/detail.uri?authorId=57189370786 "><LogoScopus /></FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/jan-walulik-aviation-research-and-consulting/ "><LogoLinkedin /></FooterLink>
+            <FooterLink href="https://scholar.google.com/citations?user=TXVA74kAAAAJ&hl=en"><img src={LogoGoogleScholarSrc} width={60} /></FooterLink>
+            <FooterLink href="https://orcid.org/0000-0001-9995-7774"><LogoOrcid /></FooterLink>
+            <FooterLink href="https://uw.academia.edu/JanWalulik"><LogoAcademia /></FooterLink>
+            <FooterLink href="https://www.mendeley.com/profiles/jan-walulik/ "><LogoBlob /></FooterLink>
+            <FooterLink href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3377597"><LogoSSRN /></FooterLink>
+            <FooterLink href="https://www.researchgate.net/profile/Jan_Walulik"><LogoResearchgate /></FooterLink>
+            <FooterLink href="https://nauka-polska.pl/#/profile/scientist?id=238924&lang=en&_k=3l9r8c"><img src={LogoNaukaPolska} width={70} /></FooterLink>
+            <FooterLink href="https://recenzenci.opi.org.pl/sssr-web/site/people-details;jsessionid=p5nY37ci2-sDz1IQqlaKrYd8.undefined?personId=58fc7c9237a7a47e&lang=en"><img src={LogoSSWR} width={70} />
+            <img src={LogoInventorum} width={80} /></FooterLink>
+            <FooterLink href="https://pbn.nauka.gov.pl/sedno-webapp/persons/3949073/"><LogoPBN /></FooterLink>
           </Logos>
         </ContainerLeft>
         <ContainerRight>
