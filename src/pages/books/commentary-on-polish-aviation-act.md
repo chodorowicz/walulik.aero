@@ -9,6 +9,7 @@ text: |-
   \
   Marek Żylicz (ed.)
 publisher: Wolters Kluwer
+slug: polish-aviation-act
 ---
 
 ## Commentary on Polish Aviation Act (Prawo lotnicze. Komentarz)

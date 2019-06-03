@@ -8,6 +8,7 @@ text: |-
   ISBN: 9788376270821
 publisher: EuroPrawo
 extraBadge: /assets/book-award.png
+slug: regulatory-reform-airline-deregulation-liberalization
 ---
 
 ## Regulatory Reform: The Case of Air Transport (Reforma regulacyjna. Przykład transportu lotniczego)

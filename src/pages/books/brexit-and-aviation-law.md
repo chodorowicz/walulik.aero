@@ -9,6 +9,7 @@ text: |-
   \
   Brexit and Aviation Law presents the key Brexit-related legal issues for aviation business and administration. 
 publisher: Routledge
+slug: brexit-and-aviation
 ---
 
 ## Brexit and Aviation Law

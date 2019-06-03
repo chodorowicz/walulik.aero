@@ -14,6 +14,7 @@ extraContentRight: |-
   In 2017, I invited a group of renowned aviation and aerospace experts to the Airline Regulatory and Antitrust Conference at the Centre for Antitrust and Regulatory Studies, Faculty of Management, University of Warsaw, Poland. Our approach was to discuss and reconcile distinct perspectives on air law issues and provide possibly unbiased solutions, which could serve as base for future harmonisation of international arrangements. Harmonising Regulatory and Antitrust Regimes for International Air Transport presents the results of this vivid debate. 
 extraContentLeft: |-
 extraBg: /assets/harmonising-extra-bg.jpg
+slug: harmonising-aviation-regulations-antistrust-regulations
 ---
 
 ## Harmonising Regulatory and Antitrust Regimes for International Air Transport

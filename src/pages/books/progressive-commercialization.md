@@ -7,6 +7,7 @@ text: |-
   ISBN: 9781138654990
 image: /assets/progressive.png
 publisher: Routledge
+slug: progressive-commercialization-airline-regulations-governance-culture
 ---
 
 ## Progressive Commercialization of Airline Governance Culture

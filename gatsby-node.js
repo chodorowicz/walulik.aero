@@ -8,10 +8,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const customSlug = node.frontmatter.slug;
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
+      value: customSlug || slug,
     })
   }
 }
@@ -33,6 +34,7 @@ exports.createPages = ({ actions, graphql }) => {
               templateKey
               category
               where
+              slug
             }
           }
         }
@@ -53,13 +55,15 @@ exports.createPages = ({ actions, graphql }) => {
 
     pages.forEach(edge => {
       const { id } = edge.node
+      const slug = edge.node.fields.slug;
+
       createPage({
-        path: edge.node.fields.slug,
+        path: slug === "index" ? "" : slug,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
         context: {
-          slug: edge.node.fields.slug,
+          slug: slug === "index" ? "" : slug,
           id,
           researchPapers,
           books,
@@ -71,14 +75,15 @@ exports.createPages = ({ actions, graphql }) => {
       const { id } = edge.node
       const prev = index === 0 ? books[books.length - 1].node : books[index - 1].node;
       const next = (index + 1 === books.length) ? books[0].node : books[index + 1].node;
+      const slug = edge.node.fields.slug;
 
       createPage({
-        path: edge.node.fields.slug,
+        path: slug,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
         context: {
-          slug: edge.node.fields.slug,
+          slug,
           id,
           books,
           next,
@@ -91,14 +96,15 @@ exports.createPages = ({ actions, graphql }) => {
       const { id } = edge.node
       const prev = index === 0 ? researchPapers[researchPapers.length - 1].node : researchPapers[index - 1].node;
       const next = (index + 1 === researchPapers.length) ? researchPapers[0].node : researchPapers[index + 1].node;
+      const slug = edge.node.fields.slug;
 
       createPage({
-        path: edge.node.fields.slug,
+        path: slug,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
         context: {
-          slug: edge.node.fields.slug,
+          slug,
           id,
           researchPapers,
           next,

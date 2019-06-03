@@ -34,10 +34,10 @@ export const fontFamily = {
 
 export const urls = {
   home: "/",
-  about: "/about",
-  books: "/books",
-  researchPapers: "/research-papers",
-  researchPapersList: "/research-papers#list",
+  about: "/aviation-research-consulting",
+  books: "/aviation-law-books",
+  researchPapers: "/aviation-research-papers",
+  researchPapersList: "/aviation-research-papers#list",
   contact: "/#contact",
   privacyPolicy: "/privacy-policy",
 }
