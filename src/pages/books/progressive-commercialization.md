@@ -2,7 +2,9 @@
 templateKey: book-page
 title: Progressive Commercialization of Airline Governance Culture
 text: |-
-  Abingdon, New York: Routledge, 2017
+  Abingdon, New York: Routledge, 2017\
+  \
+  ISBN: 9781138654990
 image: /assets/progressive.png
 publisher: Routledge
 ---

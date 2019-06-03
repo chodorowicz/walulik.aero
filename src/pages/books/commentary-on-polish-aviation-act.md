@@ -3,7 +3,7 @@ templateKey: book-page
 title: "Commentary on Polish Aviation Act (Prawo lotnicze. Komentarz)"
 image: /assets/prawo_lotnicze_komentarz.png
 text: |-
-  Warsaw: Wolters Kluwer, 2016 (in Polish)
+  Warsaw: Wolters Kluwer, 2016 (in Polish)\
   \
   ISBN: 9788326497018\
   \

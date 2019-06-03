@@ -4,6 +4,7 @@ title: Harmonising Regulatory and Antitrust Regimes for International Air Transp
 image: /assets/harmonising_bok.png
 text: |-
   Abingdon, New York: Routledge, 2019\
+  \
   ISBN: 9780815353867\
   \
   Jan Walulik (ed.). Contributors: Shadi A. Alshdaifat, Elena Carpanelli, Paul S. Dempsey, Piotr P. Dziubak, Elmar M. Giemulla, Peter P.C. Haanappel, Agnieszka Kunert-Diallo, Bashar H. Malkawi, Pablo Mendes de Leon, Małgorzata Polkowska, Andrea Trimarchi, Frans G. von der Dunk, Jan Walulik, Paweł Zagrajek, Marek Żylicz.
