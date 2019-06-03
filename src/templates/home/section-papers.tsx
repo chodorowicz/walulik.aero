@@ -83,9 +83,7 @@ export const SectionPapers: React.FC<any> = () => {
         <WrapperText>
           <Title>Research papers</Title>
           <Paragraph>
-            Jan’s publications include many specialist research papers focused
-            on key issues in aviation law and policy as well as on market
-            regulation and fair competition matters.
+            Jan’s publications include also many specialist research papers focused on key issues in aviation law and policy as well as on market regulation and fair competition matters.
           </Paragraph>
         </WrapperText>
         <BoxWrapper>

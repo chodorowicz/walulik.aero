@@ -100,18 +100,12 @@ export const SectionEducation: React.FC = () => (
           Education <br /> &amp; distinctions
         </SectionTitle>
         <Paragraph>
-          He graduated in law from University of Warsaw in 2007 (summa cum
-          laude) and had received multiple scholar awards from the Minister of
-          Education. Jan obtained his PhD degree in air law in 2011 and the{" "}
-          <a href="#">prizewinning</a> print version of his thesis was named the
-          best Polish monograph in law and economic regulation of network
-          infrastructures.
+          He graduated in law from University of Warsaw in 2007 (<em>summa cum laude</em>) and had received multiple scholar awards from the Minister of Education. Jan obtained his PhD degree in air law in 2011 and the <a href="#">prizewinning</a> print version of his thesis was named the best Polish monograph in law and economic regulation of network infrastructures.
         </Paragraph>
         <ContactBox>
           <ContactBoxInner>
             <Paragraph color={colors.white} fontSize={fontSizes.size28}>
-              Jan can be contacted by email or on social media. Jan speaks
-              English, Polish, German and Russian.
+              Jan can be contacted by email or on social media. He speaks English, Polish, German and Russian.
             </Paragraph>
             <AnimatedLink to={urls.contact}>Contact Jan</AnimatedLink>
           </ContactBoxInner>

@@ -82,12 +82,8 @@ export const SectonPhotoText: React.FC<any> = () => {
           <TextContent>
             <Title>Jan Walulik</Title>
             <Paragraph>
-              Attorney and researcher specialising in aviation law and policy
-              and in commercial law for over 10 years. Active as an aviation
-              expert in consulting and training projects for the industry and
-              the government. Lecturer in air law; author, editor and reviewer
-              of numerous publications on regulatory issues in aviation. Member
-              of the Warsaw Bar Association.
+              Attorney and researcher specialising in aviation law and policy and in commercial law for over 10 years. Active as an aviation expert in consulting and training projects for the industry and the government. Lecturer in air law; author, editor and reviewer of numerous publications on regulatory issues in aviation. Member of the Warsaw Bar Association.
+
             </Paragraph>
             <ButtonContainerSC>
               <AnimatedButtonRight>learn more</AnimatedButtonRight>

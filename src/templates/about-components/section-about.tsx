@@ -84,7 +84,7 @@ export const SectionAbout: React.FC = () => (
       </ImagesColumn>
       <TextColumn>
         <StyledTitleText>Research &amp; teaching</StyledTitleText>
-        <StyledParagraphText>Jan has also been a lecturer in air law at the Warsaw School of Economics since 2012 and was an assistant professor at the Centre for Antitrust and Regulatory Studies, Faculty of Management, University of Warsaw, where he has headed the Civil Aviation Laboratory since 2016. He is also a tutor at Polish National School of Public Administration.</StyledParagraphText>
+        <StyledParagraphText>Jan has also been a lecturer in air law at the <a href="uczelnia.sgh.waw.pl/en/Pages/default.aspx" target="_blank">Warsaw School of Economics</a> since 2012 and was an assistant professor at the <a href="https://www.cars.wz.uw.edu.pl/o_nas_gb.html" target="_blank">Centre for Antitrust and Regulatory Studies</a>, Faculty of Management, University of Warsaw, where he has headed the <a href="https://www.cars.wz.uw.edu.pl/laboratories-02.html" target="_blank">Civil Aviation Laboratory</a> since 2016. He is also a tutor at Polish National School of Public Administration.</StyledParagraphText>
         <img src={LogoCarsWzuw} />
       </TextColumn>
     </StyledWrapperContent>
