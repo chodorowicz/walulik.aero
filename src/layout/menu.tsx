@@ -113,7 +113,8 @@ const Links: React.FC = () => {
   )
 }
 
-export const Menu: React.FC = () => {
+export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
+  const { isSticky = false } = props;
   const [isMenuOpened, setMenuOpened] = React.useState(false)
   return (
     <>
@@ -121,7 +122,7 @@ export const Menu: React.FC = () => {
         <HomePageTitle>
           <Link to={urls.home}>
             <MediaQuery minDeviceWidth={breakPoints.b768}>
-              {matches => (matches ? <LogoJan /> : <LogoJanSmall />)}
+              {matches => ((matches && !isSticky) ? <LogoJan /> : <LogoJanSmall />)}
             </MediaQuery>
           </Link>
         </HomePageTitle>

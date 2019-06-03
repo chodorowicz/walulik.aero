@@ -77,7 +77,7 @@ export const LogoAndMenu: React.FC = () => {
     <WrapperSticky isSticky={isSticky} offset={offset}>
       <WrapperContent>
         <LogoMenuContainerSC>
-          <Menu />
+          <Menu isSticky={isSticky} />
         </LogoMenuContainerSC>
       </WrapperContent>
     </WrapperSticky>
