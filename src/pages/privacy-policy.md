@@ -9,23 +9,22 @@ The provision of your personal data is voluntary. However, if you decide not to 
 
 The links below will take you to the detailed sections of our policy:
 
-- [Privacy Policy](#privacy-policy)
-  - [What data do we collect?](#what-data-do-we-collect)
-  - [How do we collect your data?](#how-do-we-collect-your-data)
-  - [How will we use your data?](#how-will-we-use-your-data)
-  - [What are the legal grounds for using your data?](#what-are-the-legal-grounds-for-using-your-data)
-  - [How do we store your data?](#how-do-we-store-your-data)
-  - [To whom we disclose your data?](#to-whom-we-disclose-your-data)
-  - [What are your data protection rights?](#what-are-your-data-protection-rights)
-  - [Cookies](#cookies)
-  - [How do we use cookies?](#how-do-we-use-cookies)
-  - [What types of cookies do we use?](#what-types-of-cookies-do-we-use)
-  - [How to manage cookies](#how-to-manage-cookies)
-  - [Statistics](#statistics)
-  - [Privacy policies of other websites](#privacy-policies-of-other-websites)
-  - [Changes to our privacy policy](#changes-to-our-privacy-policy)
-  - [How to contact us](#how-to-contact-us)
-  - [How to contact the appropriate authority](#how-to-contact-the-appropriate-authority)
+- [What data do we collect?](#what-data-do-we-collect)
+- [How do we collect your data?](#how-do-we-collect-your-data)
+- [How will we use your data?](#how-will-we-use-your-data)
+- [What are the legal grounds for using your data?](#what-are-the-legal-grounds-for-using-your-data)
+- [How do we store your data?](#how-do-we-store-your-data)
+- [To whom we disclose your data?](#to-whom-we-disclose-your-data)
+- [What are your data protection rights?](#what-are-your-data-protection-rights)
+- [Cookies](#cookies)
+- [How do we use cookies?](#how-do-we-use-cookies)
+- [What types of cookies do we use?](#what-types-of-cookies-do-we-use)
+- [How to manage cookies](#how-to-manage-cookies)
+- [Statistics](#statistics)
+- [Privacy policies of other websites](#privacy-policies-of-other-websites)
+- [Changes to our privacy policy](#changes-to-our-privacy-policy)
+- [How to contact us](#how-to-contact-us)
+- [How to contact the appropriate authority](#how-to-contact-the-appropriate-authority)
 
 ## What data do we collect?
 
@@ -57,7 +56,7 @@ Information that is provided automatically through cookies or similar technology
 
 We will use your personal data because either:
 - you have given us consent to the processing of your data for one or more specific purposes or processing is necessary for the performance of a contract to which you are party or in order to take any steps at your request prior to entering into a contract,
-- it is necessary for compliance with our legal obligations or for the performance of a task carried out in the public interest or in the exercise of official authority vested in us as a Law firm,
+- it is necessary for compliance with our legal obligations or for the performance of a task carried out in the public interest or in the exercise of official authority vested in us as a law firm,
 - it is necessary in order to protect our vital interests or vital interests of another natural person, or necessary for the purposes of our other legitimate interests such as processing your order and performing services for you or contacting you and providing you with the feedback that you have requested, except where such other interests are overridden by your interests or fundamental rights.
 
 ## How do we store your data?
@@ -74,17 +73,17 @@ We may disclose your personal data to entities that are entitled by law to recei
 
 ## What are your data protection rights?
 
-You are entitled to the following in respect of your persona data:
+You are entitled to the following in respect of your personal data:
 
 - the right to access – you have the right to request us for copies of your personal data,
 - the right to rectification – you have the right to request that we correct any information you believe is inaccurate or that we complete the information you believe is incomplete,
 - the right to erasure – you have the right to request that we erase your personal data, under certain conditions,
-- the right to restrict processing – you have the right to request that we restrict the processing of your personal data, under certain conditions.
-- the right to object to processing – you have the right to object to processing of your personal data by us, under certain conditions.
+- the right to restrict processing – you have the right to request that we restrict the processing of your personal data, under certain conditions,
+- the right to object to processing – you have the right to object to processing of your personal data by us, under certain conditions,
 - the right to data portability – you have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions,
 - the rights to withdraw your consent – whenever we process personal data based on your consent to processing of your data for one or more specific purposes you may partly or entirely withdraw your consent at any time; this will not affect the lawfulness of processing based on the consent before its withdrawal.
 
-If you make any of the above requests, we have one month to respond to you. If you would like to exercise any of these rights, please [contact us](#how-to-contact-us)
+If you make any of the above requests, we have one month to respond to you. If you would like to exercise any of these rights, please [contact us](#how-to-contact-us).
 
 ## Cookies
 
