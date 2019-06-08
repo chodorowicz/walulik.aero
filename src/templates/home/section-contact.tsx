@@ -63,12 +63,17 @@ const Link = styled.a`
   font-size: ${fontSizes.medium}px;
 `;
 
+const SectionTitleSC = styled(SectionTitle)`
+  padding-top: 80px; 
+  margin-top: -80px;
+`
+
 export const SectionContact: React.FC<any> = () => {
   return (
     <WrapperContentNoMobilePadding>
       <Wrapper>
         <InfoSide>
-          <SectionTitle name="contact">Contact</SectionTitle>
+          <SectionTitleSC name="contact">Contact</SectionTitleSC>
           <InfoSideTitle>
             Jan Walulik<br />
             Aviation Research &amp; Consulting
