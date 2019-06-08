@@ -91,9 +91,13 @@ const Logos = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  svg, img { 
-    margin-right: 30px;
+  svg, img {
     margin-bottom: 30px;
+  }
+  a:not(:last-child) {
+    svg, img { 
+      margin-right: 30px;
+    }
   }
 `
 
@@ -133,8 +137,6 @@ export function Footer(): JSX.Element {
             <FooterLink href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3377597"><LogoSSRN /></FooterLink>
             <FooterLink href="https://www.researchgate.net/profile/Jan_Walulik"><LogoResearchgate /></FooterLink>
             <FooterLink href="https://nauka-polska.pl/#/profile/scientist?id=238924&lang=en&_k=3l9r8c"><img src={LogoNaukaPolska} width={70} /></FooterLink>
-            <FooterLink href="https://recenzenci.opi.org.pl/sssr-web/site/people-details;jsessionid=p5nY37ci2-sDz1IQqlaKrYd8.undefined?personId=58fc7c9237a7a47e&lang=en"><img src={LogoSSWR} width={70} />
-            <img src={LogoInventorum} width={80} /></FooterLink>
             <FooterLink href="https://pbn.nauka.gov.pl/sedno-webapp/persons/3949073/"><LogoPBN /></FooterLink>
           </Logos>
         </ContainerLeft>
