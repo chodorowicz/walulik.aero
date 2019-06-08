@@ -49,6 +49,7 @@
     "react-helmet": "5.2.0",
     "react-pose": "4.0.8",
     "react-responsive": "6.1.2",
+    "react-use": "9.4.0",
     "striptags": "3.1.1",
     "utility-types": "3.6.1"
   },

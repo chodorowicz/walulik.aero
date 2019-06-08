@@ -93,10 +93,10 @@ export const SectionPapers: React.FC<any> = () => {
           <LinkedPaperBox section="Airline finance">
           <IconAirlineFinance />
           </LinkedPaperBox>
-          <LinkedPaperBox section="Aviation safety and security">
+          <LinkedPaperBox section="Aviation safety">
             <IconSecurity />
           </LinkedPaperBox>
-          <LinkedPaperBox section="Aviation criminal law">
+          <LinkedPaperBox section="Aviation security">
             <IconCriminalLaw />
           </LinkedPaperBox>
         </BoxWrapper>
