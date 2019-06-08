@@ -162,8 +162,7 @@ export function Footer(): JSX.Element {
           Designed by <StandardLink href="http://www.furyarts.pl/" target="_blank">Furyarts</StandardLink> &amp; <StandardLink href="https://www.chodorowicz.com/" target="_blank">chodorowicz</StandardLink>
         </CopySection>
         <LinksSection>
-          <StandardLink href={urls.privacyPolicy}>Privacy Policy</StandardLink> |{" "}
-          <StandardLink href="#">Cookies</StandardLink>
+          <StandardLink href={urls.privacyPolicy}>Privacy Policy</StandardLink>
         </LinksSection>
       </Container>
     </WrapperContent>
