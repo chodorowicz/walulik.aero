@@ -2,6 +2,7 @@ import styled from "@emotion/styled"
 import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import posed, { PoseGroup } from "react-pose"
+import useLocalStorage from 'react-use/lib/useLocalStorage';
 
 import { CarouselCounter } from "./carousel-counter"
 import { CarouselArrows } from "./carousel-arrows"
@@ -93,7 +94,7 @@ function useWindowDimensions() {
 }
 
 export const Carousel: React.FC = () => {
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useLocalStorage('page', 0);
   const [animateDirection, setAnimateDirection] = useState("next")
   const dimensions = useWindowDimensions()
 
