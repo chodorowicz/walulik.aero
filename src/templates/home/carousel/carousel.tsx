@@ -102,6 +102,7 @@ export const Carousel: React.FC = () => {
       books: allMarkdownRemark(
         limit: 1000
         filter: { frontmatter: { templateKey: { eq: "book-page" } } }
+        sort: { fields: [frontmatter___order], order: ASC }
       ) {
         edges {
           node {

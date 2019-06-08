@@ -15,6 +15,7 @@ extraContentRight: |-
 extraContentLeft: |-
 extraBg: /assets/harmonising-extra-bg.jpg
 slug: harmonising-aviation-regulations-antistrust-regulations
+order: 2
 ---
 
 ## Harmonising Regulatory and Antitrust Regimes for International Air Transport

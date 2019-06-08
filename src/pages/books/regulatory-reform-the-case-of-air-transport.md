@@ -9,6 +9,7 @@ text: |-
 publisher: EuroPrawo
 extraBadge: /assets/book-award.png
 slug: regulatory-reform-airline-deregulation-liberalization
+order: 4
 ---
 
 ## Regulatory Reform: The Case of Air Transport (Reforma regulacyjna. Przykład transportu lotniczego)

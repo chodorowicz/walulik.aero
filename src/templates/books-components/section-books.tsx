@@ -5,7 +5,6 @@ import { colors, spacings, mq } from "../../constants"
 import {
   ResponsiveStyledPageCallout,
   Title,
-  WrapperContent,
   WrapperContentNoMobilePadding,
   StyledCalloutContent,
   MarkdownContainer,

@@ -71,6 +71,7 @@ export const pageQuery = graphql`
     allMarkdownRemark: allMarkdownRemark(
       limit: 1000
       filter: { frontmatter: { templateKey: { eq: "book-page" } } }
+      sort: { fields: [frontmatter___order], order: ASC }
     ) {
       ...booksListFields
     }
