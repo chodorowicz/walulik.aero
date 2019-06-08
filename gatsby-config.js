@@ -57,6 +57,7 @@ module.exports = {
               removeAccents: true,
             },
           },
+          "gatsby-transformer-remark"
         ],
       },
     },
