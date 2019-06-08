@@ -35,6 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
               category
               where
               slug
+              order
             }
           }
         }
@@ -49,7 +50,10 @@ exports.createPages = ({ actions, graphql }) => {
 
     const { edges } = result.data.allMarkdownRemark
 
-    const books = edges.filter(edge => edge.node.frontmatter.templateKey === "book-page");
+    const books = edges.filter(edge => edge.node.frontmatter.templateKey === "book-page").sort((b1, b2) => {
+      console.log(b1.node.frontmatter.order, b2.node.frontmatter.order);
+      return b2.node.frontmatter.order - b1.node.frontmatter.order; 
+    });
     const pages = edges.filter(edge => !["book-page", "research-paper"].includes(edge.node.frontmatter.templateKey));
     const researchPapers = edges.filter(edge => edge.node.frontmatter.templateKey === "research-paper");
 
