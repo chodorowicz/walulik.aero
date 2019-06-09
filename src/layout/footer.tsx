@@ -154,7 +154,7 @@ export function Footer(): JSX.Element {
               Poland
             </Text>
             <br />
-            <EmailLink href="jan@walulik.aero">jan@walulik.aero</EmailLink>
+            <EmailLink href="mailto:jan@walulik.aero">jan@walulik.aero</EmailLink>
           </ContactInfo>
         </ContainerRight>
         <CopySection>
