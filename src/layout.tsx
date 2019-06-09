@@ -23,6 +23,9 @@ export const Layout: React.FC = ({ children }) => {
               text-decoration: underline;
             }
           }
+          button:focus, a:focus {
+            outline: none;
+          }
         `}
       />
       <Helmet>
