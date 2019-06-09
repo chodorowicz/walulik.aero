@@ -1,7 +1,7 @@
 ---
 title: "Beijing Reform of Criminal Air Law – Genesis, Essence and Recommendations (in Polish)"
 where: "(Ruch Prawniczy Ekonomiczny i Socjologiczny, 2013, No. 3, pp. 35–47)"
-category: Aviation criminal law
+category: Aviation security
 templateKey: research-paper
 ---
 

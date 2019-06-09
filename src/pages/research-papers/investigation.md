@@ -1,7 +1,7 @@
 ---
 title: "Investigation of Air Accidents in Civil and State Aviation (in Polish)"
 where: "(Kontrola Państwowa, 2011, No. 2, pp. 8–21)"
-category: Aviation safety and security
+category: Aviation safety
 templateKey: research-paper
 ---
 

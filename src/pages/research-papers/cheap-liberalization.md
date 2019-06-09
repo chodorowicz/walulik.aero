@@ -1,7 +1,7 @@
 ---
 title: "Cheap Liberalization: Cutting Regulatory Corners in Air Transport or Cutting One’s Own Throat?"
 where: "([in:] Jan Walulik (ed.) Harmonising Regulatory and Antitrust Regimes for International Air Transport, Abingdon, New York: Routledge, 2019, pp. 157–176)"
-category: Aviation safety and security
+category: Aviation safety
 templateKey: research-paper
 ---
 

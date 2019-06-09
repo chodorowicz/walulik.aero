@@ -1,7 +1,7 @@
 ---
 title: "Protection of Air Accidents Investigation Records in Other Legal Proceedings (in Polish)"
 where: "(Studia Prawnicze, 2012, No. 2, pp. 135–157)"
-category: Aviation safety and security
+category: Aviation safety
 templateKey: research-paper
 ---
 

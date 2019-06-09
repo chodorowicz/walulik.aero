@@ -1,7 +1,7 @@
 ---
 title: "Just Culture Principles and the Investigation of Air Accidents and Incidents (in Polish)"
 where: "(Kontrola Państwowa, 2011, No. 6, pp. 99–112)"
-category: Aviation safety and security
+category: Aviation safety
 templateKey: research-paper
 ---
 

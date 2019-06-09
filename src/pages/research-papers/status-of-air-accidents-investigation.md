@@ -1,7 +1,7 @@
 ---
 title: "Status of Air Accidents Investigation Reports in Court and Administrative Proceedings (in Polish)"
 where: "(Kontrola Państwowa, 2012, No. 2, pp. 87–108)"
-category: Aviation safety and security
+category: Aviation safety
 templateKey: research-paper
 ---
 
