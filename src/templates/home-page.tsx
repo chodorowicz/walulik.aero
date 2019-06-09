@@ -14,7 +14,7 @@ interface IProps {
 const HomePage: React.FC<IProps> = (props) => {
   const { claim } = props.data.markdownRemark.frontmatter;
   return (
-    <Layout>
+    <Layout title="Aviation Research & Consulting | Jan Walulik">
       <SectionTop background={HomePageImage} isHome={true} claim={claim} />
       <SectonPhotoText />
       <SectionBooks />

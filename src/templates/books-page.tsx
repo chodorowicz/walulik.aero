@@ -16,13 +16,14 @@ const Books: React.FC<IProps> = props => {
   const { data } = props
 
   const { html, frontmatter } = data.markdownRemark
+  const { title } = frontmatter;
   return (
-    <Layout>
+    <Layout title={title}>
       <SectionTop background={BooksPageBackground} isHome={false} />
       <SectionBooks
         books={data.allMarkdownRemark.edges}
         text={html}
-        title={frontmatter.title}
+        title={title}
       />
     </Layout>
   )

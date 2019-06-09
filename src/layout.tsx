@@ -6,7 +6,7 @@ import { colors, fontFamily } from "./constants"
 import { Footer } from "./layout/footer"
 import { LogoAndMenu } from "./components"
 
-export const Layout: React.FC = ({ children }) => {
+export const Layout: React.FC<{ title?: string }> = ({ children, title }) => {
   return (
     <div>
       <Global
@@ -37,6 +37,7 @@ export const Layout: React.FC = ({ children }) => {
           href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i&amp;subset=latin-ext"
           rel="stylesheet"
         />
+        <title>{title}</title>
         <meta
           name="viewport"
           content="width=device-width, minimum-scale=1, minimal-ui"

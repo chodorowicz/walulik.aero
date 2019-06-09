@@ -8,7 +8,7 @@ import { SectionPublications } from "./about-components/section-publications";
 import { SectionEducation } from "./about-components/section-education";
 
 const About: React.FC = () => (
-  <Layout>
+  <Layout title="About | Jan Walulik">
     <SectionTop background={AboutPageBackground} isHome={false} />
     <SectionAbout />
     <SectionPublications />

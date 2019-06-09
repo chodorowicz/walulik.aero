@@ -26,7 +26,7 @@ const BookPage: React.FC<IProps> = props => {
   const prevLink = prev && prev.fields.slug
 
   return (
-    <Layout>
+    <Layout title={title}>
       <SectionTopBooks>
         <BookTop
           fluid={image.childImageSharp.fluid}

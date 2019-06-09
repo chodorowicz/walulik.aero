@@ -28,7 +28,7 @@ const ResearchPapersPage: React.FC = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout title={title}>
         <PageWrapper>
           <WrapperContent>
             <SectionTopShort />

@@ -7,12 +7,12 @@ import ResearchPageBackground from "../images/research/research-bg@2x.jpg"
 import { SectionResearchPapers } from "./research-papers/section-reasearch-papers"
 
 const ResearchPapersPage: React.FC = ({ data, pageContext }) => {
-  const { categories } = data.markdownRemark.frontmatter;
+  const { categories, title } = data.markdownRemark.frontmatter;
   return (
-    <Layout>
+    <Layout title={title}>
       <SectionTop background={ResearchPageBackground} isHome={false} />
       <SectionResearchPapers
-        title={data.markdownRemark.frontmatter.title}
+        title={title}
         html={data.markdownRemark.html}
         categories={categories}
         researchPapers={pageContext.researchPapers}
