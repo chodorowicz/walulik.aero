@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from "@emotion/styled"
 import { fontWeight, fontSizes, colors, mq, spacings } from '../constants';
+import { GlobalUrlContext } from "../context"
 
 import LogoFacebook from "../images/book/facebook"
 import LogoLinkedIn from "../images/book/linkedin"
@@ -27,13 +28,17 @@ const ShareLogosContainer = styled.div`
 `;
 
 export const Share: React.FC<{ className?: string }> = ({ className }) => {
+  const [href, setHref] = React.useState("");
+  React.useEffect(() => {
+    setHref(window.location.href)
+  }, []);
   return (
     <div className={className}>
       <ShareTitle>Share:</ShareTitle>
       <ShareLogosContainer>
-        <LogoFacebook />
-        <LogoLinkedIn />
-        <LogoTwitter />
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${href}`} target="_blank"><LogoFacebook /></a>
+        <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${href}`} target="_blank"><LogoLinkedIn /></a>
+        <a href={`https://twitter.com/intent/tweet?text=${href}`} target="_blank"><LogoTwitter /></a>
       </ShareLogosContainer>
     </div>
   );
