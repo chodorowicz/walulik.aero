@@ -1,25 +1,18 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { WrapperContent, StyledContent } from "../../components"
+import { WrapperContent, MarkdownContainerFull } from "../../components"
 import { grid12 } from "../../styles"
 import { colors } from "../../constants"
-
-const Wrapper = styled.div`
-  background-image:  url(${props => props.bgSrc});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-`;
 
 const Container = styled.div`
   ${grid12};
 `
 
-const StyledContentLeft = styled(StyledContent)`
+const StyledContentLeft = styled(MarkdownContainerFull)`
   grid-column: 2 / span 4;
 `
-const StyledContentRight = styled(StyledContent)`
+const StyledContentRight = styled(MarkdownContainerFull)`
   grid-column: 6 / span 5;
 `
 
@@ -38,10 +31,10 @@ export const BookExtra: React.FC<IProps> = (props) => {
   const bgSrc = extraBg.childImageSharp.fluid.src
 
   return (
-      <WrapperContentSC  bgSrc={bgSrc}>
+      <WrapperContentSC bgSrc={bgSrc}>
         <Container>
-          <StyledContentLeft dangerouslySetInnerHTML={{ __html: extraContentLeft }} color={colors.white} />
-          <StyledContentRight dangerouslySetInnerHTML={{ __html: extraContentRight }} color={colors.white} />
+          <StyledContentLeft content={extraContentLeft} color={colors.white} stripTags={false} />
+          <StyledContentRight content={extraContentRight} color={colors.white} stripTags={false} />
         </Container>
       </WrapperContentSC>
   )

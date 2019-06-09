@@ -98,6 +98,7 @@ interface IProps {
   title: string
   nextLink: string
   prevLink: string
+  extraBadge?: any;
 }
 
 const ExtraBadgeSC = styled.div`

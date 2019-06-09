@@ -3,8 +3,12 @@ import commonmark from "commonmark";
 import styled from "@emotion/styled"
 import striptags from "striptags"
 
+import { StyledContent } from "../components"
+
 interface IProps {
   content: string;
+  className?: string;
+  color?: string;
 };
 
 const StyledText = styled.div`
@@ -13,14 +17,31 @@ const StyledText = styled.div`
   }
 `;
 
-export const MarkdownContainer: React.FC<IProps> = React.memo(({ content }) => {
+export const MarkdownContainer: React.FC<IProps> = React.memo(({ content, className }) => {
   const reader = new commonmark.Parser();
   const writer = new commonmark.HtmlRenderer();
   const parsed = reader.parse(content);
   const result = writer.render(parsed);
-  const strippedResult = striptags(result, "<br>")
+  const strippedResult = striptags(result, "<br>");
 
   return (
-    <StyledText dangerouslySetInnerHTML={{ __html: strippedResult }} />
+    <StyledText className={className} dangerouslySetInnerHTML={{ __html: strippedResult }} />
+  );
+});
+
+interface IPropsFull {
+  content: string;
+  className?: string;
+  color?: string;
+};
+
+export const MarkdownContainerFull: React.FC<IPropsFull> = React.memo(({ content, className, color }) => {
+  const reader = new commonmark.Parser();
+  const writer = new commonmark.HtmlRenderer();
+  const parsed = reader.parse(content);
+  const result = writer.render(parsed);
+
+  return (
+    <StyledContent className={className} dangerouslySetInnerHTML={{ __html: result }} color={color} />
   );
 });

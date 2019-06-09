@@ -14,6 +14,40 @@ collections:
         label: "Home Page"
         name: "index"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-          - {label: "Claim", name: "claim", widget: "markdown" }
-          - {label: "test", name: "test", widget: "markdown" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "home-page",
+            }
+          - { label: "Claim", name: "claim", widget: "markdown" }
+  - name: "books"
+    label: "Books"
+    folder: "src/pages/books"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "book-page",
+        }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Text", name: "text", widget: "markdown" }
+      - { label: "Publisher", name: "publisher", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Extra Badge", name: "extraBadge", widget: "image" }
+      - {
+          label: "Extra Content Left",
+          name: "extraContentLeft",
+          widget: "markdown",
+        }
+      - {
+          label: "Extra Content Right",
+          name: "extraContentRight",
+          widget: "markdown",
+        }
+      - { label: "Extra Background", name: "extraBg", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }

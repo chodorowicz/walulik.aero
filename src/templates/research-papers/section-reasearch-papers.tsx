@@ -6,7 +6,6 @@ import {
   PageCallout,
   StyledCalloutContent,
   Title,
-  WrapperContent,
   MarkdownContainer,
   WrapperContentNoMobilePadding,
 } from "../../components"
