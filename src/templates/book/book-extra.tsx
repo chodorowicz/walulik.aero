@@ -31,7 +31,7 @@ export const BookExtra: React.FC<IProps> = (props) => {
   const bgSrc = extraBg.childImageSharp.fluid.src
 
   return (
-      <WrapperContentSC bgSrc={bgSrc}>
+      <WrapperContentSC bgSrc={bgSrc} id="prize">
         <Container>
           <StyledContentLeft content={extraContentLeft} color={colors.white} stripTags={false} />
           <StyledContentRight content={extraContentRight} color={colors.white} stripTags={false} />

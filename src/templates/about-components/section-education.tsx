@@ -1,17 +1,15 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 
 import { colors, fontSizes, mq, urls } from "../../constants"
 import {
-  Button,
-  ButtonInner,
   Paragraph,
   WrapperContent,
   SectionTitle,
   AnimatedLink
 } from "../../components"
 import { grid12, paddingSides20 } from "../../styles"
-import Line from "../../images/line.inline.svg"
 import ImageEducation from "../../images/about/education@2x.png"
 
 
@@ -100,7 +98,7 @@ export const SectionEducation: React.FC = () => (
           Education <br /> &amp; distinctions
         </SectionTitle>
         <Paragraph>
-          He graduated in law from University of Warsaw in 2007 (<em>summa cum laude</em>) and had received multiple scholar awards from the Minister of Education. Jan obtained his PhD degree in air law in 2011 and the <a href="#">prizewinning</a> print version of his thesis was named the best Polish monograph in law and economic regulation of network infrastructures.
+          He graduated in law from University of Warsaw in 2007 (<em>summa cum laude</em>) and had received multiple scholar awards from the Minister of Education. Jan obtained his PhD degree in air law in 2011 and the <Link to="/regulatory-reform-airline-deregulation-liberalization#prize">prizewinning</Link> print version of his thesis was named the best Polish monograph in law and economic regulation of network infrastructures.
         </Paragraph>
         <ContactBox>
           <ContactBoxInner>
