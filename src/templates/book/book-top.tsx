@@ -125,7 +125,7 @@ export const BookTop: React.FC<IProps> = ({
               <AnimatedLink to={urls.books} direction="left">Books</AnimatedLink>
             </div>
             <ArrowsContainer>
-              <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
+              <CarouselArrowsLinks nextLink={prevLink} prevLink={nextLink} />
             </ArrowsContainer>
           </BookNavigation>
         </NavigationWrapper>

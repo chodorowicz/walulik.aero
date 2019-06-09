@@ -36,6 +36,8 @@ exports.createPages = ({ actions, graphql }) => {
               where
               slug
               order
+              categories
+              date
             }
           }
         }
@@ -54,7 +56,24 @@ exports.createPages = ({ actions, graphql }) => {
       return b2.node.frontmatter.order - b1.node.frontmatter.order; 
     });
     const pages = edges.filter(edge => !["book-page", "research-paper"].includes(edge.node.frontmatter.templateKey));
-    const researchPapers = edges.filter(edge => edge.node.frontmatter.templateKey === "research-paper");
+    
+    // research papers
+    const resarchPapersPage = edges.find(edge => edge.node.frontmatter.templateKey === "research-papers-page");
+    const categories = resarchPapersPage.node.frontmatter.categories;
+    const researchPapers = edges.filter(edge => edge.node.frontmatter.templateKey === "research-paper").sort((p1, p2) => {
+      const p1Category = p1.node.frontmatter.category;
+      const p2Category = p2.node.frontmatter.category;
+      if(p1Category !== p2Category) {
+        return categories.indexOf(p1Category) - categories.indexOf(p2Category);
+      }
+
+      if (p1.node.frontmatter.date < p2.node.frontmatter.date) {
+        return 1;
+      } else if (p1.node.frontmatter.date > p2.node.frontmatter.date) {
+        return -1;
+      }
+      return 0;
+    });
 
     pages.forEach(edge => {
       const { id } = edge.node

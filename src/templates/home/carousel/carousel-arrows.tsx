@@ -147,8 +147,8 @@ export const CarouselArrowsLinks: React.FC<IPropsLinks> = ({
 }) => {
   return (
     <ArrowsContainer>
-      <Link to={nextLink}><AnimatedCircleLeft /></Link>
-      <Link to={prevLink}><CircleWithIconTop /></Link>
+      <Link to={prevLink}><AnimatedCircleLeft /></Link>
+      <Link to={nextLink}><CircleWithIconTop /></Link>
     </ArrowsContainer>
   )
 }
