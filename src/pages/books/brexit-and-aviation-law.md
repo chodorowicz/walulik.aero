@@ -3,17 +3,17 @@ templateKey: book-page
 title: Brexit and Aviation Law
 image: /assets/brexit-and-aviation-law.png
 text: |-
-  Abingdon, New York Routledge, 2019\
-  ISBN 9781138591370\
+  Abingdon, New York: Routledge, 2019\
   \
-  \
-  Brexit and Aviation Law presents the key Brexit-related legal issues for aviation business and administration. 
+  ISBN: 9781138591370
 publisher: Routledge
 slug: brexit-and-aviation
 order: 1
 ---
 
 ## Brexit and Aviation Law
+
+Brexit and Aviation Law presents the key Brexit-related legal issues for aviation business and administration. 
 
 The book begins with a discussion of the pieces of legislation that are affected by Brexit and those few that remain untouched. This covers EU primary and derived law, domestic laws, EU third party agreements (including the EEA, the ECAA, vertical agreements, horizontal agreements, aviation safety and security agreements), EU Member States’ bilateral air services agreements, the WTO/GATS framework, the ICAO framework, the ECAC framework, the EUROCONTROL framework, the Cape Town Convention, civil liability conventions, aviation security and criminal law conventions. The exact impact of Brexit on particular legal instruments and on their application in and to the UK is explained, as well as on the UK’s relations with the EU and third party states.
 
