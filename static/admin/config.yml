@@ -21,6 +21,18 @@ collections:
               default: "home-page",
             }
           - { label: "Claim", name: "claim", widget: "markdown" }
+      - file: "src/pages/research-papers.md"
+        label: "Resarch Papers Page"
+        name: "research-papers"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "research-papers-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Categories", name: "categories", widget: "list" }
   - name: "books"
     label: "Books"
     folder: "src/pages/books"
