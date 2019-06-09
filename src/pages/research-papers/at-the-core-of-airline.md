@@ -3,6 +3,7 @@ title: "At the core of airline foreign investment restrictions: A study of 121 c
 where: "(Transport Policy, 2016, Vol. 49, pp. 234–251)"
 category: Economic regulation
 templateKey: research-paper
+slug: airline-investment-restrictions
 date: 2016-01-01
 ---
 
