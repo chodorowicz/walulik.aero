@@ -1,5 +1,7 @@
 ---
 title: "The Need for Accession of Poland to Cape Town Convention (in Polish)"
+titleTag: "The Need for Accession of Poland to Cape Town Convention"
+descriptionTag: "The article discusses the Cape Town Convention and its Aircraft Protocol, which establish the institution of international interest in mobile equipment"
 where: "(Kontrola Państwowa, 2011, No. 3, pp. 111–125)"
 category: Airline finance
 templateKey: research-paper

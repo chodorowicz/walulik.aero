@@ -1,5 +1,7 @@
 ---
 title: "Protection of Air Accidents Investigation Records in Other Legal Proceedings (in Polish)"
+titleTag: "Protection of Air Accidents Investigation Records"
+descriptionTag: "The article concentrates on the protection of records gathered in an aircraft accident investigation"
 where: "(Studia Prawnicze, 2012, No. 2, pp. 135–157)"
 category: Aviation safety
 templateKey: research-paper

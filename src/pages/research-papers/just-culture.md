@@ -1,5 +1,7 @@
 ---
 title: "Just Culture Principles and the Investigation of Air Accidents and Incidents (in Polish)"
+titleTag: "Just Culture Principles and the Investigation of Air Accidents"
+descriptionTag: "The article discusses the issue of just culture in ensuring aviation safety and executing responsibility"
 where: "(Kontrola Państwowa, 2011, No. 6, pp. 99–112)"
 category: Aviation safety
 templateKey: research-paper

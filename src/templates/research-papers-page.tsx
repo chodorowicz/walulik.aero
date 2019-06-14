@@ -5,11 +5,12 @@ import { Layout } from "../layout"
 import { SectionTop } from "../components"
 import ResearchPageBackground from "../images/research/research-bg@2x.jpg"
 import { SectionResearchPapers } from "./research-papers/section-reasearch-papers"
+import { IDefaultMeta } from "MyTypes";
 
-const ResearchPapersPage: React.FC = ({ data, pageContext }) => {
-  const { categories, title } = data.markdownRemark.frontmatter;
+const ResearchPapersPage: React.FC<IDefaultMeta> = ({ data, pageContext }) => {
+  const { categories, title, titleTag, descriptionTag } = data.markdownRemark.frontmatter;
   return (
-    <Layout title={title}>
+    <Layout title={titleTag} description={descriptionTag}>
       <SectionTop background={ResearchPageBackground} isHome={false} />
       <SectionResearchPapers
         title={title}
@@ -34,6 +35,8 @@ export const pageQuery = graphql`
         category
         where
         categories
+        titleTag
+        descriptionTag
       }
     }
   }

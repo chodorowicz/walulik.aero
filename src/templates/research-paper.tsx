@@ -8,6 +8,7 @@ import { Layout } from "../layout"
 import { gradient } from "../styles"
 import { SectionTopShort, WrapperContent } from "../components"
 import { Paper } from "./research-paper/paper";
+import { IDefaultMeta } from "MyTypes";
 
 const PageWrapper = styled.div`
   ${gradient};
@@ -18,17 +19,17 @@ const theme = {
 }
 
 
-const ResearchPapersPage: React.FC = (props) => {
+const ResearchPapersPage: React.FC<IDefaultMeta> = (props) => {
   const { data, pageContext } = props
   const { html, frontmatter } = data.markdownRemark
-  const { title, where, category } = frontmatter
+  const { title, where, category, titleTag, descriptionTag } = frontmatter
   const { next, prev } = pageContext
   const nextLink = next && next.fields.slug
   const prevLink = prev && prev.fields.slug
 
   return (
     <ThemeProvider theme={theme}>
-      <Layout title={title}>
+      <Layout title={titleTag} description={descriptionTag}>
         <PageWrapper>
           <WrapperContent>
             <SectionTopShort />
@@ -51,6 +52,8 @@ export const pageQuery = graphql`
         where
         title
         category
+        titleTag
+        descriptionTag
       }
     }
   }

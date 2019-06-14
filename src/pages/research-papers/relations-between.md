@@ -1,5 +1,7 @@
 ---
 title: "Relations between Economic Regulation and Competition Law: A Summary of the Current Debate (in Polish)"
+titleTag: "Relations between Economic Regulation and Competition Law"
+descriptionTag: "A theoretical study on relations between economic regulation and competition law"
 where: "([in:] M. Bernatt, A. Jurkowska-Gomułka, M. Namysłowska, Anna Piszcz (eds.), Challenges to Competition Law and Market Regulation. Jubilee Book Dedicated to Professor Tadeusz Skoczny, Warsaw: C.H. Beck, 2017, pp. 481–490)"
 category: Economic regulation
 templateKey: research-paper

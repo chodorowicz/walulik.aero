@@ -1,5 +1,7 @@
 ---
 title: "Status of Air Accidents Investigation Reports in Court and Administrative Proceedings (in Polish)"
+titleTag: "Status of Air Accidents Investigation Reports"
+descriptionTag: "The article develops on the legal status of of an aircraft accident investigation report"
 where: "(Kontrola Państwowa, 2012, No. 2, pp. 87–108)"
 category: Aviation safety
 templateKey: research-paper

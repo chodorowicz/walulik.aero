@@ -1,6 +1,8 @@
 ---
 templateKey: research-papers-page
 title: Research papers
+titleTag: "Aviation research rapers"
+descriptionTag: "Jan Walulik. Author of numerous high-quality aviation research papers"
 slug: aviation-research-papers
 categories: ["Economic regulation", "Airline finance", "Aviation safety", "Aviation security"]
 ---

@@ -1,5 +1,7 @@
 ---
 title: "Beijing Reform of Criminal Air Law – Genesis, Essence and Recommendations (in Polish)"
+titleTag: "Beijing Reform of Criminal Air Law"
+descriptionTag: "This paper is a detailed study of the differences between the Montreal Convention 1971 and the Beijing Convention 2010"
 where: "(Ruch Prawniczy Ekonomiczny i Socjologiczny, 2013, No. 3, pp. 35–47)"
 category: Aviation security
 templateKey: research-paper

@@ -1,5 +1,7 @@
 ---
 title: "Cheap Liberalization: Cutting Regulatory Corners in Air Transport or Cutting One’s Own Throat?"
+titleTag: "Cheap Liberalization: Cutting Regulatory Corners in Air Transport or Cutting One’s Own Throat?"
+descriptionTag: "The reform of airline ownership and control restrictions may successfully substitute for the economic benefits of the 7th to the 9th freedoms of the air, although at a lower price for the aviation safety"
 where: "([in:] Jan Walulik (ed.), Harmonising Regulatory and Antitrust Regimes for International Air Transport, Abingdon, New York: Routledge, 2019, pp. 157–176)"
 category: Aviation safety
 templateKey: research-paper

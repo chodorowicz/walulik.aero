@@ -1,5 +1,7 @@
 ---
 title: "At the core of airline foreign investment restrictions: A study of 121 countries"
+titleTag: "At the core of airline foreign investment restrictions"
+descriptionTag: "The article portrays the worldwide scale and extent of airline investment restrictions by presenting national regulations on airline ownership and control in 121 states and territories"
 where: "(Transport Policy, 2016, Vol. 49, pp. 234–251)"
 category: Economic regulation
 templateKey: research-paper

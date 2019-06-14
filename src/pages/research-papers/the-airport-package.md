@@ -1,5 +1,7 @@
 ---
 title: "The Airport Package: An Analysis of European Commission’s Legislative Proposal (in Polish)"
+titleTag: "The Airport Package"
+descriptionTag: "The article discusses an airport regulation reform proposed by the European Commission"
 where: "(Studia Europejskie, 2012, No. 4, pp. 187–206)"
 category: Economic regulation
 templateKey: research-paper

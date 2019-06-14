@@ -1,5 +1,7 @@
 ---
 title: "Beijing Reform – the Extent of Criminalization and Recommendations for the Polish Lawmaker (in Polish)"
+titleTag: "Beijing Reform – the Extent of Criminalization"
+descriptionTag: "The article starts with a discussion on international crimes in air law"
 where: "([in:] K. Myszona, Z. Galicki (eds.), 50 Years of Tokyo Convention – Safety of Air Navigation form the Perspective of Air and Outer Space: Book in Honor of Prof. Marek Żylicz, Warsaw, 2014, pp. 235–253)"
 category: Aviation security
 templateKey: research-paper

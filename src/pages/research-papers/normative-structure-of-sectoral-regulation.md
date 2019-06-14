@@ -1,5 +1,7 @@
 ---
 title: "Normative Structure of Sectoral Regulation (in Polish)"
+titleTag: "Normative Structure of Sectoral Regulation"
+descriptionTag: "This working paper includes a brief theoretical legal study on economic regulation"
 where: "(Warsaw Seminar for Administration Axiology Working Papers. Vol. 1, 2012, pp. 187–211)"
 category: Economic regulation
 templateKey: research-paper
