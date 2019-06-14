@@ -6,7 +6,12 @@ import { colors, fontFamily } from "./constants"
 import { Footer } from "./layout/footer"
 import { LogoAndMenu } from "./components"
 
-export const Layout: React.FC<{ title?: string }> = ({ children, title }) => {
+interface IProps {
+  title?: string
+  description?: string
+}
+
+export const Layout: React.FC<IProps> = ({ children, title, description }) => {
   return (
     <div>
       <Global
@@ -23,7 +28,8 @@ export const Layout: React.FC<{ title?: string }> = ({ children, title }) => {
               text-decoration: underline;
             }
           }
-          button:focus, a:focus {
+          button:focus,
+          a:focus {
             outline: none;
           }
         `}
@@ -38,6 +44,11 @@ export const Layout: React.FC<{ title?: string }> = ({ children, title }) => {
           rel="stylesheet"
         />
         <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta
           name="viewport"
           content="width=device-width, minimum-scale=1, minimal-ui"

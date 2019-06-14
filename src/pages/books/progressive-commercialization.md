@@ -1,6 +1,8 @@
 ---
 templateKey: book-page
 title: Progressive Commercialization of Airline Governance Culture
+titleTag: Progressive Commercialization of Airline Governance Culture
+descriptionTag: Progressive Commercialization of Airline Governance Culture analyses the transition of the airline sector from the perspective of airline regulations and governance culture
 text: |-
   Abingdon, New York: Routledge, 2017\
   \

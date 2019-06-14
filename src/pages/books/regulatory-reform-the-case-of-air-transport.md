@@ -1,6 +1,8 @@
 ---
 templateKey: book-page
 title: "Regulatory Reform: The Case of Air Transport (Reforma regulacyjna. Przykład transportu lotniczego)"
+titleTag: "Regulatory Reform: The Case of Air Transport"
+descriptionTag: "Comprehensive publication on airline deregulation, liberalization and regulatory reform"
 image: /assets/reforma_regulacyjna.png
 text: |-
   Warsaw: EuroPrawo, 2013 (in Polish)\

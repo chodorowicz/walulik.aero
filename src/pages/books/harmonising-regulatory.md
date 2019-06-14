@@ -1,6 +1,8 @@
 ---
 templateKey: book-page
 title: Harmonising Regulatory and Antitrust Regimes for International Air Transport
+titleTag: Harmonising Regulatory and Antitrust Regimes for International Air Transport
+descriptionTag: Harmonising Regulatory and Antitrust Regimes for International Air Transport addresses the timely and problematic issue of lack of uniformity of international aviation regulations
 image: /assets/harmonising_bok.png
 text: |-
   Abingdon, New York: Routledge, 2019\

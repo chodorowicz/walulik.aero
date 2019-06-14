@@ -1,20 +1,30 @@
 import React from "react"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
+import { IDefaultMeta } from "MyTypes"
 
 import { Layout } from "../layout"
-import { SectonPhotoText, SectionBooks, SectionPapers, SectionContact } from "./home";
-import { SectionTop } from "../components/section-top";
+import {
+  SectonPhotoText,
+  SectionBooks,
+  SectionPapers,
+  SectionContact,
+} from "./home"
+import { SectionTop } from "../components/section-top"
 import HomePageImage from "../images/home-page-bg@2x-optimized.jpg"
 import { HomePageTemplateQuery } from "../generated/graphql"
 
-interface IProps {
+type IProps = {
   data: HomePageTemplateQuery
-}
+} & IDefaultMeta
 
-const HomePage: React.FC<IProps> = (props) => {
-  const { claim } = props.data.markdownRemark.frontmatter;
+const HomePage: React.FC<IProps> = props => {
+  const {
+    claim,
+    titleTag,
+    descriptionTag,
+  } = props.data.markdownRemark.frontmatter
   return (
-    <Layout title="Aviation Research & Consulting | Jan Walulik">
+    <Layout title={titleTag} description={descriptionTag}>
       <SectionTop background={HomePageImage} isHome={true} claim={claim} />
       <SectonPhotoText />
       <SectionBooks />
@@ -31,6 +41,8 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "home-page" } }) {
       frontmatter {
         claim
+        titleTag
+        descriptionTag
       }
     }
   }

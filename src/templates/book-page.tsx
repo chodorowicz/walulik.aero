@@ -6,8 +6,9 @@ import { SectionTopBooks } from "../components"
 import { BookTop } from "./book/book-top"
 import { BookContent } from "./book/book-content"
 import { BookExtra } from "./book/book-extra"
+import { IDefaultMeta } from "MyTypes";
 
-interface IProps {
+type IProps = {
   data: {
     markdownRemark: {
       frontmatter: {
@@ -15,18 +16,18 @@ interface IProps {
       }
     }
   }
-}
+} & IDefaultMeta;
 
 const BookPage: React.FC<IProps> = props => {
   const { data, pageContext } = props
   const { html, frontmatter } = props.data.markdownRemark
-  const { image, text, title, extraBadge, extraBg, extraContentRight, extraContentLeft } = frontmatter
+  const { image, text, title, extraBadge, extraBg, extraContentRight, extraContentLeft, titleTag, descriptionTag } = frontmatter
   const { next, prev } = pageContext
   const nextLink = next && next.fields.slug
   const prevLink = prev && prev.fields.slug
 
   return (
-    <Layout title={title}>
+    <Layout title={titleTag} description={descriptionTag}>
       <SectionTopBooks>
         <BookTop
           fluid={image.childImageSharp.fluid}
@@ -53,6 +54,8 @@ export const pageQuery = graphql`
       frontmatter {
         text
         title
+        titleTag
+        descriptionTag
         image {
           childImageSharp {
             fluid(maxWidth: 1048, quality: 100) {

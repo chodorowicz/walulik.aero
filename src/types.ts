@@ -34,8 +34,8 @@ declare module "MyTypes" {
       }
       frontmatter: {
         title: string
-        publisher: string;
-        image: any;
+        publisher: string
+        image: any
       }
     }
   }
@@ -43,5 +43,16 @@ declare module "MyTypes" {
   export interface IPageContext {
     books: IBook[]
     researchPaper: IPaper[]
+  }
+
+  export interface IDefaultMeta {
+    data: {
+      markdownRemark: {
+        frontmatter: {
+          titleTag?: string
+          descriptionTag?: string
+        }
+      }
+    }
   }
 }

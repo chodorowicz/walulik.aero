@@ -1,6 +1,8 @@
 ---
 templateKey: book-page
 title: "The Great Encyclopedia of Law. Transport Law (Wielka encyklopedia prawa. Prawo komunikacyjne)"
+titleTag: "The Great Encyclopedia of Law. Transport Law"
+descriptionTag: "Transport Law Volume. Part of the Great Encyclopedia of Law Series"
 image: /assets/wlk_enc_prawa.png
 text: |-
   Warsaw: Ubi societas, ibi ius, scheduled for publishing in 2019 (in Polish)\

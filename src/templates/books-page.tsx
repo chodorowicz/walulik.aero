@@ -6,19 +6,20 @@ import { Layout } from "../layout"
 import { SectionTop } from "../components"
 import BooksPageBackground from "../images/books/books-bg@2x.jpg"
 import { SectionBooks } from "./books-components/section-books"
-import { BooksPageTemplateQuery } from "../generated/graphql"; 
+import { BooksPageTemplateQuery } from "../generated/graphql"
+import { IDefaultMeta } from "MyTypes"
 
-interface IProps {
-  data: DeepRequired<BooksPageTemplateQuery>;
-}
+type IProps = {
+  data: DeepRequired<BooksPageTemplateQuery>
+} & IDefaultMeta
 
 const Books: React.FC<IProps> = props => {
   const { data } = props
 
   const { html, frontmatter } = data.markdownRemark
-  const { title } = frontmatter;
+  const { title, titleTag, descriptionTag } = frontmatter
   return (
-    <Layout title={title}>
+    <Layout title={titleTag} description={descriptionTag}>
       <SectionTop background={BooksPageBackground} isHome={false} />
       <SectionBooks
         books={data.allMarkdownRemark.edges}
@@ -67,6 +68,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        titleTag
+        descriptionTag
       }
     }
     allMarkdownRemark: allMarkdownRemark(

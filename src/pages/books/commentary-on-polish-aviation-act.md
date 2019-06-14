@@ -1,6 +1,8 @@
 ---
 templateKey: book-page
 title: "Commentary on Polish Aviation Act (Prawo lotnicze. Komentarz)"
+titleTag: "Commentary on Polish Aviation Act"
+descriptionTag: "Book is a Commentary on Polish Aviation Act"
 image: /assets/prawo_lotnicze_komentarz.png
 text: |-
   Warsaw: Wolters Kluwer, 2016 (in Polish)\
