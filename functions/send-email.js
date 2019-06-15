@@ -9,7 +9,7 @@ const sendThankYouEmail = async ({ email, message, name, pot}) => {
     console.log("Sending the email")
     const sgEmail = {
       to: process.env.EMAIL_TO,
-      from: process.env.EMAIL_FORM, 
+      from: process.env.EMAIL_FROM, 
       replyTo: `${name} <${email}>`,
       subject: "Contact form: walulik.aero",
       text: message,
