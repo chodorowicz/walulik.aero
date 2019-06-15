@@ -63,7 +63,7 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
       <LogoAndMenu />
       {children}
       <CookieConsent
-        buttonStyle={{ color: colors.accent, fontSize: "13px", background: "none" }}
+        buttonStyle={{ color: colors.accent, fontSize: "16px", background: "none" }}
       >
         This website uses cookies. You can{" "}
         <Link to={urls.privacyPolicy}>read more here</Link>
