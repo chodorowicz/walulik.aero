@@ -156,6 +156,7 @@ export const ContactForm: React.FC = () => {
           <input
             id="pot"
             value={pot}
+            tabindex="-1"
             onChange={event => {
               setPot(event.currentTarget.value)
             }}
