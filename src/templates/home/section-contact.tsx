@@ -5,6 +5,7 @@ import { SectionTitle, WrapperContentNoMobilePadding } from "../../components"
 import { ContactForm } from "./contact-form/contact-form"
 import { colors, fontSizes, fontFamily, fontWeight, spacings, mq } from "../../constants"
 import { grid12, paddingSides20, paddingSides0 } from "../../styles"
+import Obfuscate from "react-obfuscate";
 
 const Wrapper = styled.div`
   ${grid12};
@@ -55,6 +56,9 @@ const InfoSideDetails = styled.div`
   font-weight: ${fontWeight.light};
   color: ${colors.darkBlue};
   line-height: 30px;
+  a {
+    color: ${colors.darkBlue};
+  }
 `;
 
 const Link = styled.a`
@@ -82,7 +86,10 @@ export const SectionContact: React.FC<any> = () => {
             50/515 Nowogrodzka St.<br />
             Warsaw, PL00-695 <br />
             Poland<br />
-            jan@walulik.aero<br />
+            <span><Obfuscate
+              style={{display:'inline-block'}}
+              email="jan@walulik.aero"
+            /></span><br />
           </InfoSideDetails>
           <br />
           <Link href="https://walulik.aero">walulik.aero</Link>

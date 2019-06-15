@@ -11,7 +11,6 @@ import {
   mq,
 } from "../constants"
 import LogoCars from "../images/logos/cars.svg"
-// import ResearchId from "../images/logos/researcherid.svg"
 import LogoP from "../images/logos/p.svg"
 import LogoRoutledge from "../images/logos/routledge.svg"
 import LogoScopus from "../images/logos/scopus.svg"
@@ -22,13 +21,11 @@ import LogoBlob from "../images/logos/blob.svg"
 import LogoSSRN from "../images/logos/ssrn.svg"
 import LogoResearchgate from "../images/logos/researchgate.svg"
 import LogoPBN from "../images/logos/pbn.svg"
-import LogoResearchIdSrc from "../images/logos/researcherid.png"
 import LogoGoogleScholarSrc from "../images/logos/google-scholar.png"
 import LogoNaukaPolska from "../images/logos/nauka-polska.png"
-import LogoSSWR from "../images/logos/sswr.png"
-import LogoInventorum from "../images/logos/inventorum.png"
 import { grid12 } from "../styles"
 import { urls } from "../constants"
+import Obfuscate from "react-obfuscate";
 
 const WrapperOuterSC = styled.div`
   background-color: ${colors.white};
@@ -101,7 +98,11 @@ const Logos = styled.div`
   }
 `
 
-const ContactInfo = styled.div``
+const ContactInfo = styled.div`
+  a {
+    color: ${colors.accent};
+  }
+`
 const Text = styled.div`
   font-family: ${fontFamily.roboto};
 `
@@ -154,7 +155,10 @@ export function Footer(): JSX.Element {
               Poland
             </Text>
             <br />
-            <EmailLink href="mailto:jan@walulik.aero">jan@walulik.aero</EmailLink>
+            <Obfuscate
+              style={{display:'inline-block'}}
+              email="jan@walulik.aero"
+            />
           </ContactInfo>
         </ContainerRight>
         <CopySection>

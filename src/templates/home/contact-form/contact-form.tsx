@@ -137,7 +137,7 @@ export const ContactForm: React.FC = () => {
             required
             className={name !== "" && "notEmpty"}
           />
-          <LabelSC for="name">name</LabelSC>
+          <LabelSC htmlFor="name">name</LabelSC>
         </SectionSC>
         <SectionSC>
           <InputSC
@@ -150,18 +150,16 @@ export const ContactForm: React.FC = () => {
             type="email"
             className={email !== "" && "notEmpty"}
           />
-          <LabelSC for="email">e-mail</LabelSC>
+          <LabelSC htmlFor="email">e-mail</LabelSC>
         </SectionSC>
         <div style={{ opacity: 0, height: "1px", width: "1px" }}>
-          <label>
-            <input
-              id="pot"
-              value={pot}
-              onChange={event => {
-                setPot(event.currentTarget.value)
-              }}
-            />
-          </label>
+          <input
+            id="pot"
+            value={pot}
+            onChange={event => {
+              setPot(event.currentTarget.value)
+            }}
+          />
         </div>
         <SectionSC>
           <TextareaSC
@@ -173,7 +171,7 @@ export const ContactForm: React.FC = () => {
             required
             className={message !== "" && "notEmpty"}
           />
-          <LabelSC for="message">message</LabelSC>
+          <LabelSC htmlFor="message">message</LabelSC>
         </SectionSC>
         <ButtonSectionSC>
           <AnimatedButtonRight>Send</AnimatedButtonRight>
