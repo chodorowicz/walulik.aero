@@ -72,27 +72,59 @@ const ButtonSectionSC = styled.div`
   justify-content: center;
 `
 
+const Success = styled.div<{ isVisible: boolean }>`
+  opacity: ${props => props.isVisible ? 1 : 0};
+  transition: 300ms all;
+  position: absolute;
+  bottom: -45px;
+  left: 0;
+  right: 0;
+  text-align: center;
+`
+
 export const ContactForm: React.FC = () => {
   const [name, setName] = React.useState("")
   const [email, setEmail] = React.useState("")
   const [message, setMessage] = React.useState("")
+  const [pot, setPot] = React.useState("")
+  const [wasFormSent, setWasFormSent] = React.useState(false)
   return (
     <Container>
       <Title>Send a message</Title>
       <form
+        style={{ position: "relative"}}
         onSubmit={event => {
           event.preventDefault()
-          window.fetch("/.netlify/functions/send-email", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              name,
-              email,
-              message,
-            }),
-          })
+          window.fetch(
+              "/.netlify/functions/send-email",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  name,
+                  email,
+                  message,
+                  pot,
+                }),
+              }
+            ).then((response) => {
+              console.log(response);
+              setWasFormSent(true)
+              window.setTimeout(() => {
+                setWasFormSent(false)
+                setName("")
+                setEmail("")
+                setMessage("")
+              }, 4000)
+              if(response.status !== 200) {
+                console.log("problem sending");
+              }
+            }).catch(error => {
+              console.log("problem sending", error);
+            })
+          
         }}
       >
         <SectionSC>
@@ -120,6 +152,17 @@ export const ContactForm: React.FC = () => {
           />
           <LabelSC for="email">e-mail</LabelSC>
         </SectionSC>
+        <div style={{ opacity: 0, height: "1px", width: "1px" }}>
+          <label>
+            <input
+              id="pot"
+              value={pot}
+              onChange={event => {
+                setPot(event.currentTarget.value)
+              }}
+            />
+          </label>
+        </div>
         <SectionSC>
           <TextareaSC
             id="message"
@@ -135,6 +178,7 @@ export const ContactForm: React.FC = () => {
         <ButtonSectionSC>
           <AnimatedButtonRight>Send</AnimatedButtonRight>
         </ButtonSectionSC>
+        <Success isVisible={wasFormSent}>Thanks for sending Your message!</Success>
       </form>
     </Container>
   )

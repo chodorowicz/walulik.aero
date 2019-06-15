@@ -25,6 +25,7 @@
     "@types/react-helmet": "5.0.8",
     "@types/react-responsive": "3.0.3",
     "commonmark": "0.29.0",
+    "dotenv": "8.0.0",
     "emotion-theming": "10.0.10",
     "gatsby": "2.3.30",
     "gatsby-image": "2.0.40",

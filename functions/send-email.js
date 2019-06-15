@@ -1,17 +1,30 @@
+require('dotenv').config()
+
+const _ = require("lodash")
 const sendGridMail = require("@sendgrid/mail")
 sendGridMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-const sendThankYouEmail = async ({ email, message, name}) => {
+const sendThankYouEmail = async ({ email, message, name, pot}) => {
   return new Promise((resolve, reject) => {
     console.log("Sending the email")
     const sgEmail = {
-      to: "jakub@chodorowicz.com",
+      to: process.env.EMAIL_TO,
       from: `${name} <${email}>`,
       subject: "Contact form: walulik.aero",
       text: message,
     }
-    sendGridMail.send(sgEmail);
-    resolve()
+
+    console.log(sgEmail, "pot", pot);
+    if (!_.isNil(pot) && pot !== "") {
+      console.log("bot, cancelling");
+      reject()
+      return
+    }
+    sendGridMail.send(sgEmail).then(() => {
+      resolve()
+    }).catch(error => {
+      reject()
+    })
   })
 }
 
@@ -33,10 +46,17 @@ exports.handler = function sendEmail(event, _context, callback) {
   
   const body = JSON.parse(event.body)
   const { email, message, name } = body
-  sendThankYouEmail({ email, message, name})
-  callback(null, {
-    statusCode: 200,
-    body: "thank you",
-    headers,
+  sendThankYouEmail(body).then(() =>{
+    callback(null, {
+      statusCode: 200,
+      body: "thank you",
+      headers,
+    });
+  }).catch(error => {
+    callback(null, {
+      statusCode: 404,
+      body: "problem",
+      headers,
+    });
   })
 }
