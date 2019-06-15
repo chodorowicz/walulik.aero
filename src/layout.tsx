@@ -1,10 +1,12 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import { Global, css } from "@emotion/core"
+import CookieConsent from "react-cookie-consent"
 
-import { colors, fontFamily } from "./constants"
+import { colors, fontFamily, urls } from "./constants"
 import { Footer } from "./layout/footer"
 import { LogoAndMenu } from "./components"
+import { Link } from "gatsby"
 
 interface IProps {
   title?: string
@@ -32,6 +34,10 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
           a:focus {
             outline: none;
           }
+          
+          .cookieConsent a {
+            color: ${colors.accent}
+          }
         `}
       />
       <Helmet>
@@ -56,6 +62,12 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
       </Helmet>
       <LogoAndMenu />
       {children}
+      <CookieConsent
+        buttonStyle={{ color: colors.accent, fontSize: "13px", background: "none" }}
+      >
+        This website uses cookies. You can{" "}
+        <Link to={urls.privacyPolicy}>read more here</Link>
+      </CookieConsent>
       <Footer />
     </div>
   )
