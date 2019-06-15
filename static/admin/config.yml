@@ -2,6 +2,7 @@ backend:
   # name: test-repo
   name: github
   repo: chodorowicz/jan-walulik
+publish_mode: editorial_workflow
 
 media_folder: static/assets
 public_folder: assets
