@@ -69,3 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 /src/generated
+.functions
+sendgrid.env

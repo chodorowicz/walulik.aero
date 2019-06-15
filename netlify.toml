@@ -2,4 +2,4 @@
   id = "7776c836-6668-4ec9-8fe5-28f1b8629799"
 
 [build]
-  functions = "functions/"
+  functions = "functions"

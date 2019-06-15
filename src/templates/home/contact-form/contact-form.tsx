@@ -82,6 +82,17 @@ export const ContactForm: React.FC = () => {
       <form
         onSubmit={event => {
           event.preventDefault()
+          window.fetch("/.netlify/functions/send-email", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              message,
+            }),
+          })
         }}
       >
         <SectionSC>
