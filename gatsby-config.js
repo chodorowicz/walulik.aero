@@ -1,13 +1,14 @@
 const path = require("path")
+var proxy = require("http-proxy-middleware")
 
 module.exports = {
   plugins: [
     {
       // this needs to point to folder where uploaded images are stored
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/assets`,
-        name: 'assets',
+        name: "assets",
       },
     },
     {
@@ -18,34 +19,34 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
+        name: "pages",
       },
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-relative-images',
+            resolve: "gatsby-remark-relative-images",
             options: {
-              name: 'assets',
+              name: "assets",
             },
           },
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 2048,
             },
           },
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: "gatsby-remark-copy-linked-files",
             options: {
-              destinationDir: 'static',
+              destinationDir: "static",
             },
           },
           {
@@ -57,7 +58,7 @@ module.exports = {
               removeAccents: true,
             },
           },
-          "gatsby-remark-external-links"
+          "gatsby-remark-external-links",
         ],
       },
     },
@@ -73,6 +74,25 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-netlify-cms"
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    "gatsby-plugin-netlify",
   ],
+  // for avoiding CORS while developing Netlify Functions locally
+  // read more: https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying
+  developMiddleware: app => {
+    app.use(
+      '/.netlify/functions/',
+      proxy({
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '/.netlify/functions/': '',
+        },
+      })
+    )
+},
 }
