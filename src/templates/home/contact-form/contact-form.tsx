@@ -177,7 +177,7 @@ export const ContactForm: React.FC = () => {
         <ButtonSectionSC>
           <AnimatedButtonRight>Send</AnimatedButtonRight>
         </ButtonSectionSC>
-        <Success isVisible={wasFormSent}>Thanks for sending Your message!</Success>
+        <Success isVisible={wasFormSent}>Thank you. Your message has been successfully sent.</Success>
       </form>
     </Container>
   )
