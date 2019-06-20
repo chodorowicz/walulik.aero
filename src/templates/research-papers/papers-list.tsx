@@ -23,6 +23,8 @@ interface IProps {
   researchPapers: IPaper[]
 }
 
+const PARAM_SECTION = "section"
+
 const NavButton = styled.button<{ isSelected: boolean }>`
   border: none;
   background: ${({ isSelected }) => (isSelected ? colors.accent : "none")};
@@ -94,6 +96,12 @@ const PosedPaper = posed.div({
 
 const PosedPaperSC = styled(PosedPaper)``
 
+function setCategoryParam(category: string) {
+  const params = new URLSearchParams(window.location.search)
+  params.set(PARAM_SECTION, slugify(category));
+  window.history.replaceState({}, '', `${location.pathname}?${params}`);
+}
+
 export const PapersList: React.FC<IProps> = ({
   categories,
   researchPapers,
@@ -103,11 +111,12 @@ export const PapersList: React.FC<IProps> = ({
   // to make in SSR compatible
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search)
-    const section = params.get("section")
+    const section = params.get(PARAM_SECTION)
     const matchedCategory = categories.find(x => slugify(x) === section)
     const foundCategory =
       matchedCategory !== undefined ? matchedCategory : categories[0]
     setCategory(foundCategory)
+    setCategoryParam(foundCategory)
   }, [])
 
   const filteredPapers = researchPapers.filter(
@@ -120,7 +129,10 @@ export const PapersList: React.FC<IProps> = ({
           {categories.map(category => (
             <NavButton
               isSelected={selectedCategory === category}
-              onClick={() => setCategory(category)}
+              onClick={() => {
+                setCategory(category)
+                setCategoryParam(category)
+              }}
             >
               {category}
             </NavButton>

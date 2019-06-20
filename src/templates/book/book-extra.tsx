@@ -17,7 +17,7 @@ const StyledContentRight = styled(MarkdownContainerFull)`
 `
 
 const WrapperContentSC = styled(WrapperContent)`
-  background-image:  url(${props => props.bgSrc});
+  background-image: url(${props => props.bgSrc});
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 100px;
@@ -25,17 +25,24 @@ const WrapperContentSC = styled(WrapperContent)`
   background-position: center center;
 `
 
-
-export const BookExtra: React.FC<IProps> = (props) => {
-  const { extraBg, extraContentRight, extraContentLeft  } = props
+export const BookExtra: React.FC<IProps> = props => {
+  const { extraBg, extraContentRight, extraContentLeft } = props
   const bgSrc = extraBg.childImageSharp.fluid.src
 
   return (
-      <WrapperContentSC bgSrc={bgSrc} id="prize">
-        <Container>
-          <StyledContentLeft content={extraContentLeft} color={colors.white} stripTags={false} />
-          <StyledContentRight content={extraContentRight} color={colors.white} stripTags={false} />
-        </Container>
-      </WrapperContentSC>
+    <WrapperContentSC bgSrc={bgSrc} id="prize">
+      <Container>
+        <StyledContentLeft
+          content={extraContentLeft}
+          color={colors.white}
+          stripTags={false}
+        />
+        <StyledContentRight
+          content={extraContentRight}
+          color={colors.white}
+          stripTags={false}
+        />
+      </Container>
+    </WrapperContentSC>
   )
 }

@@ -65,7 +65,7 @@ export const SectionPublications: React.FC = () => (
       <WrapperText>
         <StyledTitle>Publications &amp; editorship</StyledTitle>
         <Paragraph color={colors.white}>
-          He has published several <a href={urls.books}>books</a> and numerous <a href={urls.researchPapers}>research papers</a> on air law, aviation policy and regulatory issues. Jan has been an editor of the Transport Series at <a href="https://ikar.wz.uw.edu.pl/" target="_blank">iKAR</a> (internet Quarterly on Antitrust and Regulation, ISSN 2299-5749), and a reviewer for several renowned transport journals.
+          He has published several <a href={urls.books}>books</a> and numerous research papers on air law, aviation policy and regulatory issues. Jan has been an editor of the Transport Series at <a href="https://ikar.wz.uw.edu.pl/" target="_blank">iKAR</a> (internet Quarterly on Antitrust and Regulation, ISSN 2299-5749), and a reviewer for several renowned transport journals.
         </Paragraph>
         <ContainerButton>
           <AnimatedLink to={urls.researchPapers}>See my research papers</AnimatedLink>
