@@ -4,6 +4,8 @@ const _ = require("lodash")
 const sendGridMail = require("@sendgrid/mail")
 sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+const domain = "https://walulik.aero"
+
 function getAutoRespondMessageContent() {
   return `
   <p>Thank you for taking the time to contact me. Your message has been successfully sent. I will get back to you soon.</p>
@@ -16,7 +18,11 @@ function getAutoRespondMessageContent() {
   Warsaw, PL00-695<br/>
   Poland<br/>
   jan@walulik.aero<br/>
-  walulik.aero<br/>
+  <a href="${domain}">walulik.aero</a><br/>
+  </p>
+
+  <p>
+    Please be informed that supplied personal data might be processed according to our <a href="${domain}/privacy-policy/">privacy policy rules</a>. 
   </p>
   `
 }
