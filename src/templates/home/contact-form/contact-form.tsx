@@ -1,7 +1,15 @@
 import * as React from "react"
 import styled from "@emotion/styled"
+import Cookies from "js-cookie"
 
-import { colors, fontSizes, fontFamily, spacings, mq } from "../../../constants"
+import {
+  colors,
+  fontSizes,
+  fontFamily,
+  spacings,
+  mq,
+  urls,
+} from "../../../constants"
 import { AnimatedButtonRight } from "../../../components"
 import { paddingSides20 } from "../../../styles"
 
@@ -73,7 +81,7 @@ const ButtonSectionSC = styled.div`
 `
 
 const Success = styled.div<{ isVisible: boolean }>`
-  opacity: ${props => props.isVisible ? 1 : 0};
+  opacity: ${props => (props.isVisible ? 1 : 0)};
   transition: 300ms all;
   position: absolute;
   bottom: -45px;
@@ -87,44 +95,59 @@ export const ContactForm: React.FC = () => {
   const [email, setEmail] = React.useState("")
   const [message, setMessage] = React.useState("")
   const [pot, setPot] = React.useState("")
-  const [wasFormSent, setWasFormSent] = React.useState(false)
+  const [errorMessage, setErrorMessage] = React.useState("")
+
   return (
     <Container>
       <Title>Send a message</Title>
       <form
-        style={{ position: "relative"}}
+        style={{ position: "relative" }}
         onSubmit={event => {
           event.preventDefault()
-          window.fetch(
-              "/.netlify/functions/send-mailgun",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  name,
-                  email,
-                  message,
-                  pot,
-                }),
-              }
-            ).then((response) => {
-              console.log(response);
-              setWasFormSent(true)
+          const consent = Cookies.get("CookieConsent")
+          console.log(consent)
+          if (consent !== "true") {
+            setErrorMessage(
+              `You must indicate that you have read and agreed to the <a href="${
+                urls.privacyPolicy
+              }">Privacy Policy</a>.`
+            )
+            window.setTimeout(() => {
+              setMessage("")
+            }, 4000)
+            return
+          }
+          window
+            .fetch("/.netlify/functions/send-mailgun", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                name,
+                email,
+                message,
+                pot,
+              }),
+            })
+            .then(response => {
+              console.log(response)
+              setErrorMessage(
+                "Thank you. Your message has been successfully sent."
+              )
               window.setTimeout(() => {
-                setWasFormSent(false)
+                setErrorMessage("")
                 setName("")
                 setEmail("")
                 setMessage("")
               }, 4000)
-              if(response.status !== 200) {
-                console.log("problem sending");
+              if (response.status !== 200) {
+                console.log("problem sending")
               }
-            }).catch(error => {
-              console.log("problem sending", error);
             })
-          
+            .catch(error => {
+              console.log("problem sending", error)
+            })
         }}
       >
         <SectionSC>
@@ -177,7 +200,10 @@ export const ContactForm: React.FC = () => {
         <ButtonSectionSC>
           <AnimatedButtonRight>Send</AnimatedButtonRight>
         </ButtonSectionSC>
-        <Success isVisible={wasFormSent}>Thank you. Your message has been successfully sent.</Success>
+        <Success
+          isVisible={errorMessage !== ""}
+          dangerouslySetInnerHTML={{ __html: errorMessage }}
+        />
       </form>
     </Container>
   )

@@ -26,6 +26,7 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
           }
           a {
             text-decoration: none;
+            color: ${colors.accent};
             &:hover {
               text-decoration: underline;
             }
