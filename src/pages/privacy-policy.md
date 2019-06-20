@@ -95,9 +95,7 @@ We use cookies in a range of ways to improve your experience on our website, inc
 
 ## What types of cookies do we use?
 
-There are a number of different types of cookies, however, our website uses:
-- Functionality – Our Company uses these cookies so that we recognize you on our website and remember your previously selected preferences. These could include what language you prefer and location you are in. A mix of first-party and third-party cookies are used.
-- Advertising – Our Company uses these cookies to collect information about your visit to our website, the content you viewed, the links you followed and information about your browser, device, and your IP address. Our Company sometimes shares some limited aspects of this data with third parties for advertising purposes. We may also share online data collected through cookies with our advertising partners. This means that when you visit another website, you may be shown advertising based on your browsing patterns on our website.
+There are a number of different types of cookies. However, our website uses cookies so that we recognize you on our website and remember your previously selected preferences. A mix of first-party and third-party cookies are used.
 
 ## How to manage cookies
 
@@ -105,7 +103,9 @@ You can set your browser not to accept cookies, and the above website tells you 
 
 ## Statistics
 
-The website uses a minimal build of Google Analytics, a service which transmits website traffic data to Google servers in the United States and allows us to notice trends to improve the user experience on our website. This minimal build processes personal data such as: the unique User ID set by Google Analytics, the date and time, the title of the page being viewed, the URL of the page being viewed, the URL of the page that was viewed prior to the current page, the screen resolution, the time in local time zone, the files that were clicked on and downloaded, the links clicked on to an outside domain, the type of device, and the country, region, and city.
+The website uses a minimal build of Google Analytics, a service which allows us to notice trends to improve the user experience on our website. Google Analytics transmits website traffic data to Google data centres. Your data will be protected by the standards set out in the Privacy Shield, approved by the European Commission. This will give your data an appropriate level of security.
+
+This minimal build processes personal data such as: the unique User ID set by Google Analytics, the date and time, the title of the page being viewed, the URL of the page being viewed, the URL of the page that was viewed prior to the current page, the screen resolution, the time in local time zone, the files that were clicked on and downloaded, the links clicked on to an outside domain, the type of device, and the country, region, and city.
 
 You may opt out of this tracking at any time by activating the “Do Not Track” setting in your browser.
 
