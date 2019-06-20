@@ -96,7 +96,7 @@ export const ContactForm: React.FC = () => {
         onSubmit={event => {
           event.preventDefault()
           window.fetch(
-              "/.netlify/functions/send-email",
+              "/.netlify/functions/send-mailgun",
               {
                 method: "POST",
                 headers: {
