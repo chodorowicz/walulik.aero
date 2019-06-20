@@ -113,7 +113,7 @@ export const ContactForm: React.FC = () => {
               }">Privacy Policy</a>.`
             )
             window.setTimeout(() => {
-              setMessage("")
+              setErrorMessage("")
             }, 4000)
             return
           }

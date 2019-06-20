@@ -48,14 +48,6 @@ const sendThankYouEmail = async ({ email, message, name, pot }) => {
     })
 
     resolve()
-
-    // sendGridMail.send(sgEmail).then(() => {
-    //   resolve()
-    // }).catch(error => {
-    //   reject()
-    // })
-
-    // sendGridMail.send(autoRespondEmail);
   })
 }
 
