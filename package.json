@@ -50,6 +50,8 @@
     "lodash": "4.17.11",
     "netlify-cms-app": "2.9.3",
     "netlify-lambda": "1.4.13",
+    "nodejs-nodemailer-outlook": "1.1.0",
+    "nodemailer": "6.2.1",
     "react": "^16.8.6",
     "react-cookie-consent": "2.3.1",
     "react-dom": "^16.8.6",

@@ -3,29 +3,8 @@ require('dotenv').config()
 const _ = require("lodash")
 const sendGridMail = require("@sendgrid/mail")
 sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-const domain = "https://walulik.aero"
-
-function getAutoRespondMessageContent() {
-  return `
-  <p>Thank you for taking the time to contact me. Your message has been successfully sent. I will get back to you soon.</p>
-  <p>Kind regards,</p>
-
-  <p>
-  Jan Walulik<br/>
-  Aviation Research & Consulting<br/>
-  50/515 Nowogrodzka St.<br/>
-  Warsaw, PL00-695<br/>
-  Poland<br/>
-  jan@walulik.aero<br/>
-  <a href="${domain}">walulik.aero</a><br/>
-  </p>
-
-  <p>
-    Please be informed that supplied personal data might be processed according to our <a href="${domain}/privacy-policy/">privacy policy rules</a>. 
-  </p>
-  `
-}
+const common = require("./src/common");
+const { getAutoRespondMessageContent, statusCode, headers} = common;
 
 
 const sendThankYouEmail = async ({ email, message, name, pot}) => {
@@ -34,7 +13,7 @@ const sendThankYouEmail = async ({ email, message, name, pot}) => {
     const personEmail = `${name} <${email}>`;
     const sgEmail = {
       to: process.env.EMAIL_TO,
-      from: process.env.EMAIL_FROM, 
+      from: "jakub@chodorowicz.pl", 
       replyTo: personEmail,
       subject: "Contact form: walulik.aero",
       text: message,
@@ -42,11 +21,10 @@ const sendThankYouEmail = async ({ email, message, name, pot}) => {
 
     const autoRespondEmail = {
       to: personEmail,
-      from: process.env.EMAIL_FROM, 
+      from: "jakub@chodorowicz.pl", 
       subject: "Contact form: walulik.aero",
       html: getAutoRespondMessageContent(),
     }
-
 
     console.log("Sending the email")
     console.log(sgEmail, "pot", pot);
@@ -65,12 +43,6 @@ const sendThankYouEmail = async ({ email, message, name, pot}) => {
 
     sendGridMail.send(autoRespondEmail);
   })
-}
-
-const statusCode = 200
-const headers = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "Content-Type",
 }
 
 exports.handler = function sendEmail(event, _context, callback) {
