@@ -22,6 +22,8 @@ collections:
               default: "home-page",
             }
           - { label: "Claim", name: "claim", widget: "markdown" }
+          - { label: "About", name: "about", widget: "markdown" }
+          - { label: "About Resarch Papers", name: "aboutResearchPapers", widget: "markdown" }
       - file: "src/pages/research-papers.md"
         label: "Resarch Papers Page"
         name: "research-papers"

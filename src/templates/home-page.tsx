@@ -22,13 +22,15 @@ const HomePage: React.FC<IProps> = props => {
     claim,
     titleTag,
     descriptionTag,
+    about,
+    aboutResearchPapers
   } = props.data.markdownRemark.frontmatter
   return (
     <Layout title={titleTag} description={descriptionTag}>
       <SectionTop background={HomePageImage} isHome={true} claim={claim} />
-      <SectonPhotoText />
+      <SectonPhotoText about={about} />
       <SectionBooks />
-      <SectionPapers />
+      <SectionPapers aboutResearchPapers={aboutResearchPapers} />
       <SectionContact />
     </Layout>
   )
@@ -43,6 +45,8 @@ export const pageQuery = graphql`
         claim
         titleTag
         descriptionTag
+        about
+        aboutResearchPapers
       }
     }
   }

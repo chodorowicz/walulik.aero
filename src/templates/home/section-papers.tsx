@@ -75,7 +75,8 @@ const LinkedPaperBox: React.FC<{ section: string }> = ({
   )
 }
 
-export const SectionPapers: React.FC<any> = () => {
+export const SectionPapers: React.FC<any> = (props) => {
+  const { aboutResearchPapers } = props;
   return (
     <Wrapper>
       <WrapperContent>
@@ -83,7 +84,7 @@ export const SectionPapers: React.FC<any> = () => {
         <WrapperText>
           <Title>Research papers</Title>
           <Paragraph>
-            Jan’s publications include also many specialist research papers focused on key issues in aviation law and policy as well as on market regulation and fair competition matters.
+            {aboutResearchPapers}
           </Paragraph>
         </WrapperText>
         <BoxWrapper>

@@ -59,7 +59,7 @@ const ButtonContainerSC = styled.div`
   }
 `
 
-export const SectonPhotoText: React.FC<any> = () => {
+export const SectonPhotoText: React.FC<any> = (props) => {
   const data = useStaticQuery(graphql`
     query ImageQuery {
       file(relativePath: { eq: "jan@2x.jpg" }) {
@@ -72,6 +72,7 @@ export const SectonPhotoText: React.FC<any> = () => {
     }
   `)
 
+  const { about } = props;
   return (
     <WrapperOuter>
       <WrapperContentNoMobilePadding>
@@ -82,7 +83,7 @@ export const SectonPhotoText: React.FC<any> = () => {
           <TextContent>
             <Title>Jan Walulik</Title>
             <Paragraph>
-              Attorney and researcher specialising in aviation law and policy and in commercial law for over 10 years. Active as an aviation expert in consulting and training projects for the industry and the government. Lecturer in air law; author, editor and reviewer of numerous publications on regulatory issues in aviation. Member of the Warsaw Bar Association.
+              {about}
             </Paragraph>
             <ButtonContainerSC>
               <AnimatedLink to={urls.about}>learn more</AnimatedLink>
