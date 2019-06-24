@@ -46,7 +46,6 @@ collections:
               widget: "hidden",
               default: "about-page",
             }
-          - { label: "Title", name: "title", widget: "string" }
           - { label: "Url", name: "slug", widget: "string" }
           - { label: "Title Tag", name: "titleTag", widget: "string" }
           - { label: "Description Tag", name: "descriptionTag", widget: "string" }
