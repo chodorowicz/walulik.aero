@@ -7,13 +7,13 @@ import {
   Paragraph,
   WrapperContent,
   SectionTitle,
-  AnimatedLink
+  AnimatedLink,
+  MarkdownContainerPure
 } from "../../components"
 import { grid12, paddingSides20 } from "../../styles"
 import ImageEducation from "../../images/about/education@2x.png"
 
-
-const BOX_PADDING = 45;
+const BOX_PADDING = 45
 
 const Wrapper = styled.div`
   overflow: hidden;
@@ -33,7 +33,8 @@ const StyledWrapperContent = styled(WrapperContent)`
 const ColumnPhoto = styled.div`
   grid-column: 1 / span 12;
   grid-row: 2;
-  &, img {
+  &,
+  img {
     max-width: 100%;
   }
   margin-top: ${BOX_PADDING}px;
@@ -68,47 +69,50 @@ const ContactBox = styled.div`
     position: absolute;
     z-index: 2;
     background-color: ${colors.darkBlue};
-    top: ${-BOX_PADDING}px; 
+    top: ${-BOX_PADDING}px;
     bottom: ${-BOX_PADDING}px;
     left: 0;
     right: 0;
   }
   ${mq.b768} {
     &:after {
-      left: -140px; 
-      right: -9999px; 
+      left: -140px;
+      right: -9999px;
     }
   }
-`;
+`
 
 const ContactBoxInner = styled.div`
   position: relative;
   z-index: 3;
   ${paddingSides20};
-`;
+`
 
-export const SectionEducation: React.FC = () => (
-  <Wrapper>
-    <StyledWrapperContent>
-      <ColumnPhoto>
-        <StyledPhoto src={ImageEducation} />
-      </ColumnPhoto>
-      <ColumnText>
-        <SectionTitle>
-          Education <br /> &amp; distinctions
-        </SectionTitle>
-        <Paragraph>
-          He graduated in law from University of Warsaw in 2007 (<em>summa cum laude</em>) and had received multiple scholar awards from the Minister of Education. Jan obtained his PhD degree in air law in 2011 and the <Link to="/regulatory-reform-airline-deregulation-liberalization#prize">prizewinning</Link> print version of his thesis was named the best Polish monograph in law and economic regulation of network infrastructures.
-        </Paragraph>
-        <ContactBox>
-          <ContactBoxInner>
-            <Paragraph color={colors.white} fontSize={fontSizes.size28}>
-              Jan can be contacted by email or on social media. He speaks English, Polish, German and Russian.
-            </Paragraph>
-            <AnimatedLink to={urls.contact}>Contact Jan</AnimatedLink>
-          </ContactBoxInner>
-        </ContactBox>
-      </ColumnText>
-    </StyledWrapperContent>
-  </Wrapper>
-)
+export const SectionEducation: React.FC = props => {
+  const { educationTop, educationBottom } = props
+  return (
+    <Wrapper>
+      <StyledWrapperContent>
+        <ColumnPhoto>
+          <StyledPhoto src={ImageEducation} />
+        </ColumnPhoto>
+        <ColumnText>
+          <SectionTitle>
+            Education <br /> &amp; distinctions
+          </SectionTitle>
+          <Paragraph>
+            <MarkdownContainerPure content={educationTop} />
+          </Paragraph>
+          <ContactBox>
+            <ContactBoxInner>
+              <Paragraph color={colors.white} fontSize={fontSizes.size28}>
+                <MarkdownContainerPure content={educationBottom} />
+              </Paragraph>
+              <AnimatedLink to={urls.contact}>Contact Jan</AnimatedLink>
+            </ContactBoxInner>
+          </ContactBox>
+        </ColumnText>
+      </StyledWrapperContent>
+    </Wrapper>
+  )
+}

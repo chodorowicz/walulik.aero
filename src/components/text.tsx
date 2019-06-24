@@ -64,3 +64,6 @@ export const StyledCalloutContent = styled.div<IStyledContent>`
     font-weight: ${fontWeight.bold};
   }
 `;
+
+export const StyledContentPure = styled.div<IStyledContent>`
+`

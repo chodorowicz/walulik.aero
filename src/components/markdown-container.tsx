@@ -3,7 +3,7 @@ import commonmark from "commonmark";
 import styled from "@emotion/styled"
 import striptags from "striptags"
 
-import { StyledContent } from "../components"
+import { StyledContent, StyledContentPure } from "../components"
 
 interface IProps {
   content: string;
@@ -43,5 +43,16 @@ export const MarkdownContainerFull: React.FC<IPropsFull> = React.memo(({ content
 
   return (
     <StyledContent className={className} dangerouslySetInnerHTML={{ __html: result }} color={color} />
+  );
+});
+
+export const MarkdownContainerPure: React.FC<IPropsFull> = React.memo(({ content, className, color }) => {
+  const reader = new commonmark.Parser();
+  const writer = new commonmark.HtmlRenderer();
+  const parsed = reader.parse(content);
+  const result = writer.render(parsed);
+
+  return (
+    <StyledContentPure className={className} dangerouslySetInnerHTML={{ __html: result }} color={color} />
   );
 });

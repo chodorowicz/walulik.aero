@@ -7,16 +7,24 @@ import { Layout } from "../layout"
 import { SectionAbout } from "./about-components/section-about"
 import { SectionPublications } from "./about-components/section-publications"
 import { SectionEducation } from "./about-components/section-education"
-import { IDefaultMeta } from "MyTypes";
+import { IDefaultMeta } from "MyTypes"
 
-const About: React.FC<IDefaultMeta> = (props) => {
-  const { titleTag, descriptionTag } = props.data.markdownRemark.frontmatter
+const About: React.FC<IDefaultMeta> = props => {
+  const {
+    titleTag,
+    descriptionTag,
+    about,
+    publications,
+    researchTeaching,
+    educationTop,
+    educationBottom,
+  } = props.data.markdownRemark.frontmatter
   return (
     <Layout title={titleTag} description={descriptionTag}>
       <SectionTop background={AboutPageBackground} isHome={false} />
-      <SectionAbout />
-      <SectionPublications />
-      <SectionEducation />
+      <SectionAbout about={about} researchTeaching={researchTeaching} />
+      <SectionPublications publications={publications} />
+      <SectionEducation educationTop={educationTop} educationBottom={educationBottom} />
     </Layout>
   )
 }
@@ -28,6 +36,11 @@ export const pageQuery = graphql`
       frontmatter {
         titleTag
         descriptionTag
+        about
+        publications
+        researchTeaching
+        educationTop
+        educationBottom
       }
     }
   }
