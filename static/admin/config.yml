@@ -49,8 +49,9 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Text", name: "text", widget: "markdown" }
       - { label: "Publisher", name: "publisher", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Url", name: "slug", widget: "string" }
       - { label: "Order", name: "order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Extra Badge", name: "extraBadge", widget: "image" }
       - {
           label: "Extra Content Left",
@@ -63,4 +64,22 @@ collections:
           widget: "markdown",
         }
       - { label: "Extra Background", name: "extraBg", widget: "image" }
+  - name: "research-papers"
+    label: "Resarch Papers"
+    folder: "src/pages/research-papers"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title Tag", name: "titleTag", widget: "string" }
+      - { label: "Description Tag", name: "descriptionTag", widget: "string" }
+      - { label: "Where", name: "where", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "research-paper",
+        }
+      - { label: "Url", name: "slug", widget: "string" }
+      - { label: "Date",  name: "date", widget: "date", default: "", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD" }
       - { label: "Body", name: "body", widget: "markdown" }
