@@ -66,6 +66,16 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-transition-link",
     {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/favicon.png",
+        // WebApp Manifest Configuration
+        background: '#fff',
+        theme_color: '#fff',
+        start_url: '/',
+      }
+    },
+    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
