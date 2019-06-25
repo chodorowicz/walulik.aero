@@ -1,24 +1,38 @@
 ---
-templateKey: book-page
 title: Harmonising Regulatory and Antitrust Regimes for International Air Transport
-titleTag: Harmonising Regulatory and Antitrust Regimes for International Air Transport
-descriptionTag: Harmonising Regulatory and Antitrust Regimes for International Air Transport addresses the timely and problematic issue of lack of uniformity of international aviation regulations
+templateKey: book-page
 image: /assets/harmonising_bok.png
-text: |-
+text: >-
   Abingdon, New York: Routledge, 2019\
+
   \
+
   ISBN: 9780815353867\
+
   \
-  Jan Walulik (ed.). Contributors: Shadi A. Alshdaifat, Elena Carpanelli, Paul S. Dempsey, Piotr P. Dziubak, Elmar M. Giemulla, Peter P.C. Haanappel, Agnieszka Kunert-Diallo, Bashar H. Malkawi, Pablo Mendes de Leon, Małgorzata Polkowska, Andrea Trimarchi, Frans G. von der Dunk, Jan Walulik, Paweł Zagrajek, Marek Żylicz.
+
+  Jan Walulik (ed.). Contributors: Shadi A. Alshdaifat, Elena Carpanelli, Paul
+  S. Dempsey, Piotr P. Dziubak, Elmar M. Giemulla, Peter P.C. Haanappel,
+  Agnieszka Kunert-Diallo, Bashar H. Malkawi, Pablo Mendes de Leon, Małgorzata
+  Polkowska, Andrea Trimarchi, Frans G. von der Dunk, Jan Walulik, Paweł
+  Zagrajek, Marek Żylicz.
 publisher: Routledge
-extraBadge: /assets/airline-regulatory.png
-extraContentRight: |-
-  In 2017, I invited a group of renowned aviation and aerospace experts to the Airline Regulatory and Antitrust Conference at the Centre for Antitrust and Regulatory Studies, Faculty of Management, University of Warsaw, Poland. Our approach was to discuss and reconcile distinct perspectives on air law issues and provide possibly unbiased solutions, which could serve as base for future harmonisation of international arrangements. Harmonising Regulatory and Antitrust Regimes for International Air Transport presents the results of this vivid debate.
-extraContentLeft: |-
-  <a href="http://www.arac2017.wz.uw.edu.pl/" target="_blank"><img src="/assets/ARAC-white.png" alt=""></a>
-extraBg: /assets/harmonising-extra-bg.jpg
 slug: harmonising-aviation-regulations-antistrust-regulations
 order: 2
+extraBadge: /assets/airline-regulatory.png
+extraContentLeft: >-
+  <a href="http://www.arac2017.wz.uw.edu.pl/" target="_blank"><img
+  src="/assets/ARAC-white.png" alt=""></a>
+extraContentRight: >-
+  In 2017 I invited a group of renowned aviation and aerospace experts to the
+  Airline Regulatory and Antitrust Conference at the Centre for Antitrust and
+  Regulatory Studies, Faculty of Management, University of Warsaw, Poland. Our
+  approach was to discuss and reconcile distinct perspectives on air law issues
+  and provide possibly unbiased solutions, which could serve as base for future
+  harmonisation of international arrangements. Harmonising Regulatory and
+  Antitrust Regimes for International Air Transport presents the results of this
+  vivid debate.
+extraBg: /assets/harmonising-extra-bg.jpg
 ---
 
 ## Harmonising Regulatory and Antitrust Regimes for International Air Transport
