@@ -67,6 +67,8 @@ collections:
           widget: "hidden",
           default: "book-page",
         }
+      - { label: "Title Tag", name: "titleTag", widget: "string" }
+      - { label: "Description Tag", name: "descriptionTag", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Text", name: "text", widget: "markdown" }
       - { label: "Publisher", name: "publisher", widget: "string" }
