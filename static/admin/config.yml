@@ -73,6 +73,17 @@ collections:
               name: "educationBottom",
               widget: "markdown",
             }
+      - file: "src/pages/privacy-policy.md"
+        label: "Privacy Policy"
+        name: "privacy-policy"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "simple-page",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
   - name: "books"
     label: "Books"
     folder: "src/pages/books"
