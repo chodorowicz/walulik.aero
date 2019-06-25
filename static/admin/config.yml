@@ -21,6 +21,8 @@ collections:
               widget: "hidden",
               default: "home-page",
             }
+          - { label: "Title Tag", name: "titleTag", widget: "string" }
+          - { label: "Description Tag", name: "descriptionTag", widget: "string" }
           - { label: "Claim", name: "claim", widget: "markdown" }
           - { label: "About", name: "about", widget: "markdown" }
           - {
