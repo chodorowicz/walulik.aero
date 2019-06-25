@@ -16,7 +16,7 @@ function getAutoRespondMessageContent() {
   </p>
 
   <p>
-    Please be informed that supplied personal data might be processed according to our <a href="${domain}/privacy-policy/">privacy policy rules</a>. 
+    Please be informed that any personal data supplied may be processed according to our privacy policy rules.</a>. 
   </p>
   `
 }
