@@ -22,7 +22,11 @@ collections:
               default: "home-page",
             }
           - { label: "Title Tag", name: "titleTag", widget: "string" }
-          - { label: "Description Tag", name: "descriptionTag", widget: "string" }
+          - {
+              label: "Description Tag",
+              name: "descriptionTag",
+              widget: "string",
+            }
           - { label: "Claim", name: "claim", widget: "markdown" }
           - { label: "About", name: "about", widget: "markdown" }
           - {
@@ -41,7 +45,32 @@ collections:
               default: "research-papers-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Url", name: "slug", widget: "string" }
+          - {
+              label: "Description Tag",
+              name: "descriptionTag",
+              widget: "string",
+            }
           - { label: "Categories", name: "categories", widget: "list" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/books.md"
+        label: "Books Page"
+        name: "books-page"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "books-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Url", name: "slug", widget: "string" }
+          - {
+              label: "Description Tag",
+              name: "descriptionTag",
+              widget: "string",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/about.md"
         label: "About Page"
         name: "about-page"
