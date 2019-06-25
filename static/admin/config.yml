@@ -23,7 +23,11 @@ collections:
             }
           - { label: "Claim", name: "claim", widget: "markdown" }
           - { label: "About", name: "about", widget: "markdown" }
-          - { label: "About Resarch Papers", name: "aboutResearchPapers", widget: "markdown" }
+          - {
+              label: "About Resarch Papers",
+              name: "aboutResearchPapers",
+              widget: "markdown",
+            }
       - file: "src/pages/research-papers.md"
         label: "Resarch Papers Page"
         name: "research-papers"
@@ -48,13 +52,25 @@ collections:
             }
           - { label: "Url", name: "slug", widget: "string" }
           - { label: "Title Tag", name: "titleTag", widget: "string" }
-          - { label: "Description Tag", name: "descriptionTag", widget: "string" }
+          - {
+              label: "Description Tag",
+              name: "descriptionTag",
+              widget: "string",
+            }
           - { label: "About", name: "about", widget: "markdown" }
-          - { label: "Research Teaching", name: "researchTeaching", widget: "markdown" }
+          - {
+              label: "Research Teaching",
+              name: "researchTeaching",
+              widget: "markdown",
+            }
           - { label: "Publications", name: "publications", widget: "markdown" }
           - { label: "Publications", name: "publications", widget: "markdown" }
           - { label: "Education Top", name: "educationTop", widget: "markdown" }
-          - { label: "Education Bottom", name: "educationBottom", widget: "markdown" }
+          - {
+              label: "Education Bottom",
+              name: "educationBottom",
+              widget: "markdown",
+            }
   - name: "books"
     label: "Books"
     folder: "src/pages/books"
@@ -75,18 +91,30 @@ collections:
       - { label: "Url", name: "slug", widget: "string" }
       - { label: "Order", name: "order", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Extra Badge", name: "extraBadge", widget: "image" }
+      - {
+          label: "Extra Badge",
+          name: "extraBadge",
+          widget: "image",
+          required: false,
+        }
       - {
           label: "Extra Content Left",
           name: "extraContentLeft",
           widget: "markdown",
+          required: false,
         }
       - {
           label: "Extra Content Right",
           name: "extraContentRight",
           widget: "markdown",
+          required: false,
         }
-      - { label: "Extra Background", name: "extraBg", widget: "image" }
+      - {
+          label: "Extra Background",
+          name: "extraBg",
+          widget: "image",
+          required: false,
+        }
   - name: "research-papers"
     label: "Resarch Papers"
     folder: "src/pages/research-papers"
@@ -104,5 +132,12 @@ collections:
           default: "research-paper",
         }
       - { label: "Url", name: "slug", widget: "string" }
-      - { label: "Date",  name: "date", widget: "date", default: "", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "date",
+          default: "",
+          format: "YYYY-MM-DD",
+          dateFormat: "YYYY-MM-DD",
+        }
       - { label: "Body", name: "body", widget: "markdown" }
