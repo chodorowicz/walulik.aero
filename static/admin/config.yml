@@ -160,7 +160,7 @@ collections:
           required: false,
         }
   - name: "research-papers"
-    label: "Resarch Papers"
+    label: "Research Papers"
     folder: "src/pages/research-papers"
     create: true
     fields:
@@ -185,3 +185,13 @@ collections:
           dateFormat: "YYYY-MM-DD",
         }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "other"
+    label: "Other"
+    files:
+      - file: "src/content-other/email.json"
+        label: "Email"
+        name: "email"
+        extension: "json"
+        create: true
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }

@@ -1,5 +1,13 @@
 require("dotenv").config()
 
+const email = require("../src/content-other/email.json")
+const commonmark = require("commonmark")
+
+const reader = new commonmark.Parser()
+const writer = new commonmark.HtmlRenderer()
+const parsed = reader.parse(email.body)
+const result = writer.render(parsed)
+
 const _ = require("lodash")
 var mailgun = require("mailgun-js")({
   apiKey: process.env.MAILGUN_API,
@@ -8,7 +16,7 @@ var mailgun = require("mailgun-js")({
 })
 
 const common = require("./src/common")
-const { getAutoRespondMessageContent, statusCode, headers } = common
+const { statusCode, headers } = common
 
 const from = `jan@${process.env.MAILGUN_DOMAIN}`
 
@@ -27,7 +35,7 @@ const sendThankYouEmail = async ({ email, message, name, pot }) => {
       to: personEmail,
       from,
       subject: "Contact form: walulik.aero",
-      html: getAutoRespondMessageContent(),
+      html: result,
     }
 
     console.log("Sending the email")
