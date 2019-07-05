@@ -97,7 +97,6 @@ collections:
               widget: "markdown",
             }
           - { label: "Publications", name: "publications", widget: "markdown" }
-          - { label: "Publications", name: "publications", widget: "markdown" }
           - { label: "Education Top", name: "educationTop", widget: "markdown" }
           - {
               label: "Education Bottom",
