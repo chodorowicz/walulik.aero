@@ -1,5 +1,3 @@
-require("dotenv").config()
-
 const email = require("../src/content-other/email.json")
 const commonmark = require("commonmark")
 
@@ -18,7 +16,7 @@ var mailgun = require("mailgun-js")({
 const common = require("./src/common")
 const { statusCode, headers } = common
 
-const from = `jan@${process.env.MAILGUN_DOMAIN}`
+const from = process.env.EMAIL_FROM;
 
 const sendThankYouEmail = async ({ email, message, name, pot }) => {
   return new Promise((resolve, reject) => {
