@@ -1,4 +1,4 @@
-const email = require("../src/content-other/email.json")
+const email = require("./email.json")
 const commonmark = require("commonmark")
 
 const reader = new commonmark.Parser()
