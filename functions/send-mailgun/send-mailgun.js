@@ -24,9 +24,9 @@ const sendThankYouEmail = async ({ email, message, name, pot }) => {
     const sgEmail = {
       to: process.env.EMAIL_TO,
       from,
-      replyTo: personEmail,
+      "h:Reply-To": personEmail,
       subject: "Contact form: walulik.aero",
-      text: message,
+      html: `from: ${name}, ${email}<br /><br />${message}`,
     }
 
     const autoRespondEmail = {
