@@ -26,12 +26,12 @@ researchTeaching: >-
   at <a href="http://ksap.gov.pl/ksap/en" target="_blank">Polish National School
   of Public Administration</a>
 publications: >-
-  He has published several <a href="https://walulik.aero/aviation-law-books"
-  target="_blank">books</a> and numerous research papers on air law, aviation
-  policy and regulatory issues. Jan has been an editor of the Transport Series
-  at <a href="https://ikar.wz.uw.edu.pl/" target="_blank">iKAR</a> (internet
-  Quarterly on Antitrust and Regulation, ISSN 2299-5749), and a reviewer for
-  several renowned transport journals.
+  He has published several [books](https://walulik.aero/aviation-law-books) and
+  numerous research papers on air law, aviation policy and regulatory issues.
+  Jan has been an editor of the Transport Series at <a
+  href="https://ikar.wz.uw.edu.pl/" target="_blank">iKAR</a> (internet Quarterly
+  on Antitrust and Regulation, ISSN 2299-5749), and a reviewer for several
+  renowned transport journals.
 educationTop: >-
   He graduated in law from University of Warsaw in 2007 (<em>summa cum
   laude</em>) and had received multiple scholar awards from the Minister of
