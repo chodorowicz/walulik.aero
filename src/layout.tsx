@@ -35,9 +35,9 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
           a:focus {
             outline: none;
           }
-          
+
           .cookieConsent a {
-            color: ${colors.accent}
+            color: ${colors.accent};
           }
         `}
       />
@@ -64,10 +64,14 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
       <LogoAndMenu />
       {children}
       <CookieConsent
-        buttonStyle={{ color: colors.accent, fontSize: "16px", background: "none" }}
+        buttonStyle={{
+          color: colors.accent,
+          fontSize: "16px",
+          background: "none",
+        }}
       >
-        This website uses cookies. You can{" "}
-        <Link to={urls.privacyPolicy}>read more here</Link>
+        Click here to indicate that you have read and agree to the{" "}
+        <Link to={urls.privacyPolicy}>Privacy Policy</Link>.
       </CookieConsent>
       <Footer />
     </div>

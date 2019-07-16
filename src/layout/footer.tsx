@@ -106,9 +106,7 @@ const ContactInfo = styled.div`
 const Text = styled.div`
   font-family: ${fontFamily.roboto};
 `
-const EmailLink = styled.a`
-  color: ${colors.accent};
-`
+
 const StandardLink = styled.a`
   font-family: ${fontFamily.roboto};
   color: ${colors.darkBlue};
