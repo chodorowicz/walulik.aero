@@ -69,6 +69,7 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
           fontSize: "16px",
           background: "none",
         }}
+        buttonText="Agree"
       >
         Click here to indicate that you have read and agree to the{" "}
         <Link to={urls.privacyPolicy}>Privacy Policy</Link>.
