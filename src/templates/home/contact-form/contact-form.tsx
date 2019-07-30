@@ -78,6 +78,7 @@ const TextareaSC = styled.textarea`
   &:required {
     box-shadow: none;
   }
+  resize: none;
 `
 
 const ButtonSectionSC = styled.div`
