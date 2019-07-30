@@ -2,6 +2,8 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { Global, css } from "@emotion/core"
 import CookieConsent from "react-cookie-consent"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 import { colors, fontFamily, urls } from "./constants"
 import { Footer } from "./layout/footer"
@@ -16,6 +18,7 @@ interface IProps {
 export const Layout: React.FC<IProps> = ({ children, title, description }) => {
   return (
     <div>
+      <ToastContainer />
       <Global
         styles={css`
           body {
@@ -38,6 +41,11 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
 
           .cookieConsent a {
             color: ${colors.accent};
+          }
+
+          .Toastify__toast.Toastify__toast--default {
+            background-color: ${colors.whiteOff};
+            color: ${colors.darkBlue};
           }
         `}
       />

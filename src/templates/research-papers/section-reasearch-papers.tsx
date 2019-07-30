@@ -19,7 +19,10 @@ interface IProps {
 }
 
 const Wrapper = styled.div`
-  background-image: linear-gradient(359deg, #d1d1d1, #f4f4f4);
+  /* when height of section change there's an effect as if background was changing
+      when toggling between sections, let's make this background constant */
+  /* background-image: linear-gradient(359deg, #d1d1d1, #f4f4f4); */
+  background-color: #f4f4f4;
 `
 
 const StyledPageCallout = styled(PageCallout)`

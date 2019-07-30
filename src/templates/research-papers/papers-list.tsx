@@ -37,6 +37,7 @@ const NavButton = styled.button<{ isSelected: boolean }>`
   margin-bottom: 10px;
   width: 100%;
   text-align: left;
+  cursor: pointer;
 `
 
 const NavigationContainer = styled.div`

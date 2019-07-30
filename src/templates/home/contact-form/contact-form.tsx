@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "@emotion/styled"
 import Cookies from "js-cookie"
+import { toast } from "react-toastify"
 
 import {
   colors,
@@ -57,6 +58,9 @@ const InputSC = styled.input`
     top: 0px;
     font-size: ${fontSizes.size15}px;
   }
+  &:required {
+    box-shadow: none;
+  }
 `
 
 const TextareaSC = styled.textarea`
@@ -72,6 +76,10 @@ const TextareaSC = styled.textarea`
     top: 0px;
     font-size: ${fontSizes.size15}px;
   }
+  &:required {
+    box-shadow: none;
+  }
+  resize: none;
 `
 
 const ButtonSectionSC = styled.div`
@@ -108,9 +116,7 @@ export const ContactForm: React.FC = () => {
           console.log(consent)
           if (consent !== "true") {
             setErrorMessage(
-              `You must indicate that you have read and agreed to the <a href="${
-                urls.privacyPolicy
-              }">Privacy Policy</a>.`
+              `You must indicate that you have read and agreed to the <a href="${urls.privacyPolicy}">Privacy Policy</a>.`
             )
             window.setTimeout(() => {
               setErrorMessage("")
@@ -131,10 +137,14 @@ export const ContactForm: React.FC = () => {
               }),
             })
             .then(response => {
-              console.log(response)
-              setErrorMessage(
+              const message =
                 "Thank you. Your message has been successfully sent."
-              )
+              console.log(response)
+              setErrorMessage(message)
+              toast(message, {
+                hideProgressBar: true,
+                autoClose: 5000,
+              })
               window.setTimeout(() => {
                 setErrorMessage("")
                 setName("")
