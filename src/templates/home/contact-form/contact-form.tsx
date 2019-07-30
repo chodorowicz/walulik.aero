@@ -57,6 +57,9 @@ const InputSC = styled.input`
     top: 0px;
     font-size: ${fontSizes.size15}px;
   }
+  &:required {
+    box-shadow: none;
+  }
 `
 
 const TextareaSC = styled.textarea`
@@ -71,6 +74,9 @@ const TextareaSC = styled.textarea`
   &.notEmpty ~ label {
     top: 0px;
     font-size: ${fontSizes.size15}px;
+  }
+  &:required {
+    box-shadow: none;
   }
 `
 
