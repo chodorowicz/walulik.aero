@@ -39,7 +39,7 @@ const Title = styled.h1`
 const TopSectionSC = styled(TopSectionBackground)`
   display: flex;
   background-position: ${props => props.theme.centeringSmall || "center right"};
-  ${mq.b768} {
+  ${mq.b1024} {
     background-position: ${props => props.theme.centeringBig || "center right"};
   }
 `

@@ -1,9 +1,9 @@
 {
+  "peacock.color": "#3641a5",
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#3641a5",
     "titleBar.inactiveBackground": "#3641a599",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveForeground": "#e7e7e799"
-  },
-  "peacock.color": "#3641a5"
+  }
 }
