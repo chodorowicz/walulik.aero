@@ -12,6 +12,8 @@ export const TopSectionBackground = styled.div<ITopSectionProps>`
   background-size: cover;
   background-position: center center;
   background-color: ${colors.darkBlue};
-  min-height: 100vh;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
+  transition: all 0.2s linear;
 `

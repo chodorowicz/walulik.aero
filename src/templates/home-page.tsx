@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { IDefaultMeta } from "MyTypes"
+import { ThemeProvider } from "emotion-theming"
 
 import { Layout } from "../layout"
 import {
@@ -17,22 +18,33 @@ type IProps = {
   data: HomePageTemplateQuery
 } & IDefaultMeta
 
+const theme = {
+  centeringSmall: "center right -200px",
+  centeringBig: "center right",
+}
+
 const HomePage: React.FC<IProps> = props => {
   const {
     claim,
     titleTag,
     descriptionTag,
     about,
-    aboutResearchPapers
+    aboutResearchPapers,
   } = props.data.markdownRemark.frontmatter
   return (
-    <Layout title={titleTag} description={descriptionTag}>
-      <SectionTop background={HomePageImage} isHome={true} claim={claim} />
-      <SectonPhotoText about={about} />
-      <SectionBooks />
-      <SectionPapers aboutResearchPapers={aboutResearchPapers} />
-      <SectionContact />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout title={titleTag} description={descriptionTag}>
+        <SectionTop
+          background={HomePageImage}
+          isHome={true}
+          claim={claim}
+        />
+        <SectonPhotoText about={about} />
+        <SectionBooks />
+        <SectionPapers aboutResearchPapers={aboutResearchPapers} />
+        <SectionContact />
+      </Layout>
+    </ThemeProvider>
   )
 }
 

@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { DeepRequired } from "utility-types"
+import { ThemeProvider } from "emotion-theming"
 
 import { Layout } from "../layout"
 import { SectionTop } from "../components"
@@ -13,20 +14,27 @@ type IProps = {
   data: DeepRequired<BooksPageTemplateQuery>
 } & IDefaultMeta
 
+const theme = {
+  centeringSmall: "center center",
+  centeringBig: "center right",
+}
+
 const Books: React.FC<IProps> = props => {
   const { data } = props
 
   const { html, frontmatter } = data.markdownRemark
   const { title, titleTag, descriptionTag } = frontmatter
   return (
-    <Layout title={titleTag} description={descriptionTag}>
-      <SectionTop background={BooksPageBackground} isHome={false} />
-      <SectionBooks
-        books={data.allMarkdownRemark.edges}
-        text={html}
-        title={title}
-      />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout title={titleTag} description={descriptionTag}>
+        <SectionTop background={BooksPageBackground} isHome={false} />
+        <SectionBooks
+          books={data.allMarkdownRemark.edges}
+          text={html}
+          title={title}
+        />
+      </Layout>
+    </ThemeProvider>
   )
 }
 

@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "@emotion/styled"
-import { useWindowSize, useWindowScrollPosition} from "../utils";
+import { useWindowSize, useWindowScrollPosition } from "../utils"
 
 import {
   colors,
@@ -36,12 +36,11 @@ const Title = styled.h1`
   }
 `
 
-const TopSectionSC = styled(TopSectionBackground)<{ isHome: boolean }>`
-  background-position: center
-    ${props => (props.isHome ? "right -200px" : "right")};
+const TopSectionSC = styled(TopSectionBackground)`
   display: flex;
+  background-position: ${props => props.theme.centeringSmall || "center right"};
   ${mq.b768} {
-    background-position: center ${props => (props.isHome ? "right" : "right")};
+    background-position: ${props => props.theme.centeringBig || "center right"};
   }
 `
 
@@ -57,7 +56,7 @@ const LogoMenuContainerSC = styled.div`
   }
 `
 
-const WrapperSticky = styled.div<{ isSticky: boolean, offset: number }>`
+const WrapperSticky = styled.div<{ isSticky: boolean; offset: number }>`
   position: ${props => (props.isSticky ? "fixed" : "absolute")};
   background-color: ${props =>
     props.isSticky ? colors.darkBlue : "transparent"};
@@ -70,7 +69,7 @@ const WrapperSticky = styled.div<{ isSticky: boolean, offset: number }>`
 export const LogoAndMenu: React.FC = () => {
   const { y } = useWindowScrollPosition()
   const { innerWidth } = useWindowSize()
-  const offset = innerWidth >= breaksMap.b768 ? 40 : 20;
+  const offset = innerWidth >= breaksMap.b768 ? 40 : 20
   const isSticky = y > offset
 
   return (
@@ -91,7 +90,9 @@ export const SectionTop: React.FC<IProps> = ({
   children,
 }) => {
   return (
-    <TopSectionSC background={background || ""} isHome={isHome}>
+    <TopSectionSC
+      background={background || ""}
+    >
       <WrapperContent>
         {isHome && claim && (
           <Title>

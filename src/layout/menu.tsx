@@ -46,6 +46,7 @@ const MobileMenu = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -94,7 +95,11 @@ const commonLinkProps = {
   partiallyActive: true,
 }
 
-const Links: React.FC = () => {
+interface Props {
+  setMenuOpened: (x: boolean) => void;
+}
+
+const Links: React.FC<Props> = ({ setMenuOpened }) => {
   return (
     <>
       <StyledLink to={urls.about} {...commonLinkProps}>
@@ -106,7 +111,7 @@ const Links: React.FC = () => {
       <StyledLink to={urls.researchPapers} {...commonLinkProps}>
         Research papers
       </StyledLink>
-      <StyledLink to={urls.contact} {...commonLinkProps}>
+      <StyledLink to={urls.contact} onClick={() => setMenuOpened(false)} {...commonLinkProps}>
         Contact
       </StyledLink>
     </>
@@ -151,7 +156,7 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
         )}
         {isMenuOpened && (
           <MobileMenu>
-            <Links />
+            <Links setMenuOpened={setMenuOpened} />
           </MobileMenu>
         )}
       </MediaQuery>
