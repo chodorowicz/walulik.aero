@@ -1,24 +1,37 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { ThemeProvider } from "emotion-theming"
 
 import { Layout } from "../layout"
 import { SectionTop } from "../components"
 import ResearchPageBackground from "../images/research/research-bg@2x.jpg"
 import { SectionResearchPapers } from "./research-papers/section-reasearch-papers"
-import { IDefaultMeta } from "MyTypes";
+import { IDefaultMeta } from "MyTypes"
+
+const theme = {
+  centeringSmall: "left 25% center",
+  centeringBig: "center right",
+}
 
 const ResearchPapersPage: React.FC<IDefaultMeta> = ({ data, pageContext }) => {
-  const { categories, title, titleTag, descriptionTag } = data.markdownRemark.frontmatter;
+  const {
+    categories,
+    title,
+    titleTag,
+    descriptionTag,
+  } = data.markdownRemark.frontmatter
   return (
-    <Layout title={titleTag} description={descriptionTag}>
-      <SectionTop background={ResearchPageBackground} isHome={false} />
-      <SectionResearchPapers
-        title={title}
-        html={data.markdownRemark.html}
-        categories={categories}
-        researchPapers={pageContext.researchPapers}
-      />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout title={titleTag} description={descriptionTag}>
+        <SectionTop background={ResearchPageBackground} isHome={false} />
+        <SectionResearchPapers
+          title={title}
+          html={data.markdownRemark.html}
+          categories={categories}
+          researchPapers={pageContext.researchPapers}
+        />
+      </Layout>
+    </ThemeProvider>
   )
 }
 

@@ -40,11 +40,11 @@ const ColumnPhoto = styled.div`
   margin-top: ${BOX_PADDING}px;
   ${mq.b768} {
     margin-top: unset;
-    img {
-      max-width: unset;
-    }
     grid-row: 1;
     grid-column: 2 / span 4;
+    img {
+     max-width: 120%;
+    }
   }
 `
 
