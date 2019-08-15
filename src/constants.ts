@@ -77,4 +77,5 @@ export const mq = breaks.reduce(
 export const breakPoints = {
   b768: 768,
   b1024: 1024,
+  b900: 900,
 }

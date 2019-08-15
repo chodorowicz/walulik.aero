@@ -132,7 +132,7 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
           </Link>
         </HomePageTitle>
       )}
-      <MediaQuery maxDeviceWidth={breakPoints.b768}>
+      <MediaQuery maxDeviceWidth={breakPoints.b900 - 1}>
         {!isMenuOpened && (
           <VegeBurgerContainer>
             <VegeBurger onClick={() => setMenuOpened(true)} />
@@ -160,9 +160,9 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
           </MobileMenu>
         )}
       </MediaQuery>
-      <MediaQuery minDeviceWidth={breakPoints.b768}>
+      <MediaQuery minDeviceWidth={breakPoints.b900}>
         <MenuWrapper>
-          <Links />
+          <Links setMenuOpened={setMenuOpened} />
         </MenuWrapper>
       </MediaQuery>
     </>
