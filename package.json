@@ -25,6 +25,7 @@
     "@types/lodash": "4.14.135",
     "@types/react-helmet": "5.0.8",
     "@types/react-responsive": "3.0.3",
+    "body-scroll-lock": "^2.6.4",
     "commonmark": "0.29.0",
     "dotenv": "8.0.0",
     "emotion-theming": "10.0.14",
