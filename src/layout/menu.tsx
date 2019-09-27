@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import MediaQuery from "react-responsive"
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 import {
   colors,
@@ -59,6 +60,12 @@ const MobileMenu = styled.div`
   padding-right: ${spacings.space20}px;
   padding-bottom: ${spacings.space20}px;
 
+  /* font on very small screens (horizontal iPhone) needs to be smaller */
+  font-size: ${fontSizes.size28}px;
+  @media(min-height: 500px) {
+    font-size: ${fontSizes.mediumLarge}px;
+  }
+
   ${StyledLink} {
     margin-bottom: ${spacings.space20}px;
   }
@@ -100,18 +107,19 @@ interface Props {
 }
 
 const Links: React.FC<Props> = ({ setMenuOpened }) => {
+  const onClick = () => setMenuOpened(false);
   return (
     <>
-      <StyledLink to={urls.about} {...commonLinkProps}>
-        About
+      <StyledLink to={urls.about} onClick={onClick} {...commonLinkProps}>
+        About 
       </StyledLink>
-      <StyledLink to={urls.books} {...commonLinkProps}>
+      <StyledLink to={urls.books} onClick={onClick} {...commonLinkProps}>
         Books
       </StyledLink>
-      <StyledLink to={urls.researchPapers} {...commonLinkProps}>
+      <StyledLink to={urls.researchPapers} onClick={onClick} {...commonLinkProps}>
         Research papers
       </StyledLink>
-      <StyledLink to={urls.contact} onClick={() => setMenuOpened(false)} {...commonLinkProps}>
+      <StyledLink to={urls.contact} onClick={onClick} {...commonLinkProps}>
         Contact
       </StyledLink>
     </>
@@ -120,12 +128,33 @@ const Links: React.FC<Props> = ({ setMenuOpened }) => {
 
 export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
   const { isSticky = false } = props;
-  const [isMenuOpened, setMenuOpened] = React.useState(false)
+  const [isMenuOpened, setMenuOpened] = React.useState(false);
+  const menuRef = React.useRef<HTMLInputElement>(null);
+
+  // disable screen scroll when menu is opened, this solves layout issues
+  const setMenuVisibility = (isVisible: boolean) => {
+    setMenuOpened(isVisible);
+    window.setTimeout(() => {
+      const element = menuRef.current;
+      if (isVisible) {
+        disableBodyScroll(element);
+      }
+    }, 300);
+    clearAllBodyScrollLocks();
+  }
+
+  // clean up scroll lock when navigating to another menu via link, HomePageTitle link
+  React.useEffect(() => {
+    return () => {
+      clearAllBodyScrollLocks();
+    };
+  }, []);
+
   return (
     <>
       {!isMenuOpened && (
         <HomePageTitle>
-          <Link to={urls.home}>
+          <Link to={urls.home} onClick={() => setMenuVisibility(false)}>
             <MediaQuery minDeviceWidth={breakPoints.b768}>
               {matches => ((matches && !isSticky) ? <LogoJan /> : <LogoJanSmall />)}
             </MediaQuery>
@@ -135,7 +164,7 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
       <MediaQuery maxDeviceWidth={breakPoints.b900 - 1}>
         {!isMenuOpened && (
           <VegeBurgerContainer>
-            <VegeBurger onClick={() => setMenuOpened(true)} />
+            <VegeBurger onClick={() => setMenuVisibility(true)} />
           </VegeBurgerContainer>
         )}
         {isMenuOpened && (
@@ -147,7 +176,7 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
             </LogoJanSmallSC>
             <CloseContainer
               onClick={() => {
-                setMenuOpened(false)
+                setMenuVisibility(false)
               }}
             >
               <Close />
@@ -155,14 +184,14 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
           </>
         )}
         {isMenuOpened && (
-          <MobileMenu>
-            <Links setMenuOpened={setMenuOpened} />
+          <MobileMenu ref={menuRef}>
+            <Links setMenuOpened={setMenuVisibility} />
           </MobileMenu>
         )}
       </MediaQuery>
       <MediaQuery minDeviceWidth={breakPoints.b900}>
         <MenuWrapper>
-          <Links setMenuOpened={setMenuOpened} />
+          <Links setMenuOpened={setMenuVisibility} />
         </MenuWrapper>
       </MediaQuery>
     </>

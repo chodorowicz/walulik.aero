@@ -30,7 +30,7 @@ const Title = styled.h1`
   margin-bottom: 50px;
 
   font-size: ${fontSizes.size36}px;
-  ${mq.b768} {
+  @media (min-width: 768px) and (min-height: 700px) {
     font-size: ${fontSizes.xxLarge}px;
     margin-bottom: 120px;
   }
