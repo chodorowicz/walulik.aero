@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 
-import { colors, fontSizes, mq, urls } from "../../constants"
+import { colors, fontSizes, mq, urls, breakPoints } from "../../constants"
 import {
   Paragraph,
   WrapperContent,
@@ -12,6 +12,7 @@ import {
 } from "../../components"
 import { grid12, paddingSides20 } from "../../styles"
 import ImageEducation from "../../images/about/education@2x.png"
+import MediaQuery from "react-responsive"
 
 const BOX_PADDING = 45
 
@@ -59,11 +60,17 @@ const ColumnText = styled.div`
 const StyledPhoto = styled.img`
   position: relative;
   z-index: 1;
+  max-height: 100%;
+`
+
+const StyledPhotoMobile = styled.img`
+  max-width: 100%;
+  vertical-align: middle;
 `
 
 const ContactBox = styled.div`
   position: relative;
-  margin-top: 120px;
+  margin-top: 45px;
   &:after {
     content: "";
     position: absolute;
@@ -78,6 +85,7 @@ const ContactBox = styled.div`
     &:after {
       left: -140px;
       right: -9999px;
+      margin-top: 120px;
     }
   }
 `
@@ -93,9 +101,11 @@ export const SectionEducation: React.FC = props => {
   return (
     <Wrapper>
       <StyledWrapperContent>
-        <ColumnPhoto>
-          <StyledPhoto src={ImageEducation} />
-        </ColumnPhoto>
+        <MediaQuery minDeviceWidth={breakPoints.b768}>
+          <ColumnPhoto>
+            <StyledPhoto src={ImageEducation} />
+          </ColumnPhoto>
+        </MediaQuery>
         <ColumnText>
           <SectionTitle>
             Education <br /> &amp; distinctions
@@ -103,6 +113,9 @@ export const SectionEducation: React.FC = props => {
           <Paragraph>
             <MarkdownContainerPure content={educationTop} />
           </Paragraph>
+          <MediaQuery maxDeviceWidth={breakPoints.b768 - 1}>
+            <StyledPhotoMobile src={ImageEducation} />
+          </MediaQuery>
           <ContactBox>
             <ContactBoxInner>
               <Paragraph color={colors.white} fontSize={fontSizes.size28}>
