@@ -27,7 +27,7 @@ const Title = styled.h1`
   color: ${colors.white};
   position: absolute;
   bottom: 0;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   font-size: ${fontSizes.size36}px;
   @media (min-width: 768px) and (min-height: 700px) {
