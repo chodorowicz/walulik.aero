@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { IDefaultMeta } from "MyTypes"
 import { ThemeProvider } from "emotion-theming"
+import { useMediaQuery } from "react-responsive";
 
 import { Layout } from "../layout"
 import {
@@ -18,11 +19,6 @@ type IProps = {
   data: HomePageTemplateQuery
 } & IDefaultMeta
 
-const theme = {
-  centeringSmall: "center right -200px",
-  centeringBig: "center right",
-}
-
 const HomePage: React.FC<IProps> = props => {
   const {
     claim,
@@ -31,6 +27,14 @@ const HomePage: React.FC<IProps> = props => {
     about,
     aboutResearchPapers,
   } = props.data.markdownRemark.frontmatter
+
+  const isLandScape = useMediaQuery({ orientation: 'landscape' })
+
+  const theme = {
+    centeringSmall: isLandScape ? "center right" : "center right -200px",
+    centeringBig: "center right",
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Layout title={titleTag} description={descriptionTag}>
