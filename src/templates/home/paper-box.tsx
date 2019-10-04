@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-import { colors, fontSizes, fontFamily, fontWeight } from "../../constants"
+import { colors, fontSizes, fontFamily, fontWeight, mq } from "../../constants"
 import { transition } from "../../styles"
 
 const Box = styled.div`
@@ -27,9 +27,13 @@ const Text = styled.div`
   text-align: center;
   width: 100%;
   color: ${colors.white};
-  font-size: ${fontSizes.small}px;
+  font-size: ${fontSizes.medium}px;
   font-family: ${fontFamily.roboto};
   font-weight: ${fontWeight.bold};
+
+  ${mq.b1024} {
+    font-size: ${fontSizes.small}px;
+  }
 `
 
 const CenterElement = styled.div`

@@ -4,7 +4,7 @@ import slugify from "@sindresorhus/slugify"
 import { Link } from "gatsby"
 
 import { Title, Paragraph, WrapperContent } from "../../components"
-import { colors, spacings, urls, mq } from "../../constants"
+import { colors, spacings, urls, mq, breakPoints } from "../../constants"
 import { PaperBox } from "./paper-box"
 import EconomicRegulation from "../../images/icon-economic.inline.svg"
 import IconAirlineFinance from "../../images/icon-airline-finance.svg"
@@ -59,8 +59,14 @@ const LinkSC = styled(Link)`
 
 const PaperBoxSC = styled(PaperBox)`
   height: 100%;
-`
 
+  @media(max-width: ${breakPoints.b1024 - 1}px) {
+    svg {
+      width: 40%;
+      height: 40%;
+    }
+  }
+`
 
 const LinkedPaperBox: React.FC<{ section: string }> = ({
   children,
