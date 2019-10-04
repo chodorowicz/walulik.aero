@@ -61,13 +61,22 @@ const MobileMenu = styled.div`
   padding-bottom: ${spacings.space20}px;
 
   /* font on very small screens (horizontal iPhone) needs to be smaller */
-  font-size: ${fontSizes.size28}px;
+  font-size: ${fontSizes.medium}px;
+
+  @media(min-height: 400px) {
+    font-size: ${fontSizes.size28}px;
+  }
+  
   @media(min-height: 500px) {
     font-size: ${fontSizes.mediumLarge}px;
   }
 
   ${StyledLink} {
-    margin-bottom: ${spacings.space20}px;
+    margin-bottom: 10px;
+    @media(min-height: 500px) {
+      margin-bottom: ${spacings.space20}px;
+    }
+    
   }
 `
 
