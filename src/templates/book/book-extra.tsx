@@ -3,17 +3,24 @@ import styled from "@emotion/styled"
 
 import { WrapperContent, MarkdownContainerFull } from "../../components"
 import { grid12 } from "../../styles"
-import { colors } from "../../constants"
+import { colors, mq } from "../../constants"
 
 const Container = styled.div`
   ${grid12};
 `
 
 const StyledContentLeft = styled(MarkdownContainerFull)`
-  grid-column: 2 / span 4;
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    grid-column: 2 / span 4;
+  }
+  
 `
 const StyledContentRight = styled(MarkdownContainerFull)`
-  grid-column: 6 / span 5;
+  grid-column: 1 / span 12;
+  ${mq.b768} {
+    grid-column: 6 / span 5;
+  }
 `
 
 const WrapperContentSC = styled(WrapperContent)`
