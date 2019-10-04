@@ -57,9 +57,13 @@ const Books = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: 1fr;
+  height: 120vw;
+  max-height: 90vh;
   ${mq.b768} {
     grid-template-columns: repeat(3, 33%);
     order: 2;
+    height: unset;
+    max-height: unset;
   }
 `
 
@@ -70,6 +74,7 @@ const BookContainer = styled.div`
   right: -11%;
   img {
     max-width: 100%;
+    max-height: 95vh;
   }
 `
 
@@ -127,8 +132,8 @@ export const Carousel: React.FC = () => {
     }
   `)
 
-  const ITEMS_PER_PAGE = dimensions >= breaksMap.b768 ? 3 : 1
   const { edges } = result.books
+  const ITEMS_PER_PAGE = dimensions >= breaksMap.b768 ? 3 : 1
   const numberOfPages = Math.ceil(edges.length / ITEMS_PER_PAGE)
   const modNumberOfPages = modulo(numberOfPages)
   if (modNumberOfPages(page) > page) {
@@ -142,6 +147,7 @@ export const Carousel: React.FC = () => {
     setPage(modNumberOfPages(page - 1))
     setAnimateDirection("left")
   }
+
 
   const indexOfFirstItem = page * ITEMS_PER_PAGE
   const edgesToDisplay = result.books.edges.slice(
@@ -162,7 +168,6 @@ export const Carousel: React.FC = () => {
           {edgesToDisplay.map(edge => (
             <BookPose key={edge.node.fields.slug}>
               <BookContainer key={edge.node.fields.slug}>
-                {/* <Img fixed={edge.node.frontmatter.image.childImageSharp.fixed} /> */}
                 <Link to={edge.node.fields.slug}>
                   <img
                     src={edge.node.frontmatter.image.childImageSharp.fixed.src}
