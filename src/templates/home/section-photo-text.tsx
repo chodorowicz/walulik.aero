@@ -1,5 +1,4 @@
 import React from "react"
-import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
 
@@ -7,7 +6,7 @@ import {
   Title,
   Paragraph,
   WrapperContentNoMobilePadding,
-  AnimatedLink
+  AnimatedLink,
 } from "../../components"
 import { gradient, grid12, paddingSides20 } from "../../styles"
 import { breakPoints, spacings, mq, urls } from "../../constants"
@@ -22,15 +21,24 @@ const Wrapper = styled.div`
 
 const WrapperImageSC = styled.div`
   grid-column: 1 / span 12;
-  padding-bottom: ${spacings.space80}px;
+  padding-bottom: ${spacings.space40}px;
   align-self: center;
+  text-align: center;
+  img { 
+    max-height: 95vh;
+    max-width: 100%;
+  }
   @media (min-width: ${breakPoints.b768}px) {
+    padding-bottom: ${spacings.space80}px;
     padding-bottom: 0;
     grid-column: 1 / span 4;
+    img {
+      width: 100%;
+      height: unset;
+      transform: scale(1.15);
+    }
   }
-  img {
-    transform: scale(1.15);
-  }
+
 `
 
 const TextContent = styled.div`
@@ -59,7 +67,7 @@ const ButtonContainerSC = styled.div`
   }
 `
 
-export const SectonPhotoText: React.FC<any> = (props) => {
+export const SectonPhotoText: React.FC<any> = props => {
   const data = useStaticQuery(graphql`
     query ImageQuery {
       file(relativePath: { eq: "jan@2x.jpg" }) {
@@ -72,19 +80,19 @@ export const SectonPhotoText: React.FC<any> = (props) => {
     }
   `)
 
-  const { about } = props;
+  const { about } = props
   return (
     <WrapperOuter>
       <WrapperContentNoMobilePadding>
         <Wrapper>
           <WrapperImageSC>
-            <Img fluid={data.file.childImageSharp.fluid} />
+            <img
+              src={data.file.childImageSharp.fluid.src}
+            />
           </WrapperImageSC>
           <TextContent>
             <Title>Jan Walulik</Title>
-            <Paragraph>
-              {about}
-            </Paragraph>
+            <Paragraph>{about}</Paragraph>
             <ButtonContainerSC>
               <AnimatedLink to={urls.about}>learn more</AnimatedLink>
             </ButtonContainerSC>
