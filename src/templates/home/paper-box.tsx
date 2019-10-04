@@ -9,12 +9,14 @@ const Box = styled.div`
   position: relative;
   cursor: pointer;
 
-  &:hover {
-    background-color: ${colors.accent};
-    ${transition};
-    svg,
-    path {
-      fill: #ffffff;
+  @media (hover: hover) {
+    &:hover {
+      background-color: ${colors.accent};
+      ${transition};
+      svg,
+      path {
+        fill: #ffffff;
+      }
     }
   }
 `

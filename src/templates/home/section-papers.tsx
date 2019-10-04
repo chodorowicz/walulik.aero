@@ -4,7 +4,7 @@ import slugify from "@sindresorhus/slugify"
 import { Link } from "gatsby"
 
 import { Title, Paragraph, WrapperContent } from "../../components"
-import { colors, spacings, urls, breakPoints, mq } from "../../constants"
+import { colors, spacings, urls, mq } from "../../constants"
 import { PaperBox } from "./paper-box"
 import EconomicRegulation from "../../images/icon-economic.inline.svg"
 import IconAirlineFinance from "../../images/icon-airline-finance.svg"
