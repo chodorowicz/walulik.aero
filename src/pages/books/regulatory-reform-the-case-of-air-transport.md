@@ -31,6 +31,7 @@ extraContentRight: >-
   <a href="https://www.cars.wz.uw.edu.pl/o_nas_gb-12.html" target="_blank"><img
   src="/assets/cars_book_awards.svg" alt=""></a>
 extraBg: /assets/reforma-bg.jpg
+extraBgCenteringSmall: "left center"
 ---
 
 ## Regulatory Reform: The Case of Air Transport (Reforma regulacyjna. Przykład transportu lotniczego)

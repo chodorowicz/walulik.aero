@@ -29,7 +29,7 @@ const WrapperContentSC = styled(WrapperContent)`
   background-size: cover;
   padding-top: 100px;
   padding-bottom: 100px;
-  background-position: center center;
+  background-position: ${props => props.theme.extraBgCenteringSmall || "center center"};
 `
 
 export const BookExtra: React.FC<IProps> = props => {
