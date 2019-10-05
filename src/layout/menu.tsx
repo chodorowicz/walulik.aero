@@ -145,8 +145,9 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
     setMenuOpened(isVisible);
     window.setTimeout(() => {
       const element = menuRef.current;
-      if (isVisible) {
+      if (isVisible && element !== null) {
         disableBodyScroll(element);
+        element.ontouchmove = (e) => { e.preventDefault(); return false; };
       }
     }, 300);
     clearAllBodyScrollLocks();
