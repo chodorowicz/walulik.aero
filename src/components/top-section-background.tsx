@@ -15,5 +15,5 @@ export const TopSectionBackground = styled.div<ITopSectionProps>`
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
-  transition: all 0.2s linear;
+  transition: all 1s linear;
 `
