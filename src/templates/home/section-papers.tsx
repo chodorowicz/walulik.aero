@@ -59,11 +59,15 @@ const LinkSC = styled(Link)`
 
 const PaperBoxSC = styled(PaperBox)`
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media(max-width: ${breakPoints.b1024 - 1}px) {
     svg {
-      width: 40%;
-      height: 40%;
+      width: 60%;
+      height: 60%;
+      margin-bottom: 30px;
     }
   }
 `
