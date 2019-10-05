@@ -33,7 +33,12 @@ const StyledLink = styled(Link)`
   &:not(:last-child) {
     margin-right: 40px;
   }
-  &:hover,
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+      color: ${props => (props.theme.lightMenu ? colors.accent : colors.white)};
+    }
+  }
   &.active {
     text-decoration: underline;
     color: ${props => (props.theme.lightMenu ? colors.accent : colors.white)};
@@ -76,7 +81,6 @@ const MobileMenu = styled.div`
     @media(min-height: 500px) {
       margin-bottom: ${spacings.space20}px;
     }
-    
   }
 `
 
@@ -90,6 +94,7 @@ const LogoJanSmallSC = styled.div`
 `
 
 const VegeBurgerContainer = styled.div`
+  padding: 10px;
   cursor: pointer;
 `
 
