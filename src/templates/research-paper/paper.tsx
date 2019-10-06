@@ -105,7 +105,7 @@ export const Paper: React.FC<IProps> = ({
       <Navigation>
         <NavigationInner>
           <AnimatedLink to={urls.researchPapers} direction="left">Research Papers</AnimatedLink>
-          <MediaQuery minDeviceWidth={breaksMap.b768}>
+          <MediaQuery minWidth={breaksMap.b768}>
             <ArrowsContainer>
               <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
             </ArrowsContainer>
@@ -116,7 +116,7 @@ export const Paper: React.FC<IProps> = ({
         <BreadCrumbs>Research papers > {category} ></BreadCrumbs>
         <StyledContentTitleSC>
           <h2>{title}</h2>
-          <MediaQuery maxDeviceWidth={breaksMap.b768}>
+          <MediaQuery maxWidth={breaksMap.b768}>
             <ArrowsContainer>
               <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
             </ArrowsContainer>
@@ -128,7 +128,7 @@ export const Paper: React.FC<IProps> = ({
         </StyledContentTitleSC>
         <StyledContentSC dangerouslySetInnerHTML={{ __html: html }} />
       </Content>
-      <MediaQuery minDeviceWidth={breaksMap.b768}>
+      <MediaQuery minWidth={breaksMap.b768}>
         <Social>
           <Share />
         </Social>

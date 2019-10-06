@@ -100,7 +100,7 @@ export const SectionEducation: React.FC = props => {
   return (
     <Wrapper>
       <StyledWrapperContent>
-        <MediaQuery minDeviceWidth={breakPoints.b768}>
+        <MediaQuery minWidth={breakPoints.b768}>
           <ColumnPhoto>
             <StyledPhoto src={ImageEducation} />
           </ColumnPhoto>
@@ -112,7 +112,7 @@ export const SectionEducation: React.FC = props => {
           <Paragraph>
             <MarkdownContainerPure content={educationTop} />
           </Paragraph>
-          <MediaQuery maxDeviceWidth={breakPoints.b768 - 1}>
+          <MediaQuery maxWidth={breakPoints.b768 - 1}>
             <StyledPhotoMobile src={ImageEducation} />
           </MediaQuery>
           <ContactBox>

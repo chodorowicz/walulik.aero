@@ -170,13 +170,13 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
       {!isMenuOpened && (
         <HomePageTitle>
           <Link to={urls.home} onClick={() => setMenuVisibility(false)}>
-            <MediaQuery minDeviceWidth={breakPoints.b768}>
+            <MediaQuery minWidth={breakPoints.b768}>
               {matches => ((matches && !isSticky) ? <LogoJan /> : <LogoJanSmall />)}
             </MediaQuery>
           </Link>
         </HomePageTitle>
       )}
-      <MediaQuery maxDeviceWidth={breakPoints.b900 - 1}>
+      <MediaQuery maxWidth={breakPoints.b900 - 1}>
         {!isMenuOpened && (
           <VegeBurgerContainer>
             <VegeBurger onClick={() => setMenuVisibility(true)} />
@@ -204,7 +204,7 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
           </MobileMenu>
         )}
       </MediaQuery>
-      <MediaQuery minDeviceWidth={breakPoints.b900}>
+      <MediaQuery minWidth={breakPoints.b900}>
         <MenuWrapper>
           <Links setMenuOpened={setMenuVisibility} />
         </MenuWrapper>
