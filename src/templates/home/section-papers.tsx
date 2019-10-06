@@ -62,12 +62,18 @@ const PaperBoxSC = styled(PaperBox)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+  }
 
-  @media(max-width: ${breakPoints.b1024 - 1}px) {
+  @media(min-width: ${breakPoints.b1024}px) {
     svg {
-      width: 60%;
-      height: 60%;
-      margin-bottom: 30px;
+      width: 80%;
+      height: 80%;
     }
   }
 `

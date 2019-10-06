@@ -40,7 +40,8 @@ const CenterElement = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  padding-top: 90px;
+  align-items: center;
+  width: 50%;
 `
 
 interface IProps {
