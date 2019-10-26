@@ -149,7 +149,7 @@ export const PapersList: React.FC<IProps> = ({
                 <Where>{node.frontmatter.where}</Where>
                 <ButtonAreaSC>
                   <StyledLinkButton to={node.fields.slug}>
-                    See More
+                    see more
                   </StyledLinkButton>
                 </ButtonAreaSC>
               </PaperSC>
