@@ -14,7 +14,7 @@ The links below take you to the detailed sections of our policy:
 * [How will we use your data?](#how-will-we-use-your-data)
 * [What are the legal grounds for using your data?](#what-are-the-legal-grounds-for-using-your-data)
 * [How do we store your data?](#how-do-we-store-your-data)
-* [To whom we disclose your data?](#to-whom-we-disclose-your-data)
+* [To whom do we disclose your data?](#to-whom-do-we-disclose-your-data)
 * [What are your data protection rights?](#what-are-your-data-protection-rights)
 * [Cookies](#cookies)
 * [How do we use cookies?](#how-do-we-use-cookies)
