@@ -31,7 +31,7 @@ const HomePage: React.FC<IProps> = props => {
   const isLandScape = useMediaQuery({ orientation: 'landscape' })
 
   const theme = {
-    centeringSmall: isLandScape ? "center right" : "center right -200px",
+    centeringSmall: isLandScape ? "center right" : "center right -150px",
     centeringBig: "center right",
   }
 
