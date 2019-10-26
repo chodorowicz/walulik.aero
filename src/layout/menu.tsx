@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import MediaQuery from "react-responsive"
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import MediaQuery, { useMediaQuery } from "react-responsive"
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 import {
   colors,
@@ -30,6 +30,9 @@ const MenuWrapper = styled.nav`
 const StyledLink = styled(Link)`
   color: ${colors.accent};
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
   &:not(:last-child) {
     margin-right: 40px;
   }
@@ -164,6 +167,17 @@ export const Menu: React.FC<{ isSticky: boolean }> = (props) => {
       clearAllBodyScrollLocks();
     };
   }, []);
+
+
+  const handleMediaQueryChange = (matches) => {
+    // disable menu when switching from mobile to dekstop with menu opepend
+    if (matches && isMenuOpened) {
+      setMenuVisibility(false);
+    }
+  }
+  useMediaQuery(
+    { minWidth: 900 }, undefined,  handleMediaQueryChange
+  );
 
   return (
     <>
