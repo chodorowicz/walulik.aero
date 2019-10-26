@@ -22,14 +22,18 @@ interface IProps {
 }
 
 const Title = styled.h1`
-  font-size: ${fontSizes.xxLarge}px;
+  font-size: ${fontSizes.size36}px;
   font-family: ${fontFamily.montserrat};
   color: ${colors.white};
   position: absolute;
   bottom: 0;
   margin-bottom: 20px;
 
-  font-size: ${fontSizes.size36}px;
+  @media (min-width: 668px) and (min-height: 500px) {
+    font-size: ${fontSizes.xLarge}px;
+    margin-bottom: 60px;
+  }
+
   @media (min-width: 768px) and (min-height: 700px) {
     font-size: ${fontSizes.xxLarge}px;
     margin-bottom: 120px;
