@@ -84,7 +84,6 @@ const ContactBox = styled.div`
     &:after {
       left: -140px;
       right: -9999px;
-      margin-top: 120px;
     }
   }
 `
@@ -93,6 +92,9 @@ const ContactBoxInner = styled.div`
   position: relative;
   z-index: 3;
   ${paddingSides20};
+  ${mq.b768} {
+    margin-top: 120px;
+  }
 `
 
 export const SectionEducation: React.FC = props => {
