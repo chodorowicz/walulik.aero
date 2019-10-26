@@ -72,7 +72,7 @@ export const SectionPublications: React.FC = props => {
           </Paragraph>
           <ContainerButton>
             <AnimatedLink to={urls.researchPapers}>
-              See my research papers
+              see research papers
             </AnimatedLink>
           </ContainerButton>
         </WrapperText>

@@ -208,7 +208,7 @@ export const ContactForm: React.FC = () => {
           <LabelSC htmlFor="message">message</LabelSC>
         </SectionSC>
         <ButtonSectionSC>
-          <AnimatedButtonRight>Send</AnimatedButtonRight>
+          <AnimatedButtonRight>send</AnimatedButtonRight>
         </ButtonSectionSC>
         <Success
           isVisible={errorMessage !== ""}

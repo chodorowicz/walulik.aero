@@ -122,7 +122,7 @@ export const SectionEducation: React.FC = props => {
               <Paragraph color={colors.white} fontSize={fontSizes.size28}>
                 <MarkdownContainerPure content={educationBottom} />
               </Paragraph>
-              <AnimatedLink to={urls.contact}>Contact Jan</AnimatedLink>
+              <AnimatedLink to={urls.contact}>contact Jan</AnimatedLink>
             </ContactBoxInner>
           </ContactBox>
         </ColumnText>
