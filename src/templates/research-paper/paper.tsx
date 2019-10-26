@@ -116,7 +116,7 @@ export const Paper: React.FC<IProps> = ({
         <BreadCrumbs>Research papers > {category} ></BreadCrumbs>
         <StyledContentTitleSC>
           <h2>{title}</h2>
-          <MediaQuery maxWidth={breaksMap.b768}>
+          <MediaQuery maxWidth={breaksMap.b768 - 1}>
             <ArrowsContainer>
               <CarouselArrowsLinks nextLink={nextLink} prevLink={prevLink} />
             </ArrowsContainer>
