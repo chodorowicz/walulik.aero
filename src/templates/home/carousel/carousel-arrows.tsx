@@ -6,7 +6,7 @@ import posed from "react-pose"
 import { colors, mq, spacings } from "../../../constants"
 import Line from "../../../images/line.inline.svg"
 import LineLeft from "../../../images/line-left.inline.svg"
-import { useWindowSize } from "../../../utils"
+import { useWindowSize, checkHover } from "../../../utils"
 
 const CircleWithIcon = styled.button`
   width: 50px;
@@ -20,14 +20,16 @@ const CircleWithIcon = styled.button`
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  &:hover {
-    background-color: ${colors.accent};
-    path,
-    line {
-      stroke: ${colors.white};
+  margin-right: 10px;
+  @media (hover: hover) {
+    &:hover {
+      background-color: ${colors.accent};
+      path,
+      line {
+        stroke: ${colors.white};
+      }
     }
   }
-  margin-right: 10px;
   ${mq.b768} {
     width: 69px;
     height: 69px;
@@ -75,16 +77,18 @@ const AnimatedCircleRight: React.FC<{ onClick?: any }> = props => {
   const [isHover, setHover] = useState(false)
   const size = useWindowSize();
   const isMobile = size.innerWidth <= 768;
+  const displayHoverEffect = isHover && checkHover();
+
   return (
     <CircleWithIcon
       {...props}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <AnimatedArrowAppearSC pose={isHover ? "visible" : "hidden"} isMobile={isMobile}>
+      <AnimatedArrowAppearSC pose={displayHoverEffect ? "visible" : "hidden"} isMobile={isMobile}>
         <Line />
       </AnimatedArrowAppearSC>
-      <AnimatedArrowRight pose={isHover ? "active" : "default"} isMobile={isMobile}>
+      <AnimatedArrowRight pose={displayHoverEffect ? "active" : "default"} isMobile={isMobile}>
         <Line />
       </AnimatedArrowRight>
     </CircleWithIcon>
@@ -109,16 +113,18 @@ const AnimatedCircleLeft: React.FC<{ onClick?: any }> = props => {
   const [isHover, setHover] = useState(false)
   const size = useWindowSize();
   const isMobile = size.innerWidth <= 768;
+  const displayHoverEffect = isHover && checkHover();
+
   return (
     <CircleWithIcon
       {...props}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <AnimatedArrowAppearSC2 pose={isHover ? "visible" : "hidden"} isMobile={isMobile}>
+      <AnimatedArrowAppearSC2 pose={displayHoverEffect ? "visible" : "hidden"} isMobile={isMobile}>
         <LineLeft />
       </AnimatedArrowAppearSC2>
-      <AnimatedArrowLeft pose={isHover ? "active" : "default"}>
+      <AnimatedArrowLeft pose={displayHoverEffect ? "active" : "default"}>
         <LineLeft />
       </AnimatedArrowLeft>
     </CircleWithIcon>

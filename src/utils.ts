@@ -27,6 +27,12 @@ export function useWindowSize() {
   return windowSize;
 }
 
+export function checkHover(): boolean {
+  const canHover = !(window.matchMedia('(hover: none)').matches);
+
+  return canHover
+}
+
 export const useWindowScrollPosition = (options = {}) => {
   const { throttleMs = 100 } = options
   const [scroll, setScroll] = useState({
