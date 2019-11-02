@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { throttle } from "lodash"
 
+const  scrollToElement = require('scroll-to-element');
+
 function getSize() {
   return {
     innerHeight: isWindow() ? window.innerHeight : 1000,
@@ -60,4 +62,18 @@ export const useWindowScrollPosition = (options = {}) => {
 
 export function isWindow() {
   return typeof window !== "undefined"
+}
+
+export function scrollToHashLink(timeout: number = 0, withOffset: boolean = false) {
+  // const timeout
+  if(window.location.hash) { 
+    window.setTimeout(() => {
+      const element = document.querySelector(window.location.hash);
+      if (element) {
+        const offset = withOffset ? -element.offsetHeight : 0;
+        scrollToElement(element, {offset, duration: 300})
+        element.scrollIntoView( {block: "start", inline: "nearest", behavior: "auto" });
+      }
+    }, timeout);
+  }
 }

@@ -66,6 +66,7 @@
     "react-responsive": "^8.0.1",
     "react-toastify": "5.3.2",
     "react-use": "9.8.1",
+    "scroll-to-element": "^2.0.3",
     "striptags": "3.1.1",
     "utility-types": "3.7.0"
   },

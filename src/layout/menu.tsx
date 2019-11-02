@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import MediaQuery, { useMediaQuery } from "react-responsive"
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
+
 import {
   colors,
   fontSizes,
@@ -136,9 +137,9 @@ const Links: React.FC<Props> = ({ setMenuOpened }) => {
       <StyledLink to={urls.researchPapers} onClick={onClick} {...commonLinkProps}>
         Research papers
       </StyledLink>
-      <StyledLink to={urls.contact} onClick={onClick} {...commonLinkProps}>
+      <a href="/#contact" onClick={onClick}>
         Contact
-      </StyledLink>
+      </a>
     </>
   )
 }

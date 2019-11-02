@@ -4,11 +4,12 @@ import { Global, css } from "@emotion/core"
 import CookieConsent from "react-cookie-consent"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import { Link } from "gatsby"
 
 import { colors, fontFamily, urls } from "./constants"
 import { Footer } from "./layout/footer"
 import { LogoAndMenu } from "./components"
-import { Link } from "gatsby"
+import { scrollToHashLink } from "./utils";
 
 interface IProps {
   title?: string
@@ -24,6 +25,14 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
   React.useEffect(() => {
     setVhCssVariable();
     window.addEventListener('resize', setVhCssVariable); 
+  }, []);
+
+  React.useEffect(() => {
+    scrollToHashLink(0, true);
+    // iOS performs automatic scroll (not very accurate) on orientation change
+    //  during that scroll no other scrolls can be fired, thus timeout
+    //  no known workaround currently
+    window.addEventListener("orientationchange", () => { scrollToHashLink(1000) });
   }, []);
   
   return (
