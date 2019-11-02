@@ -8,7 +8,7 @@ interface ITitle {
 
 export const Title = styled.h2<ITitle>`
   color: ${props => props.color || colors.darkBlue};
-  font-size: ${fontSizes.size28}px;
+  font-size: 30px;
   font-family: ${fontFamily.montserrat};
   margin-top: 0px;
   ${mq.b768} {
