@@ -77,3 +77,10 @@ export function scrollToHashLink(timeout: number = 0, withOffset: boolean = fals
     }, timeout);
   }
 }
+
+export function scrollToElementBySelector(selector: string) {
+  const element = document.querySelector("#contact")
+  if (element) {
+    scrollToElement(element);
+  }
+}

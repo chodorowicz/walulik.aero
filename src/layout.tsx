@@ -6,10 +6,11 @@ import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { Link } from "gatsby"
 
+
 import { colors, fontFamily, urls } from "./constants"
 import { Footer } from "./layout/footer"
 import { LogoAndMenu } from "./components"
-import { scrollToHashLink } from "./utils";
+import { scrollToElementBySelector } from "./utils";
 
 interface IProps {
   title?: string
@@ -21,6 +22,15 @@ function setVhCssVariable() {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
+function navigateToContact() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("section") === "contact") {
+    window.setTimeout(() => {
+      scrollToElementBySelector("#contact")
+    }, 1000);
+  }
+}
+
 export const Layout: React.FC<IProps> = ({ children, title, description }) => {
   React.useEffect(() => {
     setVhCssVariable();
@@ -28,11 +38,8 @@ export const Layout: React.FC<IProps> = ({ children, title, description }) => {
   }, []);
 
   React.useEffect(() => {
-    scrollToHashLink(0, true);
-    // iOS performs automatic scroll (not very accurate) on orientation change
-    //  during that scroll no other scrolls can be fired, thus timeout
-    //  no known workaround currently
-    window.addEventListener("orientationchange", () => { scrollToHashLink(1000) });
+    navigateToContact();
+    window.addEventListener("orientationchange", () => { navigateToContact() });
   }, []);
   
   return (

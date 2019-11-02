@@ -3,6 +3,9 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import MediaQuery, { useMediaQuery } from "react-responsive"
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+const  scrollToElement = require('scroll-to-element');
+import { navigate } from '@reach/router';
+import { scrollToElementBySelector } from "../utils";
 
 
 import {
@@ -80,7 +83,7 @@ const MobileMenu = styled.div`
     font-size: ${fontSizes.mediumLarge}px;
   }
 
-  ${StyledLink} {
+  ${StyledLink}, a {
     margin-bottom: 10px;
     @media(min-height: 500px) {
       margin-bottom: ${spacings.space20}px;
@@ -124,6 +127,19 @@ interface Props {
   setMenuOpened: (x: boolean) => void;
 }
 
+async function handleContact(event, onClick) {
+  event.preventDefault();
+  onClick(); 
+  const element = document.querySelector("#contact")
+  if (element) {
+    event.preventDefault();
+    scrollToElement(element);
+    return;
+  }
+  await navigate("/?section=contact");
+  scrollToElementBySelector("#contact");
+}
+
 const Links: React.FC<Props> = ({ setMenuOpened }) => {
   const onClick = () => setMenuOpened(false);
   return (
@@ -137,7 +153,7 @@ const Links: React.FC<Props> = ({ setMenuOpened }) => {
       <StyledLink to={urls.researchPapers} onClick={onClick} {...commonLinkProps}>
         Research papers
       </StyledLink>
-      <a href="/#contact" onClick={onClick}>
+      <a href="/?section=contact" onClick={(event) => handleContact(event, onClick)}>
         Contact
       </a>
     </>

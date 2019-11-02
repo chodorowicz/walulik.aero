@@ -74,10 +74,10 @@ const SectionTitleSC = styled(SectionTitle)`
 
 export const SectionContact: React.FC<any> = () => {
   return (
-    <WrapperContentNoMobilePadding>
+    <WrapperContentNoMobilePadding id="contact">
       <Wrapper>
         <InfoSide>
-          <SectionTitleSC id="contact">Contact</SectionTitleSC>
+          <SectionTitleSC>Contact</SectionTitleSC>
           <InfoSideTitle>
             Jan Walulik<br />
             Aviation Research &amp; Consulting
