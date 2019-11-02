@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 
 import { colors } from "../../constants"
 import {
-  PageCallout,
+  ResponsiveStyledPageCallout,
   StyledCalloutContent,
   Title,
   MarkdownContainer,
@@ -25,12 +25,6 @@ const Wrapper = styled.div`
   background-color: #f4f4f4;
 `
 
-const StyledPageCallout = styled(PageCallout)`
-  margin-top: -220px;
-  position: relative;
-  z-index: 1;
-`
-
 export const SectionResearchPapers: React.FC<IProps> = ({
   html,
   title,
@@ -39,14 +33,14 @@ export const SectionResearchPapers: React.FC<IProps> = ({
 }) => (
   <Wrapper>
     <WrapperContentNoMobilePadding>
-      <StyledPageCallout>
+      <ResponsiveStyledPageCallout>
         <Title color={colors.white} style={{ marginBottom: "100px" }} name="list">
           {title}
         </Title>
         <StyledCalloutContent>
           <MarkdownContainer content={html} />
         </StyledCalloutContent>
-      </StyledPageCallout>
+      </ResponsiveStyledPageCallout>
       <PapersList categories={categories} researchPapers={researchPapers} />
     </WrapperContentNoMobilePadding>
   </Wrapper>

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 
-import { colors, fontSizes, fontWeight, fontFamily } from "../constants"
+import { colors, fontSizes, fontWeight, fontFamily, mq } from "../constants"
 
 interface ITitle {
   color?: string;
@@ -8,9 +8,12 @@ interface ITitle {
 
 export const Title = styled.h2<ITitle>`
   color: ${props => props.color || colors.darkBlue};
-  font-size: ${fontSizes.mediumLarge}px;
+  font-size: ${fontSizes.size28}px;
   font-family: ${fontFamily.montserrat};
   margin-top: 0px;
+  ${mq.b768} {
+    font-size: ${fontSizes.mediumLarge}px;
+  }
 `;
 
 
