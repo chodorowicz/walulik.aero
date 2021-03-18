@@ -10,7 +10,7 @@ text: |-
 image: /assets/progressive.png
 publisher: Routledge
 slug: progressive-commercialization-airline-regulations-governance-culture
-order: 3
+order: 4
 ---
 
 ## Progressive Commercialization of Airline Governance Culture

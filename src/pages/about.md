@@ -21,8 +21,8 @@ researchTeaching: >-
   the <a href="https://www.cars.wz.uw.edu.pl/o_nas_gb.html"
   target="_blank">Centre for Antitrust and Regulatory Studies</a>, Faculty of
   Management, University of Warsaw, where he has headed the <a
-  href="https://www.cars.wz.uw.edu.pl/laboratories-02.html"
-  target="_blank">Civil Aviation Laboratory</a> since 2016. He is also a tutor
+  href="https://cars.wz.uw.edu.pl/en/laboratories/cars-civil-aviation-laboratory.html"
+  target="_blank">Civil Aviation Laboratory</a> since 2016. He was also a tutor
   at <a href="http://ksap.gov.pl/ksap/en" target="_blank">Polish National School
   of Public Administration</a>
 publications: >-

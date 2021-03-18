@@ -132,11 +132,11 @@ export function Footer(): JSX.Element {
             <FooterLink href="https://scholar.google.com/citations?user=TXVA74kAAAAJ&hl=en"><img src={LogoGoogleScholarSrc} width={60} /></FooterLink>
             <FooterLink href="https://orcid.org/0000-0001-9995-7774"><LogoOrcid /></FooterLink>
             <FooterLink href="https://uw.academia.edu/JanWalulik"><LogoAcademia /></FooterLink>
-            <FooterLink href="https://www.mendeley.com/profiles/jan-walulik/ "><LogoBlob /></FooterLink>
+            <FooterLink href="https://www.mendeley.com/search/?authorFullName=Jan%20Walulik&page=1&query=jan%20walulik&sortBy=relevance "><LogoBlob /></FooterLink>
             <FooterLink href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3377597"><LogoSSRN /></FooterLink>
             <FooterLink href="https://www.researchgate.net/profile/Jan_Walulik"><LogoResearchgate /></FooterLink>
             <FooterLink href="https://nauka-polska.pl/#/profile/scientist?id=238924&lang=en&_k=3l9r8c"><img src={LogoNaukaPolska} width={70} /></FooterLink>
-            <FooterLink href="https://pbn.nauka.gov.pl/sedno-webapp/persons/3949073/"><LogoPBN /></FooterLink>
+            <FooterLink href="https://pbn.nauka.gov.pl/core/#/profile/public/5e7093e4878c28a0473b2a7f"><LogoPBN /></FooterLink>
           </Logos>
         </ContainerLeft>
         <ContainerRight>

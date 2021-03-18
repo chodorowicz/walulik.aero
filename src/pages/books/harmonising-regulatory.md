@@ -18,7 +18,7 @@ text: >-
   Zagrajek, Marek Żylicz.
 publisher: Routledge
 slug: harmonising-aviation-regulations-antistrust-regulations
-order: 2
+order: 3
 extraBadge: /assets/airline-regulatory.png
 extraContentLeft: >-
   <a href="http://www.arac2017.wz.uw.edu.pl/" target="_blank"><img
