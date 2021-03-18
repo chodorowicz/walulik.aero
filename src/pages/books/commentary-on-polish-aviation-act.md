@@ -12,7 +12,7 @@ text: |-
   Marek Żylicz (ed.)
 publisher: Wolters Kluwer
 slug: polish-aviation-act
-order: 5
+order: 6
 ---
 
 ## Commentary on Polish Aviation Act (Prawo lotnicze. Komentarz)

@@ -14,7 +14,7 @@ text: |-
   ISBN: 9788376270821
 publisher: EuroPrawo
 slug: regulatory-reform-airline-deregulation-liberalization
-order: 4
+order: 5
 extraBadge: /assets/book-award.png
 extraContentLeft: ''
 extraContentRight: >-

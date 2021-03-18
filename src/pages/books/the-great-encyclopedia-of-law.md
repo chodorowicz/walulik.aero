@@ -10,7 +10,7 @@ text: |-
   Dorota Pyć, Ryszard Stefański, Marek Żylicz (eds.)
 publisher: Ubi societas, ibi ius
 slug: encyclopedia-transport-law
-order: 6
+order: 7
 ---
 
 ## The Great Encyclopedia of Law. Transport Law (Wielka encyklopedia prawa. Prawo komunikacyjne)
