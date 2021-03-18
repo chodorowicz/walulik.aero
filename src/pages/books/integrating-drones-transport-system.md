@@ -6,7 +6,7 @@ descriptionTag: "drone transport"
 image: /assets/ready_for_takeoff.png
 text: |-
   Paris: OECD Publishing, 2021
-publisher: Wolters Kluwer
+publisher: OECD Publishing
 slug: integrating-drones-transport-system
 order: 1
 ---
