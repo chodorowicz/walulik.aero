@@ -16,7 +16,7 @@ about: >-
   Association.
 researchTeaching: >-
   Jan has also been a lecturer in air law at the <a
-  href="http://uczelnia.sgh.waw.pl/en/Pages/default.aspx" target="_blank"
+  href="https://www.sgh.waw.pl/en" target="_blank"
   >Warsaw School of Economics</a> since 2012 and was an assistant professor at
   the <a href="https://www.cars.wz.uw.edu.pl/o_nas_gb.html"
   target="_blank">Centre for Antitrust and Regulatory Studies</a>, Faculty of
