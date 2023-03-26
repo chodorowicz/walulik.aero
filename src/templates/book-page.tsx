@@ -35,8 +35,8 @@ const BookPage: React.FC<IProps> = props => {
     extraBgCenteringSmall,
   } = frontmatter
   const { next, prev } = pageContext
-  const nextLink = next && next.fields.slug
-  const prevLink = prev && prev.fields.slug
+  const nextLink = next && `/${next.fields.slug}`
+  const prevLink = prev && `/${prev.fields.slug}`
 
   const theme = {
     extraBgCenteringSmall,
@@ -47,7 +47,7 @@ const BookPage: React.FC<IProps> = props => {
       <Layout title={titleTag} description={descriptionTag}>
         <SectionTopBooks>
           <BookTop
-            fluid={image.childImageSharp.fluid}
+            fluid={image}
             extraBadge={extraBadge}
             text={text}
             title={title}
@@ -82,9 +82,7 @@ export const pageQuery = graphql`
         descriptionTag
         image {
           childImageSharp {
-            fluid(maxWidth: 1048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 1048, placeholder: BLURRED)
           }
         }
         extraBadge {

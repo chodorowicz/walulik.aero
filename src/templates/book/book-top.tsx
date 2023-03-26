@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import {
   WrapperContent,
@@ -116,6 +116,7 @@ export const BookTop: React.FC<IProps> = ({
   prevLink,
   extraBadge,
 }) => {
+  const image = getImage(fluid)
   return (
     <StyledWrapperContent>
       <Container>
@@ -133,7 +134,7 @@ export const BookTop: React.FC<IProps> = ({
         </NavigationWrapper>
         <BookContainer>
           <BookContainerInner>
-            <StaticImage src={fluid.src} alt=""/>
+            {image && <GatsbyImage image={image} alt="" />}
           </BookContainerInner>
         </BookContainer>
         <InfoContainer>

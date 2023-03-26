@@ -51,7 +51,7 @@ export const Book: React.FC<IBooks> = ({ source, title, publisher, url, classNam
   return (
     <BookContainer className={className}>
       {extraBadge && <ExtraBadgeSC><img src={extraBadge.childImageSharp.fluid.src} /></ExtraBadgeSC>}
-      <Link to={url}><BookImage src={source} /></Link>
+      <Link to={`/${url}`}><BookImage src={source} /></Link>
       <Info>
         <strong>{title}</strong><br />
         Publisher: {publisher}
