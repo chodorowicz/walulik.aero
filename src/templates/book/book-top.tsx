@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 import {
   WrapperContent,
@@ -32,7 +32,7 @@ const NavigationWrapper = styled.div`
   grid-column: 1 / span 12;
   order: 3;
   ${mq.b768} {
-    order: unset;;
+    order: unset;
     grid-column: 1 / span 3;
   }
 `
@@ -43,7 +43,7 @@ const BookNavigation = styled.div`
   align-items: center;
   height: 100%;
   margin-top: 50px;
-  ${mq.b768} { 
+  ${mq.b768} {
     margin-top: unset;
     display: inline-flex;
     flex-direction: column;
@@ -98,7 +98,7 @@ interface IProps {
   title: string
   nextLink: string
   prevLink: string
-  extraBadge?: any;
+  extraBadge?: any
 }
 
 const ExtraBadgeSC = styled.div`
@@ -122,7 +122,9 @@ export const BookTop: React.FC<IProps> = ({
         <NavigationWrapper>
           <BookNavigation>
             <div>
-              <AnimatedLink to={urls.books} direction="left">Books</AnimatedLink>
+              <AnimatedLink to={urls.books} direction="left">
+                Books
+              </AnimatedLink>
             </div>
             <ArrowsContainer>
               <CarouselArrowsLinks nextLink={prevLink} prevLink={nextLink} />
@@ -131,11 +133,15 @@ export const BookTop: React.FC<IProps> = ({
         </NavigationWrapper>
         <BookContainer>
           <BookContainerInner>
-            <Img fluid={fluid} />
+            <StaticImage src={fluid.src} alt=""/>
           </BookContainerInner>
         </BookContainer>
         <InfoContainer>
-          {extraBadge && <ExtraBadgeSC><img src={extraBadge.childImageSharp.fluid.src} /></ExtraBadgeSC>}
+          {extraBadge && (
+            <ExtraBadgeSC>
+              <img src={extraBadge.childImageSharp.fluid.src} />
+            </ExtraBadgeSC>
+          )}
           <TextTitle>{title}</TextTitle>
           <MarkdownContainer content={text} />
         </InfoContainer>

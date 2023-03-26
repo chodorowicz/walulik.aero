@@ -2,6 +2,7 @@ var proxy = require("http-proxy-middleware")
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-pnpm`,
     {
       // this needs to point to folder where uploaded images are stored
       resolve: "gatsby-source-filesystem",
@@ -57,24 +58,24 @@ module.exports = {
               removeAccents: true,
             },
           },
-          "gatsby-remark-external-links",
+          // "gatsby-remark-external-links",
         ],
       },
     },
     "gatsby-plugin-emotion",
     "gatsby-plugin-typescript",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-transition-link",
-    {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        logo: "./src/favicon.png",
-        // WebApp Manifest Configuration
-        background: '#fff',
-        theme_color: '#fff',
-        start_url: '/',
-      }
-    },
+    // "gatsby-plugin-transition-link",
+    // {
+    //   resolve: `gatsby-plugin-favicon`,
+    //   options: {
+    //     logo: "./src/favicon.png",
+    //     // WebApp Manifest Configuration
+    //     background: '#fff',
+    //     theme_color: '#fff',
+    //     start_url: '/',
+    //   }
+    // },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
