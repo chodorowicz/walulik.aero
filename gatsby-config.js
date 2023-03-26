@@ -59,7 +59,6 @@ module.exports = {
               removeAccents: true,
             },
           },
-          // "gatsby-remark-external-links",
         ],
       },
     },
@@ -69,7 +68,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: './src/favicon.png',
+        icon: "./src/favicon.png",
         name: `Aviation Research & Consulting`,
         short_name: `Aviation Research & Consulting`,
         start_url: `/`,
@@ -78,18 +77,6 @@ module.exports = {
         display: `standalone`,
       },
     },
-
-    // "gatsby-plugin-transition-link",
-    // {
-    //   resolve: `gatsby-plugin-favicon`,
-    //   options: {
-    //     logo: "./src/favicon.png",
-    //     // WebApp Manifest Configuration
-    //     background: '#fff',
-    //     theme_color: '#fff',
-    //     start_url: '/',
-    //   }
-    // },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
