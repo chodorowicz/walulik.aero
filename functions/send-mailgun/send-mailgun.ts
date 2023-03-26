@@ -1,8 +1,8 @@
-const email = require("./email.json")
-const commonmark = require("commonmark")
-const Mailgun = require("mailgun.js")
-const formData = require("form-data")
-const _ = require("lodash")
+import email from "./email.json"
+import * as commonmark from "commonmark"
+import Mailgun from "mailgun.js"
+import formData from "form-data"
+import * as _ from "lodash"
 
 const reader = new commonmark.Parser()
 const writer = new commonmark.HtmlRenderer()
