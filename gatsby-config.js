@@ -66,6 +66,19 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-typescript",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: './src/favicon.png',
+        name: `Aviation Research & Consulting`,
+        short_name: `Aviation Research & Consulting`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `standalone`,
+      },
+    },
+
     // "gatsby-plugin-transition-link",
     // {
     //   resolve: `gatsby-plugin-favicon`,

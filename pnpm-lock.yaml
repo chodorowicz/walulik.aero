@@ -26,6 +26,7 @@ specifiers:
   gatsby-legacy-polyfills: '2'
   gatsby-plugin-emotion: '6'
   gatsby-plugin-image: '1'
+  gatsby-plugin-manifest: '3'
   gatsby-plugin-netlify: '3'
   gatsby-plugin-netlify-cms: '5'
   gatsby-plugin-pnpm: ^1.2.10
@@ -84,6 +85,7 @@ dependencies:
   gatsby-legacy-polyfills: 2.25.0
   gatsby-plugin-emotion: 6.15.0_ff4zowgsimmfmtdamrpq6qspmu
   gatsby-plugin-image: 1.15.0_p7e6c6qabt6a6u6b6u2ioaa3dy
+  gatsby-plugin-manifest: 3.15.0_gatsby@3.15.0
   gatsby-plugin-netlify: 3.14.0_caobtf3rneg7nycuut4skpffme
   gatsby-plugin-netlify-cms: 5.15.0_dwacxwwbiyohxy6pc3whlftcrm
   gatsby-plugin-pnpm: 1.2.10_gatsby@3.15.0
@@ -8193,6 +8195,20 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /gatsby-plugin-manifest/3.15.0_gatsby@3.15.0:
+    resolution: {integrity: sha512-zvAwx45/IOMWOn9JfSU2b1HQF/Q8VaH8dBTCBIPILUEXSbpDad6z0HVBV++Z6ouLveUQCndTgWj/RRUCEqRSZg==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      gatsby: ^3.0.0-next.0
+    dependencies:
+      '@babel/runtime': 7.21.0
+      gatsby: 3.15.0_3xvy6kjtwcxmscbkwfopjlofyi
+      gatsby-core-utils: 2.15.0
+      gatsby-plugin-utils: 1.15.0_gatsby@3.15.0
+      semver: 7.3.8
+      sharp: 0.29.3
     dev: false
 
   /gatsby-plugin-netlify-cms/5.15.0_dwacxwwbiyohxy6pc3whlftcrm:
