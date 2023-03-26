@@ -83,7 +83,7 @@ const LinkedPaperBox: React.FC<{ section: string }> = ({
   section,
 }) => {
   return (
-    <LinkSC to={`/${urls.researchPapers}?section=${slugify(section)}#list`}>
+    <LinkSC to={`${urls.researchPapers}?section=${slugify(section)}#list`}>
       <PaperBoxSC text={section}>
         {children}
       </PaperBoxSC>
