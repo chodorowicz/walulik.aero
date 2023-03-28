@@ -1,25 +1,29 @@
-const email = require("./email.json")
-const commonmark = require("commonmark")
+import email from "./email.json"
+import * as commonmark from "commonmark"
+import Mailgun from "mailgun.js"
+import formData from "form-data"
+import * as _ from "lodash"
 
 const reader = new commonmark.Parser()
 const writer = new commonmark.HtmlRenderer()
 const parsed = reader.parse(email.body)
 const result = writer.render(parsed)
 
-const _ = require("lodash")
-var mailgun = require("mailgun-js")({
-  apiKey: process.env.MAILGUN_API,
-  domain: process.env.MAILGUN_DOMAIN,
-  host: "api.eu.mailgun.net",
+const mailgun = new Mailgun(formData)
+
+const mgInstance = mailgun.client({
+  username: "api",
+  key: process.env.MAILGUN_API,
+  url: "https://api.eu.mailgun.net",
 })
 
 const common = require("./src/common")
 const { statusCode, headers } = common
 
-const from = process.env.EMAIL_FROM;
+const from = process.env.EMAIL_FROM
 
 const sendThankYouEmail = async ({ email, message, name, pot }) => {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     const personEmail = `${name} <${email}>`
     const sgEmail = {
       to: process.env.EMAIL_TO,
@@ -45,15 +49,20 @@ const sendThankYouEmail = async ({ email, message, name, pot }) => {
       return
     }
 
-    mailgun.messages().send(sgEmail, function(error, body) {
-      console.log(body)
-    })
+    try {
+      await mgInstance.messages
+        .create(process.env.MAILGUN_DOMAIN, sgEmail)
+        .then(response => console.log(response))
 
-    mailgun.messages().send(autoRespondEmail, function(error, body) {
-      console.log(body)
-    })
+      await mgInstance.messages
+        .create(process.env.MAILGUN_DOMAIN, autoRespondEmail)
+        .then(response => console.log(response))
 
-    resolve()
+      resolve()
+    } catch (error) {
+      console.log(error)
+      reject(error)
+    }
   })
 }
 
@@ -68,6 +77,8 @@ exports.handler = function sendEmail(event, _context, callback) {
   }
 
   const body = JSON.parse(event.body)
+  console.log("sending")
+  console.log({ body })
 
   sendThankYouEmail(body)
     .then(() => {

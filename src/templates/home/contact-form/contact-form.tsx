@@ -113,7 +113,7 @@ export const ContactForm: React.FC = () => {
         onSubmit={event => {
           event.preventDefault()
           const consent = Cookies.get("CookieConsent")
-          console.log(consent)
+          // console.log(consent)
           if (consent !== "true") {
             setErrorMessage(
               `You must indicate that you have read and agreed to the <a href="${urls.privacyPolicy}">Privacy Policy</a>.`
@@ -139,7 +139,7 @@ export const ContactForm: React.FC = () => {
             .then(response => {
               const message =
                 "Thank you. Your message has been successfully sent."
-              console.log(response)
+              // console.log(response)
               setErrorMessage(message)
               toast(message, {
                 hideProgressBar: true,

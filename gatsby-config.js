@@ -2,6 +2,7 @@ var proxy = require("http-proxy-middleware")
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-pnpm`,
     {
       // this needs to point to folder where uploaded images are stored
       resolve: "gatsby-source-filesystem",
@@ -24,6 +25,7 @@ module.exports = {
         name: "pages",
       },
     },
+    "gatsby-plugin-image",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
@@ -57,23 +59,23 @@ module.exports = {
               removeAccents: true,
             },
           },
-          "gatsby-remark-external-links",
         ],
       },
     },
     "gatsby-plugin-emotion",
     "gatsby-plugin-typescript",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-transition-link",
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        logo: "./src/favicon.png",
-        // WebApp Manifest Configuration
-        background: '#fff',
-        theme_color: '#fff',
-        start_url: '/',
-      }
+        icon: "./src/favicon.png",
+        name: `Aviation Research & Consulting`,
+        short_name: `Aviation Research & Consulting`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `standalone`,
+      },
     },
     {
       resolve: "gatsby-plugin-react-svg",

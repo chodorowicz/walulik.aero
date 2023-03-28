@@ -99,8 +99,8 @@ const PosedPaperSC = styled(PosedPaper)``
 
 function setCategoryParam(category: string) {
   const params = new URLSearchParams(window.location.search)
-  params.set(PARAM_SECTION, slugify(category));
-  window.history.replaceState({}, '', `${location.pathname}?${params}`);
+  params.set(PARAM_SECTION, slugify(category))
+  window.history.replaceState({}, "", `${location.pathname}?${params}`)
 }
 
 export const PapersList: React.FC<IProps> = ({
@@ -148,7 +148,7 @@ export const PapersList: React.FC<IProps> = ({
                 <Title>{node.frontmatter.title}</Title>
                 <Where>{node.frontmatter.where}</Where>
                 <ButtonAreaSC>
-                  <StyledLinkButton to={node.fields.slug}>
+                  <StyledLinkButton to={`/${node.fields.slug}`}>
                     see more
                   </StyledLinkButton>
                 </ButtonAreaSC>

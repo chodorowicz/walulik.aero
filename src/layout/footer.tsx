@@ -124,7 +124,7 @@ export function Footer(): JSX.Element {
         <ContainerLeft>
           <Title>Find Jan at:</Title>
           <Logos>
-            <FooterLink href="https://www.cars.wz.uw.edu.pl/laboratories-02.html"><LogoCars /></FooterLink>
+            <FooterLink href="https://cars.wz.uw.edu.pl/en/"><LogoCars /></FooterLink>
             <FooterLink href="https://publons.com/researcher/1694797/jan-walulik/"><LogoP /></FooterLink>
             <FooterLink href="https://www.routledge.com/authors/i15817-jan-walulik"><LogoRoutledge /></FooterLink>
             <FooterLink href="https://www.scopus.com/authid/detail.uri?authorId=57189370786 "><LogoScopus /></FooterLink>
