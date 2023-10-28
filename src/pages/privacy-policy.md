@@ -124,7 +124,7 @@ We keep our privacy policy under regular review and place any updates to it on t
 
 ## How to contact us
 
-If you have any questions about our privacy policy or the data we hold on you, or if you would like to exercise one of your data protection rights, please do not hesitate to contact Jan Walulik (personal data controller) at the email address: <mailto:jan@walulik.aero> or at the mailing address: Jan Walulik, 50/54/515 Nowogrodzka St.., PL00-695 Warsaw, Poland.
+If you have any questions about our privacy policy or the data we hold on you, or if you would like to exercise one of your data protection rights, please do not hesitate to contact Jan Walulik (personal data controller) at the email address: <mailto:jan@walulik.aero> or at the mailing address: Jan Walulik, 50/54/515 Nowogrodzka St., PL00-695 Warsaw, Poland.
 
 ## How to contact the appropriate authority
 
