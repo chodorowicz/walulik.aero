@@ -83,7 +83,7 @@ export const SectionContact: React.FC<any> = () => {
             Aviation Research &amp; Consulting
           </InfoSideTitle>
           <InfoSideDetails>
-            50/515 Nowogrodzka St.<br />
+            50/54/515 Nowogrodzka St..<br />
             Warsaw, PL00-695 <br />
             Poland<br />
             <span><Obfuscate

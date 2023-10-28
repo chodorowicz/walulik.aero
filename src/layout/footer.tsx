@@ -146,7 +146,7 @@ export function Footer(): JSX.Element {
               Aviation Research &amp; Consulting
             </Title>
             <Text>
-              50/515 Nowogrodzka St.
+              50/54/515 Nowogrodzka St..
               <br />
               Warsaw, PL00-695
               <br />
